@@ -19,15 +19,20 @@ public class Boot : MonoBehaviour
     {
         // エディタで開いているシーンを取得します
         var firstScene = SceneManager.GetActiveScene();
-        ms_firstSceneIndex = firstScene.buildIndex;
-
         Debug.Log($"Start with {firstScene.name} scene.");
 
-        // まずBootシーンから開始します
-        if (ms_firstSceneIndex != BUILD_INDEX_BOOT)
+        if (firstScene.name == "Start")
         {
-            SceneManager.LoadScene(BUILD_INDEX_BOOT);
+            // 非プログラマーが開いているStartシーンから始まった場合、通常進行で開始します
+            ms_firstSceneIndex = BUILD_INDEX_BOOT;
         }
+        else
+        {
+            // エディタで開いているシーンから開始します
+            ms_firstSceneIndex = firstScene.buildIndex;
+        }
+        // まずBootシーンから開始します
+        SceneManager.LoadScene(BUILD_INDEX_BOOT);
     }
 #endif
 
