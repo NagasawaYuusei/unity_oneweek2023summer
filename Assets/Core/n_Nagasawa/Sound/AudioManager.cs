@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
+using Data;
 
 public class AudioManager : MonoBehaviour
 {
@@ -8,8 +8,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource _audioBGM;
     [SerializeField] AudioSource _audioSE;
 
-    [SerializeField] List<BGMSoundData> _bgmSoundDatas;
-    [SerializeField] List<SESoundData> _seSoundDatas;
+    [SerializeField] BGMSoundDataScrObj _bgmData;
+    [SerializeField] SESoundDataScrObj _seData;
 
     [SerializeField]
     private float _masterVolume = 1;
@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
     {
         if (Instance)
         {
-            Debug.LogWarning("AudioManager•¡”‚ ‚Á‚½‚æ[");
+            Debug.LogWarning("AudioManagerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[");
             Destroy(this.gameObject);
             return;
         }
@@ -31,59 +31,31 @@ public class AudioManager : MonoBehaviour
     }
 
     /// <summary>
-    /// BGM‚ğÄ¶
+    /// BGMï¿½ï¿½ï¿½Äï¿½
     /// </summary>
-    /// <param name="bgm">Ä¶‚µ‚½‚¢BGM</param>
-    public void PlayBGM(BGMSoundData.BGM bgm)
+    /// <param name="bgm">ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½BGM</param>
+    public void PlayBGM(SoundType.BGM bgm)
     {
-        BGMSoundData data = _bgmSoundDatas.Find(data => data._bgm == bgm);
-        _audioBGM.clip = data._audioClip;
-        _audioBGM.volume = data._volume * _bgmMasterVolume * _masterVolume;
+        var data = _bgmData.GetSoundData(bgm);
+        if (data == null)
+            return;
+
+        _audioBGM.clip = data.AudioClip;
+        _audioBGM.volume = data.Volume * _bgmMasterVolume * _masterVolume;
         _audioBGM.Play();
     }
 
     /// <summary>
-    /// SE‚ğÄ¶
+    /// SEï¿½ï¿½ï¿½Äï¿½
     /// </summary>
-    /// <param name="se">Ä¶‚µ‚½‚¢SE</param>
-    public void PlaySE(SESoundData.SE se)
+    /// <param name="se">ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SE</param>
+    public void PlaySE(SoundType.SE se)
     {
-        SESoundData data = _seSoundDatas.Find(data => data.Se == se);
+        var data = _seData.GetSoundData(se);
+        if (data == null)
+            return;
+
         _audioSE.volume = data.Volume * _seMasterVolume * _masterVolume;
         _audioSE.PlayOneShot(data.AudioClip);
-    }
-
-    [System.Serializable]
-    public class BGMSoundData
-    {
-        public enum BGM
-        {
-            Title,
-            Game,
-            Result,
-        }
-
-        public BGM _bgm;
-        public AudioClip _audioClip;
-        [Range(0f, 1f)]
-        public float _volume = 1f;
-    }
-
-    [System.Serializable]
-    public class SESoundData
-    {
-        public enum SE
-        {
-            Start,
-            CountDown,
-            End,
-            ClickButton,
-            ChangeScene
-        }
-
-        public SE Se;
-        public AudioClip AudioClip;
-        [Range(0, 1)]
-        public float Volume = 1;
     }
 }
