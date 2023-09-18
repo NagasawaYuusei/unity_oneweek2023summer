@@ -3,15 +3,15 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using KyawaLib;
 
-public class TitleSceneManager : SingletonClass<TitleSceneManager>
+public class StageSelectionSceneManager : SingletonClass<StageSelectionSceneManager>
 {
-    TitleCanvasRoot m_canvasRoot = null;
+    SceneSelectionCanvasRoot m_canvasRoot = null;
     bool m_isRunning = false;
 
     /// <summary>
     /// UI参照
     /// </summary>
-    public TitleCanvasRoot canvasRoot => m_canvasRoot;
+    public SceneSelectionCanvasRoot canvasRoot => m_canvasRoot;
 
     /// <summary>
     /// 実行中か
@@ -24,9 +24,10 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
     /// <returns></returns>
     async UniTask InitializeAsync(CancellationToken cancellation)
     {
-        await UniTask.DelayFrame(1);
+        /* 初期化処理 */
+        await UniTask.Delay(1);
 
-        m_canvasRoot = GameObject.FindObjectOfType<TitleCanvasRoot>();
+        m_canvasRoot = GameObject.FindObjectOfType<SceneSelectionCanvasRoot>();
         Debug.Assert(m_canvasRoot);
         m_canvasRoot.nextBtn.onClick.AddListener(() => m_isRunning = false);
     }
@@ -51,7 +52,7 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
         await FinalizeAsync(cancellation);
 
         // 次のシーンへ
-        SceneLoader.instance.LoadMainScene(SceneIndex.Main.StageSelection, cancellation);
+        SceneLoader.instance.LoadMainScene(SceneIndex.Main.Game, cancellation);
         Destroy();
     }
 

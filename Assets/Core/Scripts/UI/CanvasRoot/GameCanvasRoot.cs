@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class TitleCanvasRoot : CanvasRoot
+public class GameCanvasRoot : CanvasRoot
 {
     [SerializeField]
     Button m_nextBtn = null;

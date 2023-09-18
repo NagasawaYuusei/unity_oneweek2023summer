@@ -18,28 +18,44 @@ public class SceneLoader : KyawaLib.SingletonMonoBehaviour<SceneLoader>
     /// <param name="name">シーンインデックス</param>
     public bool LoadMainScene(SceneIndex.Main name, CancellationToken cancellation)
     {
+        Debug.Log($"Load {name} scene.");
         switch (name)
         {
             case SceneIndex.Main.Title:
-                var manager = TitleSceneManager.Create();
-                if (manager != null)
                 {
-                    Debug.Log($"Load {name} scene.");
-                    SceneManager.LoadScene((int)name, LoadSceneMode.Single);
-                    manager.Run(cancellation).Forget();
-                    return true;
+                    var manager = TitleSceneManager.Create();
+                    if (manager != null)
+                    {
+                        SceneManager.LoadScene((int)name, LoadSceneMode.Single);
+                        manager.Run(cancellation).Forget();
+                        return true;
+                    }
                 }
-                Debug.LogWarning($"Cannot load {name} scene.");
                 break;
-
+            case SceneIndex.Main.StageSelection:
+                {
+                    var manager = StageSelectionSceneManager.Create();
+                    if (manager != null)
+                    {
+                        SceneManager.LoadScene((int)name, LoadSceneMode.Single);
+                        manager.Run(cancellation).Forget();
+                        return true;
+                    }
+                }
+                break;
             case SceneIndex.Main.Game:
-
-                break;
-
-            case SceneIndex.Main.Result:
-
+                {
+                    var manager = GameSceneManager.Create();
+                    if (manager != null)
+                    {
+                        SceneManager.LoadScene((int)name, LoadSceneMode.Single);
+                        manager.Run(cancellation).Forget();
+                        return true;
+                    }
+                }
                 break;
         }
+        Debug.LogError($"Cannot load {name} scene.");
         return false;
     }
 
