@@ -7,16 +7,16 @@ using UnityEngine.UI;
 /// </summary>
 public abstract class CanvasRoot : MonoBehaviour
 {
-    protected Canvas canvas { get; private set; } = null;
+    protected Canvas Canvas { get; private set; } = null;
 
-    protected CanvasScaler canvasScaler { get; private set; } = null;
+    protected CanvasScaler CanvasScaler { get; private set; } = null;
 
-    protected GraphicRaycaster graphicRaycaster { get; private set; } = null;
+    protected GraphicRaycaster GraphicRaycaster { get; private set; } = null;
 
     void Awake()
     {
-        canvas = GetComponentInParent<Canvas>();
-        canvasScaler = GetComponentInParent<CanvasScaler>();
-        graphicRaycaster = GetComponentInParent<GraphicRaycaster>();
+        Canvas = GetComponentInParent<Canvas>();
+        CanvasScaler = GetComponentInParent<CanvasScaler>();
+        GraphicRaycaster = GetComponentInParent<GraphicRaycaster>();
     }
 }
