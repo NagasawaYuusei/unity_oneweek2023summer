@@ -9,8 +9,8 @@ static public class SceneIndex
     public enum Main
     {
         Title = 1,
-        StageSelection = 2,
-        Game = 3,
+        Game = 2,
+        Result = 3,
     }
 
     /// <summary>
@@ -18,6 +18,8 @@ static public class SceneIndex
     /// </summary>
     public enum Sub
     {
-        Stage000 = 4,
+        GameOver = 4,
+        GameEnemy = 5,
+        GameBack = 6,
     }
 }

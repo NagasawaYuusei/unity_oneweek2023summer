@@ -28,7 +28,11 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
 
         m_canvasRoot = GameObject.FindObjectOfType<TitleCanvasRoot>();
         Debug.Assert(m_canvasRoot);
-        m_canvasRoot.nextBtn.onClick.AddListener(() => m_isRunning = false);
+        m_canvasRoot.nextBtn.onClick.AddListener(
+            () =>
+            {
+                m_isRunning = false;
+            });
     }
 
     /// <summary>
@@ -43,7 +47,7 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
         m_isRunning = true;
 
         /* シーン内処理 */
-        await UniTask.WaitUntil(() => m_isRunning == false);
+        await UniTask.WaitUntil(() => m_isRunning == false, cancellationToken: cancellation);
 
         m_isRunning = false;
 
@@ -51,7 +55,7 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
         await FinalizeAsync(cancellation);
 
         // 次のシーンへ
-        SceneLoader.instance.LoadMainScene(SceneIndex.Main.StageSelection, cancellation);
+        SceneLoader.instance.LoadMainScene(SceneIndex.Main.Game, cancellation);
         Destroy();
     }
 

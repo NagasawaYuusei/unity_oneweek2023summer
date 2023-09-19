@@ -7,17 +7,35 @@ using UnityEngine.SceneManagement;
 public class GameSceneManager : SingletonClass<GameSceneManager>
 {
     GameCanvasRoot m_canvasRoot = null;
-    bool m_isRunning = false;
+    GameBackCanvasRoot m_backCanvasRoot = null;
+
+    enum GameState
+    {
+        Loading,
+        Playing,
+        Clear,
+        Over,
+    }
+    GameState m_state = GameState.Loading;
 
     /// <summary>
-    /// UI参照
+    /// 次に遷移するシーン
+    /// </summary>
+    SceneIndex.Main m_nextScene = SceneIndex.Main.Title;
+
+    /// <summary>
+    /// GameシーンのUI参照
     /// </summary>
     public GameCanvasRoot canvasRoot => m_canvasRoot;
+    /// <summary>
+    /// GameBackシーンのUI参照
+    /// </summary>
+    public GameBackCanvasRoot backCanvasRoot => m_backCanvasRoot;
 
     /// <summary>
     /// 実行中か
     /// </summary>
-    public bool isRunning => m_isRunning;
+    public bool isRunning => (m_state == GameState.Playing);
 
     /// <summary>
     /// 初期化処理
@@ -26,14 +44,28 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
     async UniTask InitializeAsync(CancellationToken cancellation)
     {
         // サブシーンをロード
-        var scene = await SceneLoader.instance.LoadSubSceneAsync(SceneIndex.Sub.Stage000);
-        SceneManager.SetActiveScene(scene);
+        var backScene = await SceneLoader.instance.LoadSubSceneAsync(SceneIndex.Sub.GameBack);
+        var enemyScene = await SceneLoader.instance.LoadSubSceneAsync(SceneIndex.Sub.GameEnemy);
+        SceneManager.SetActiveScene(backScene);
+        SceneManager.SetActiveScene(enemyScene);
 
         await UniTask.DelayFrame(1);
 
         m_canvasRoot = GameObject.FindObjectOfType<GameCanvasRoot>();
         Debug.Assert(m_canvasRoot);
-        m_canvasRoot.nextBtn.onClick.AddListener(() => m_isRunning = false);
+
+        m_backCanvasRoot = GameObject.FindObjectOfType<GameBackCanvasRoot>();
+        Debug.Assert(m_backCanvasRoot);
+        m_backCanvasRoot.clearBtn.onClick.AddListener(
+            () =>
+            {
+                OnGameClear();
+            });
+        m_backCanvasRoot.gameoverBtn.onClick.AddListener(
+            () =>
+            {
+                OnGameOver();
+            });
     }
 
     /// <summary>
@@ -45,18 +77,22 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         // 初期化
         await InitializeAsync(cancellation);
 
-        m_isRunning = true;
+        m_state = GameState.Playing;
 
         /* シーン内処理 */
-        await UniTask.WaitUntil(() => m_isRunning == false);
-
-        m_isRunning = false;
+        await UniTask.WaitUntil(() => isRunning == false, cancellationToken: cancellation);
 
         // 終了
         await FinalizeAsync(cancellation);
 
+        // ゲームオーバー処理
+        if (m_state == GameState.Over)
+        {
+            await GameOverProcess(cancellation);
+        }
+
         // 次のシーンへ
-        SceneLoader.instance.LoadMainScene(SceneIndex.Main.Title, cancellation);
+        SceneLoader.instance.LoadMainScene(m_nextScene, cancellation);
         Destroy();
     }
 
@@ -68,5 +104,54 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
     {
         /* 終了処理 */
         await UniTask.CompletedTask;
+    }
+
+    /// <summary>
+    /// ゲームオーバー処理
+    /// </summary>
+    /// <returns></returns>
+    async UniTask GameOverProcess(CancellationToken cancellation)
+    {
+        bool isRunning = true;
+
+        var overScene = await SceneLoader.instance.LoadSubSceneAsync(SceneIndex.Sub.GameOver);
+        SceneManager.SetActiveScene(overScene);
+
+        await UniTask.DelayFrame(1);
+
+        var overCanvasRoot = GameObject.FindObjectOfType<GameOverCanvasRoot>();
+        Debug.Assert(overCanvasRoot);
+        overCanvasRoot.titleBtn.onClick.AddListener(
+            () =>
+            {
+                m_nextScene = SceneIndex.Main.Title;
+                isRunning = false;
+            });
+        overCanvasRoot.gameBtn.onClick.AddListener(
+            () =>
+            {
+                m_nextScene = SceneIndex.Main.Game;
+                isRunning = false;
+            });
+
+        // プレイヤー入力待ち
+        await UniTask.WaitUntil(() => isRunning == false, cancellationToken: cancellation);
+    }
+
+    /// <summary>
+    /// プレイヤーが死亡した（ゲームオーバー）
+    /// </summary>
+    public void OnGameOver()
+    {
+        m_state = GameState.Over;
+    }
+
+    /// <summary>
+    /// ボスが死亡した（ゲームクリア）
+    /// </summary>
+    public void OnGameClear()
+    {
+        m_state = GameState.Clear;
+        m_nextScene = SceneIndex.Main.Result;
     }
 }

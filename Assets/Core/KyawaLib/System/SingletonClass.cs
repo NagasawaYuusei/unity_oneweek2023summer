@@ -22,9 +22,8 @@ namespace KyawaLib
             if (ms_instance is null)
             {
                 ms_instance = new T();
-                return ms_instance;
             }
-            return default(T);
+            return ms_instance;
         }
 
         /// <summary>
@@ -32,8 +31,11 @@ namespace KyawaLib
         /// </summary>
         public void Destroy()
         {
-            OnDestroy();
-            ms_instance = default(T);
+            if (ms_instance is not null)
+            {
+                OnDestroy();
+                ms_instance = default(T);
+            }
         }
 
         /// <summary>

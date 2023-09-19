@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class GameCanvasRoot : CanvasRoot
 {
-    [SerializeField]
-    Button m_nextBtn = null;
-    public Button nextBtn => m_nextBtn;
+    /*
+     * GameSceneManager.instance.canvasRoot.〇〇 で各クラスからUIを参照することができます
+     * HPバーのUI参照にお役立てください
+     * 
+     */
 }

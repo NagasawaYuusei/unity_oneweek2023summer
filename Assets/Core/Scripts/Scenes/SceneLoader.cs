@@ -23,39 +23,29 @@ public class SceneLoader : KyawaLib.SingletonMonoBehaviour<SceneLoader>
         {
             case SceneIndex.Main.Title:
                 {
+                    TitleSceneManager.instance?.Destroy();
                     var manager = TitleSceneManager.Create();
-                    if (manager != null)
-                    {
-                        SceneManager.LoadScene((int)name, LoadSceneMode.Single);
-                        manager.Run(cancellation).Forget();
-                        return true;
-                    }
+                    SceneManager.LoadScene((int)name, LoadSceneMode.Single);
+                    manager.Run(cancellation).Forget();
+                    return true;
                 }
-                break;
-            case SceneIndex.Main.StageSelection:
-                {
-                    var manager = StageSelectionSceneManager.Create();
-                    if (manager != null)
-                    {
-                        SceneManager.LoadScene((int)name, LoadSceneMode.Single);
-                        manager.Run(cancellation).Forget();
-                        return true;
-                    }
-                }
-                break;
             case SceneIndex.Main.Game:
                 {
+                    GameSceneManager.instance?.Destroy();
                     var manager = GameSceneManager.Create();
-                    if (manager != null)
-                    {
-                        SceneManager.LoadScene((int)name, LoadSceneMode.Single);
-                        manager.Run(cancellation).Forget();
-                        return true;
-                    }
+                    SceneManager.LoadScene((int)name, LoadSceneMode.Single);
+                    manager.Run(cancellation).Forget();
+                    return true;
                 }
-                break;
+            case SceneIndex.Main.Result:
+                {
+                    ResultSceneManager.instance?.Destroy();
+                    var manager = ResultSceneManager.Create();
+                    SceneManager.LoadScene((int)name, LoadSceneMode.Single);
+                    manager.Run(cancellation).Forget();
+                    return true;
+                }
         }
-        Debug.LogError($"Cannot load {name} scene.");
         return false;
     }
 
