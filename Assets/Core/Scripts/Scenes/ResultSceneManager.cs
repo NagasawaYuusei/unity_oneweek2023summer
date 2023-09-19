@@ -3,15 +3,20 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using KyawaLib;
 
-public class TitleSceneManager : SingletonClass<TitleSceneManager>
+public class ResultSceneManager : SingletonClass<ResultSceneManager>
 {
-    TitleCanvasRoot m_canvasRoot = null;
+    ResultCanvasRoot m_canvasRoot = null;
     bool m_isRunning = false;
+
+    /// <summary>
+    /// 次に遷移するシーン
+    /// </summary>
+    SceneIndex.Main m_nextScene = SceneIndex.Main.Title;
 
     /// <summary>
     /// UI参照
     /// </summary>
-    public TitleCanvasRoot canvasRoot => m_canvasRoot;
+    public ResultCanvasRoot canvasRoot => m_canvasRoot;
 
     /// <summary>
     /// 実行中か
@@ -24,13 +29,21 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
     /// <returns></returns>
     async UniTask InitializeAsync(CancellationToken cancellation)
     {
-        await UniTask.DelayFrame(1);
+        /* 初期化処理 */
+        await UniTask.Delay(1);
 
-        m_canvasRoot = GameObject.FindObjectOfType<TitleCanvasRoot>();
+        m_canvasRoot = GameObject.FindObjectOfType<ResultCanvasRoot>();
         Debug.Assert(m_canvasRoot);
-        m_canvasRoot.nextBtn.onClick.AddListener(
+        m_canvasRoot.titleBtn.onClick.AddListener(
             () =>
             {
+                m_nextScene = SceneIndex.Main.Title;
+                m_isRunning = false;
+            });
+        m_canvasRoot.gameBtn.onClick.AddListener(
+            () =>
+            {
+                m_nextScene = SceneIndex.Main.Game;
                 m_isRunning = false;
             });
     }
@@ -55,7 +68,7 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
         await FinalizeAsync(cancellation);
 
         // 次のシーンへ
-        SceneLoader.instance.LoadMainScene(SceneIndex.Main.Game, cancellation);
+        SceneLoader.instance.LoadMainScene(m_nextScene, cancellation);
         Destroy();
     }
 

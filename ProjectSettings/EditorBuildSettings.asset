@@ -16,8 +16,14 @@ EditorBuildSettings:
     guid: 4c23011297a5432488d043b9f544efa2
   - enabled: 1
     path: Assets/Core/Scenes/Result.unity
-    guid: 832ded7879820d041b3b211ea5003ff9
+    guid: 25418207f01f440c3ab9cd7de53589db
   - enabled: 1
-    path: Assets/Core/Scenes/TitleUI.unity
-    guid: d237cbde6d7c741a88ac442dc37e1598
+    path: Assets/Core/Scenes/InGame/GameOver.unity
+    guid: fcb016e2cc2964e2593ce1f6a7dc7562
+  - enabled: 1
+    path: Assets/Core/Scenes/InGame/GameEnemy.unity
+    guid: a5cefdadc7c1a45dfa6b4d39dfa8bbf6
+  - enabled: 1
+    path: Assets/Core/Scenes/InGame/GameBack.unity
+    guid: f2453272320224c1680aef79f579b30f
   m_configObjects: {}
