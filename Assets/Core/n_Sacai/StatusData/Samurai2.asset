@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60c0f165c4d80654a8501ac3a6f6d809, type: 3}
-  m_Name: Samurai1
+  m_Name: Samurai2
   m_EditorClassIdentifier: 
-  Name: "\u4ECA\u5BB5"
+  Name: "\u591C\u5BB5"
   AttackPower1: 10
   AttackPower2: 0
   AttackPower3: 0
