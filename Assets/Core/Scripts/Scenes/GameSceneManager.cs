@@ -76,6 +76,7 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
     {
         // 初期化
         await InitializeAsync(cancellation);
+        await FadeManger.instance.Fade(Fade.Situation.Game, Fade.Type.FadeIn);
 
         m_state = GameState.Playing;
 
@@ -90,6 +91,7 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         {
             await GameOverProcess(cancellation);
         }
+        await FadeManger.instance.Fade(Fade.Situation.Game, Fade.Type.FadeOut);
 
         // 次のシーンへ
         SceneLoader.instance.LoadMainScene(m_nextScene, cancellation);
