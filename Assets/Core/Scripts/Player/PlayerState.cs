@@ -7,10 +7,10 @@ public class PlayerState : MonoBehaviour
     PlayerStateEnum m_playerStateEnum;
     void ChangeState(PlayerStateEnum state)
     {
-        switch(m_playerStateEnum)
-        {
+        //switch(m_playerStateEnum)
+        //{
 
-        }
+        //}
     }
 
     public enum PlayerStateEnum
