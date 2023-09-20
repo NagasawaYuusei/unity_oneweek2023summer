@@ -6,18 +6,13 @@ using UnityEditor;
 
 public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
 {
-    //これを参照したい
-    public Status Small1, Small2, Mid1, Mid2, Large;
-
     private GameObject BattleEnemy = null;
     [SerializeField] private Transform InstancePos;
 
     [SerializeField] private GameObject[] FirstEnemyPrefab;
-    [SerializeField] private int FirstWaveEnemyNum;
     [SerializeField] private float FirstRatio = 0.6f;
 
     [SerializeField] private GameObject[] SecondEnemyPrefab;
-    [SerializeField] private int SecondWaveEnemyNum;
     [SerializeField] private float SecondRatio = 0.4f;
 
     [SerializeField] private GameObject BossPrefab;
@@ -33,14 +28,11 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
 
     private void Start()
     {
-        //Instantiate(FirstEnemyPrefab[0], new Vector3(InstancePos.position.x, InstancePos.position.y, InstancePos.position.z), Quaternion.identity);
-        //EnemyInstantiate(WaveState.FirstImpact, 3);
+      
     }
     
     private void Update()
     {
-        Debug.Log("カウント"+Count);
-
         if (Input.GetKeyDown(KeyCode.F))
         {
             EnemyInstantiate(WaveState.FirstImpact, 3);

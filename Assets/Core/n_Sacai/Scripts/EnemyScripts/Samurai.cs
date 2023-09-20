@@ -19,18 +19,12 @@ public class Samurai : Enemy
     private void Start()
     {
         BattleArea = GameObject.Find("BattleArea");
-        //ここで取得
         speed = stat.MoveSpeed;
-        //speed = GameObject.Find("EnemyManger").GetComponent<EnemyManager>().Small1.MoveSpeed;
-        Debug.Log("確認" + speed);
-        AttackPower = GameObject.Find("EnemyManager").GetComponent<EnemyManager>().Small1.AttackPower1;
+        AttackPower = stat.AttackPower1;
     }
 
     private void Update()
     {
-        //speed = GameObject.Find("EnemyManger").GetComponent<EnemyManager>().Small1.MoveSpeed;
-        Debug.Log(speed);
-        
         switch (SamuraiState)
         {
             case EnemyState.Idle:
@@ -54,10 +48,8 @@ public class Samurai : Enemy
                 }   
                 break;
         }
-       
     }
     
-
     public void Attack()
     {
 

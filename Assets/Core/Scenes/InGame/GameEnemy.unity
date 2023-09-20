@@ -183,22 +183,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b4f787f87bec34cbc5f2a976bf7f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Small1: {fileID: 11400000, guid: 2250c099b93a5ed4ebd19481131a30aa, type: 2}
-  Small2: {fileID: 11400000, guid: 654c67efd84a8ce429234a4cc7119f93, type: 2}
-  Mid1: {fileID: 11400000, guid: 3d30c909a44a30e479aac0153da17aa3, type: 2}
-  Mid2: {fileID: 11400000, guid: e7064c12fbf14f941a38da51d4804516, type: 2}
-  Large: {fileID: 11400000, guid: b0fdab8b34e47304b82c92cc0c26cbd7, type: 2}
   InstancePos: {fileID: 1654470497}
   FirstEnemyPrefab:
   - {fileID: 5095206037538789741, guid: 50439763f8659554c9c9cc03748beb85, type: 3}
-  - {fileID: 65747496874515454, guid: 37e2eaff7e4d2b7408f2bea02f8dc9b4, type: 3}
-  FirstWaveEnemyNum: 8
-  FirstRatio: 0.6
+  - {fileID: 7965717337525073358, guid: 22ccc981371168846b3a33f45a8e9971, type: 3}
+  FirstRatio: 0.5
   SecondEnemyPrefab:
   - {fileID: 7549725323527062146, guid: 3834b89fcfd4b1e4ca30984c158b20f2, type: 3}
   - {fileID: 1563903913075335095, guid: 0f6c6a530b75e7b4d82f7f9efc21ddfc, type: 3}
-  SecondWaveEnemyNum: 0
-  SecondRatio: 0.4
+  SecondRatio: 0.5
   BossPrefab: {fileID: 3417766782933190984, guid: 6341b09e4ff20054894fd3a114710369, type: 3}
 --- !u!4 &1593960014
 Transform:

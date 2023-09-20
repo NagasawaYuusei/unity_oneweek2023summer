@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class Zako2 : Enemy
+public class Mid1 : Enemy
 {
     [SerializeField] private Status stat;
 
@@ -12,7 +12,7 @@ public class Zako2 : Enemy
 
     private GameObject BattleArea;
 
-    private EnemyState Zako2State = EnemyState.Idle;
+    private EnemyState Mid1State = EnemyState.Idle;
 
     private bool check = false;
 
@@ -25,19 +25,19 @@ public class Zako2 : Enemy
 
     private void Update()
     {
-        switch (Zako2State)
+        switch (Mid1State)
         {
             case EnemyState.Idle:
                 if (this.transform.position == BattleArea.transform.position)
                 {
-                    Zako2State = EnemyState.Battle;
+                    Mid1State = EnemyState.Battle;
                 }
                 base.MoveBattlePos(BattleArea.transform, speed);
                 break;
 
             case EnemyState.Battle:
                 StartCoroutine("CountDown");
-                Zako2State = EnemyState.Death;
+                Mid1State = EnemyState.Death;
                 break;
 
             case EnemyState.Death:
@@ -61,5 +61,4 @@ public class Zako2 : Enemy
         yield return new WaitForSeconds(3f);
         check = true;
     }
-
 }
