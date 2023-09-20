@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TexturesAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f07a42486c0bca540a84584cc395e977, type: 3}
+    - {fileID: 102900000, guid: e068fd5d4fcb57e40bdda08c4825c6cc, type: 3}
+    - {fileID: 102900000, guid: 528618a2dbb6a0f43a71fb8d2dccca6f, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 2ff679207f8d6eb4791319b61b52ef5c, type: 3}
+  - {fileID: 1324427544, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: 485687044, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: -2095523462, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: 115292022, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: -1696452621, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: 927521392, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: -1852590408, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: 181706660, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: 1279804384, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: -892329541, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: 1075620530, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: -841505583, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: 321544349, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: 538091527, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: 764558367, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: -169738342, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: 27930, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: -92647023, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: 1741964981, guid: a4572268193d7df4c96a849bb376812f, type: 3}
+  - {fileID: 21300000, guid: fc06d37830faf474b976cba9900fcda9, type: 3}
+  - {fileID: -2044866792, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: 1513632191, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: 1342609624, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: -219106631, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: -281547444, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: 2145381147, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: -490474503, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: 1332318698, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: 1181341851, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: -1416036045, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: -1827294159, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: 637582320, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: -1748705732, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: 96221265, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: 795850716, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: 722266074, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: -750011164, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: 1017185811, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: -429508529, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: -230870922, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: -2071400035, guid: c9cdc2e8725fd4e42b803d92d5c64460, type: 3}
+  - {fileID: 21300000, guid: 4f3e3ccb19d69db458b5264f0c209c3d, type: 3}
+  - {fileID: -1236711681, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: 1751949457, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: -672039324, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: 1929890765, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: 2008302374, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: -149500863, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: -1153084910, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: 774722965, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: -2112718277, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: 319913793, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: -389466296, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: 946273872, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: 1991605147, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: -513989610, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: 479545463, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: -2006127809, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: 2021563424, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: -197054023, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  - {fileID: -415230619, guid: 5764ff2f62ccdd241aa4d6f261429af3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - T_Idle_Zako
+  - T_Parry_Player_3
+  - T_Parry_Player_2
+  - T_Parry_Player_1
+  - T_Parry_Player_0
+  - T_Parry_Player_7
+  - T_Parry_Player_6
+  - T_Parry_Player_5
+  - T_Parry_Player_4
+  - T_Parry_Player_9
+  - T_Parry_Player_8
+  - T_Parry_Player_16
+  - T_Parry_Player_17
+  - T_Parry_Player_14
+  - T_Parry_Player_15
+  - T_Parry_Player_12
+  - T_Parry_Player_13
+  - T_Parry_Player_10
+  - T_Parry_Player_11
+  - T_Parry_Player_18
+  - T_Idle_Boss
+  - T_Hit_Player_17
+  - T_Hit_Player_16
+  - T_Hit_Player_15
+  - T_Hit_Player_14
+  - T_Hit_Player_13
+  - T_Hit_Player_12
+  - T_Hit_Player_11
+  - T_Hit_Player_10
+  - T_Hit_Player_20
+  - T_Hit_Player_19
+  - T_Hit_Player_18
+  - T_Hit_Player_8
+  - T_Hit_Player_9
+  - T_Hit_Player_4
+  - T_Hit_Player_5
+  - T_Hit_Player_6
+  - T_Hit_Player_7
+  - T_Hit_Player_0
+  - T_Hit_Player_1
+  - T_Hit_Player_2
+  - T_Hit_Player_3
+  - T_Idle_Player
+  - T_Delay_Zako_8
+  - T_Delay_Zako_9
+  - T_Delay_Zako_18
+  - T_Delay_Zako_17
+  - T_Delay_Zako_16
+  - T_Delay_Zako_15
+  - T_Delay_Zako_14
+  - T_Delay_Zako_13
+  - T_Delay_Zako_12
+  - T_Delay_Zako_11
+  - T_Delay_Zako_10
+  - T_Delay_Zako_4
+  - T_Delay_Zako_5
+  - T_Delay_Zako_6
+  - T_Delay_Zako_7
+  - T_Delay_Zako_0
+  - T_Delay_Zako_1
+  - T_Delay_Zako_2
+  - T_Delay_Zako_3
+  m_RenderDataMap: {}
+  m_Tag: TexturesAtlas
+  m_IsVariant: 0
