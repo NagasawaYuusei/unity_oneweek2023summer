@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEditor;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
 {
     //これを参照したい
     public Status Small1, Small2, Mid1, Mid2, Large;
@@ -32,12 +33,13 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     {
-        EnemyInstantiate(WaveState.FirstImpact, 3);
+        //Instantiate(FirstEnemyPrefab[0], new Vector3(InstancePos.position.x, InstancePos.position.y, InstancePos.position.z), Quaternion.identity);
+        //EnemyInstantiate(WaveState.FirstImpact, 3);
     }
-
+    
     private void Update()
     {
-        Debug.Log(Small1.MoveSpeed);
+        Debug.Log("カウント"+Count);
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -99,7 +101,7 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-
+    
     /// <Summary>
     /// EnemyManagerが稼働しているかの判定関数.trueなら敵生成中もしくはまだ死亡していない.
     /// </Summary>

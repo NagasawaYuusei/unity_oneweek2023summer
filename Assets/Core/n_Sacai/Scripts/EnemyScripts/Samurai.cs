@@ -5,6 +5,8 @@ using UnityEditor;
 
 public class Samurai : Enemy
 {
+    [SerializeField] private Status stat;
+
     private int AttackPower;
     private float speed;
 
@@ -18,7 +20,8 @@ public class Samurai : Enemy
     {
         BattleArea = GameObject.Find("BattleArea");
         //ここで取得
-        speed = GameObject.Find("EnemyManger").GetComponent<EnemyManager>().Small1.MoveSpeed;
+        speed = stat.MoveSpeed;
+        //speed = GameObject.Find("EnemyManger").GetComponent<EnemyManager>().Small1.MoveSpeed;
         Debug.Log("確認" + speed);
         AttackPower = GameObject.Find("EnemyManager").GetComponent<EnemyManager>().Small1.AttackPower1;
     }
@@ -27,7 +30,7 @@ public class Samurai : Enemy
     {
         //speed = GameObject.Find("EnemyManger").GetComponent<EnemyManager>().Small1.MoveSpeed;
         Debug.Log(speed);
-
+        
         switch (SamuraiState)
         {
             case EnemyState.Idle:
@@ -52,6 +55,12 @@ public class Samurai : Enemy
                 break;
         }
        
+    }
+    
+
+    public void Attack()
+    {
+
     }
 
     IEnumerator CountDown()

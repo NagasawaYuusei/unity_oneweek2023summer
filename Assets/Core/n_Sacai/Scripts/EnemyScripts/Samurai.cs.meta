@@ -4,11 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - Zako1: {fileID: 11400000, guid: 2250c099b93a5ed4ebd19481131a30aa, type: 2}
-  - Zako2: {fileID: 11400000, guid: 654c67efd84a8ce429234a4cc7119f93, type: 2}
-  - Mid1: {fileID: 11400000, guid: 3d30c909a44a30e479aac0153da17aa3, type: 2}
-  - Mid2: {fileID: 11400000, guid: e7064c12fbf14f941a38da51d4804516, type: 2}
-  - Boss: {fileID: 11400000, guid: b0fdab8b34e47304b82c92cc0c26cbd7, type: 2}
+  - stat: {fileID: 11400000, guid: 2250c099b93a5ed4ebd19481131a30aa, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
