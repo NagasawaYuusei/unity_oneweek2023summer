@@ -21,5 +21,6 @@ static public class SceneIndex
         GameOver = 4,
         GameEnemy = 5,
         GameBack = 6,
+        TitleOption = 7,
     }
 }

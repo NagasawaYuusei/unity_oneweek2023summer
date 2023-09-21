@@ -18,6 +18,23 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private float _seMasterVolume = 1;
 
+    /// <summary>
+    /// BGM音量
+    /// </summary>
+    public float bgmMasterVolume
+    {
+        get { return _bgmMasterVolume; }
+        set { _bgmMasterVolume = value; }
+    }
+    /// <summary>
+    /// SE音量
+    /// </summary>
+    public float seMasterVolume
+    {
+        get { return _seMasterVolume; }
+        set { _seMasterVolume = value; }
+    }
+
     void Awake()
     {
         if (Instance)
