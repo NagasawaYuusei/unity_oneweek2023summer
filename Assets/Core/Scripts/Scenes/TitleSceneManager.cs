@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using KyawaLib;
-using UnityEngine.SceneManagement;
 
 public class TitleSceneManager : SingletonClass<TitleSceneManager>
 {
@@ -25,12 +24,15 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
     /// <returns></returns>
     async UniTask InitializeAsync(CancellationToken cancellation)
     {
-        // サブシーンをロード
-        var scene = await SceneLoader.instance.LoadSubSceneAsync(SceneIndex.Sub.TitleUI);
-        SceneManager.SetActiveScene(scene);
+        await UniTask.DelayFrame(1);
 
         m_canvasRoot = GameObject.FindObjectOfType<TitleCanvasRoot>();
         Debug.Assert(m_canvasRoot);
+        m_canvasRoot.nextBtn.onClick.AddListener(
+            () =>
+            {
+                m_isRunning = false;
+            });
     }
 
     /// <summary>
@@ -41,15 +43,18 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
     {
         // 初期化
         await InitializeAsync(cancellation);
+        await FadeManger.instance.Fade(Fade.Situation.Title, Fade.Type.FadeIn);
 
         m_isRunning = true;
 
         /* シーン内処理 */
+        await UniTask.WaitUntil(() => m_isRunning == false, cancellationToken: cancellation);
 
         m_isRunning = false;
 
         // 終了
         await FinalizeAsync(cancellation);
+        await FadeManger.instance.Fade(Fade.Situation.Title, Fade.Type.FadeOut);
 
         // 次のシーンへ
         SceneLoader.instance.LoadMainScene(SceneIndex.Main.Game, cancellation);

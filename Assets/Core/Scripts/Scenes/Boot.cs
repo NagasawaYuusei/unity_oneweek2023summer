@@ -66,6 +66,7 @@ public class Boot : MonoBehaviour
         }
 #endif
         // Titleから開始します
+        await FadeManger.instance.fader.FadeOut(0);
         SceneLoader.instance.LoadMainScene(SceneIndex.Main.Title, m_cancellation);
 
     }
@@ -75,6 +76,8 @@ public class Boot : MonoBehaviour
         // ここにゲーム内で常駐させたいものの初期化処理を書きます
 
         SceneLoader.Create(gameObject);
+
+        FadeManger.instance.Initialize();
 
         await UniTask.CompletedTask;
     }

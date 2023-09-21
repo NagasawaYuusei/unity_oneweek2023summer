@@ -18,6 +18,8 @@ static public class SceneIndex
     /// </summary>
     public enum Sub
     {
-        TitleUI = 4,
+        GameOver = 4,
+        GameEnemy = 5,
+        GameBack = 6,
     }
 }

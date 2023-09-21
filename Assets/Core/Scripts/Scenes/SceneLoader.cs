@@ -18,27 +18,33 @@ public class SceneLoader : KyawaLib.SingletonMonoBehaviour<SceneLoader>
     /// <param name="name">シーンインデックス</param>
     public bool LoadMainScene(SceneIndex.Main name, CancellationToken cancellation)
     {
+        Debug.Log($"Load {name} scene.");
         switch (name)
         {
             case SceneIndex.Main.Title:
-                var manager = TitleSceneManager.Create();
-                if (manager != null)
                 {
-                    Debug.Log($"Load {name} scene.");
+                    TitleSceneManager.instance?.Destroy();
+                    var manager = TitleSceneManager.Create();
                     SceneManager.LoadScene((int)name, LoadSceneMode.Single);
                     manager.Run(cancellation).Forget();
                     return true;
                 }
-                Debug.LogWarning($"Cannot load {name} scene.");
-                break;
-
             case SceneIndex.Main.Game:
-
-                break;
-
+                {
+                    GameSceneManager.instance?.Destroy();
+                    var manager = GameSceneManager.Create();
+                    SceneManager.LoadScene((int)name, LoadSceneMode.Single);
+                    manager.Run(cancellation).Forget();
+                    return true;
+                }
             case SceneIndex.Main.Result:
-
-                break;
+                {
+                    ResultSceneManager.instance?.Destroy();
+                    var manager = ResultSceneManager.Create();
+                    SceneManager.LoadScene((int)name, LoadSceneMode.Single);
+                    manager.Run(cancellation).Forget();
+                    return true;
+                }
         }
         return false;
     }
