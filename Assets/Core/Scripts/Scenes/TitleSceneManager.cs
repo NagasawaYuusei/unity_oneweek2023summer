@@ -43,6 +43,7 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
     {
         // 初期化
         await InitializeAsync(cancellation);
+        await FadeManger.instance.Fade(Fade.Situation.Title, Fade.Type.FadeIn);
 
         m_isRunning = true;
 
@@ -53,6 +54,7 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
 
         // 終了
         await FinalizeAsync(cancellation);
+        await FadeManger.instance.Fade(Fade.Situation.Title, Fade.Type.FadeOut);
 
         // 次のシーンへ
         SceneLoader.instance.LoadMainScene(SceneIndex.Main.Game, cancellation);
