@@ -6,9 +6,11 @@ using UnityEditor;
 public class Zako2 : Enemy
 {
     [SerializeField] private Status stat;
+    private Animator anim;
 
     private int AttackPower;
     private float speed;
+
 
     private GameObject BattleArea;
 
@@ -21,6 +23,7 @@ public class Zako2 : Enemy
         BattleArea = GameObject.Find("BattleArea");
         speed = stat.MoveSpeed;
         AttackPower = stat.AttackPower1;
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -30,18 +33,21 @@ public class Zako2 : Enemy
             case EnemyState.Idle:
                 if (this.transform.position == BattleArea.transform.position)
                 {
-                    Zako2State = EnemyState.Battle;
+                    Zako2State = EnemyState.Anticipation;
                 }
                 base.MoveBattlePos(BattleArea.transform, speed);
                 break;
 
-            case EnemyState.Battle:
-                StartCoroutine("CountDown");
-                Zako2State = EnemyState.Death;
+            case EnemyState.Anticipation:
+                anim.SetBool("isIdol", true);
+                break;
+
+            case EnemyState.Attack:
+                anim.SetBool("isAttack", true);
                 break;
 
             case EnemyState.Death:
-                if (check == true)
+                if (check)
                 {
                     base.Death();
                     check = false;
@@ -49,6 +55,16 @@ public class Zako2 : Enemy
                 break;
         }
 
+    }
+
+    public void AttackStateChange()
+    {
+        Zako2State = EnemyState.Attack;
+    }
+
+    public void DeathStateChange()
+    {
+        Zako2State = EnemyState.Death;
     }
 
     public void Attack()

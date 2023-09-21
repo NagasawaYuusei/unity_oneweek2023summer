@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526826369}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.39, y: -0.6, z: 0}
+  m_LocalPosition: {x: 2.39, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -187,12 +187,12 @@ MonoBehaviour:
   FirstEnemyPrefab:
   - {fileID: 5095206037538789741, guid: 50439763f8659554c9c9cc03748beb85, type: 3}
   - {fileID: 7965717337525073358, guid: 22ccc981371168846b3a33f45a8e9971, type: 3}
-  FirstRatio: 0.5
+  FirstRatio: 1
   SecondEnemyPrefab:
   - {fileID: 7549725323527062146, guid: 3834b89fcfd4b1e4ca30984c158b20f2, type: 3}
   - {fileID: 1563903913075335095, guid: 0f6c6a530b75e7b4d82f7f9efc21ddfc, type: 3}
   SecondRatio: 0.5
-  BossPrefab: {fileID: 3417766782933190984, guid: 6341b09e4ff20054894fd3a114710369, type: 3}
+  BossPrefab: {fileID: 8989725792906627399, guid: 73c0b7911beea9a44b750703df8fa1d0, type: 3}
 --- !u!4 &1593960014
 Transform:
   m_ObjectHideFlags: 0
@@ -232,7 +232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654470496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.81, y: -0.6, z: 0}
+  m_LocalPosition: {x: 13.81, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

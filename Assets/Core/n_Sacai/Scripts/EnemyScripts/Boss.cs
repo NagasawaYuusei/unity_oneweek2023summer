@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
-public class Samurai : Enemy
+public class Boss : Enemy
 {
     [SerializeField] private Status stat;
     private Animator anim;
@@ -13,7 +12,10 @@ public class Samurai : Enemy
 
     private GameObject BattleArea;
 
-    private EnemyState SamuraiState = EnemyState.Idle;
+    public enum BossState {move,attackidle,idle,anticipation,attack,death};
+    private BossState bosstate = BossState.move;
+
+    //private EnemyState BossState = EnemyState.Idle;
 
     private bool check = true;
 
@@ -27,25 +29,33 @@ public class Samurai : Enemy
 
     private void Update()
     {
-        switch (SamuraiState)
+        switch (bosstate)
         {
-            case EnemyState.Idle:
+            case BossState.move:
                 if (this.transform.position == BattleArea.transform.position)
                 {
-                    SamuraiState = EnemyState.Anticipation;
+                    bosstate = BossState.anticipation;
                 }
-                base.MoveBattlePos(BattleArea.transform,speed);
+                base.MoveBattlePos(BattleArea.transform, speed);
                 break;
 
-            case EnemyState.Anticipation:
-                anim.SetBool("isIdol", true);
+            case BossState.anticipation:
+                anim.SetBool("isDelay", true);
                 break;
 
-            case EnemyState.Attack:
+            case BossState.attack:
                 anim.SetBool("isAttack", true);
                 break;
 
-            case EnemyState.Death:
+            case BossState.attackidle:
+                anim.SetBool("isAttackIdle", true);
+                break;
+
+            case BossState.idle:
+                anim.SetBool("isIdol", true);
+                break;
+
+            case BossState.death:
                 if (check)
                 {
                     base.Death();
@@ -55,14 +65,27 @@ public class Samurai : Enemy
         }
     }
 
+    public void IdolStateChange()
+    {
+        bosstate = BossState.idle;
+        anim.SetBool("isAttackIdle", false);
+    }
+
+    public void AttackIdolStateChange()
+    {
+        bosstate = BossState.attackidle;
+        anim.SetBool("isAttack", false);
+    }
+
     public void AttackStateChange()
     {
-        SamuraiState = EnemyState.Attack;
+        bosstate = BossState.attack;
+        anim.SetBool("isDelay", false);
     }
 
     public void DeathStateChange()
     {
-        SamuraiState = EnemyState.Death;
+        bosstate = BossState.death;
     }
 
     public void Attack()

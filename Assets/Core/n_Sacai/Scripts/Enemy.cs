@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public enum EnemyState {Idle,Battle,Death}
+    public enum EnemyState {Idle, Anticipation, Attack,Death}
     protected EnemyState State = EnemyState.Idle;
 
-  
     protected virtual void MoveBattlePos(Transform BattlePos,float speed)
     {
         this.transform.position = Vector3.MoveTowards(transform.position, BattlePos.position, speed * Time.deltaTime);
@@ -15,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     protected void BattleMode()
     {
-        State = EnemyState.Battle;
+        State = EnemyState.Anticipation;
     }
 
     protected void Death()
