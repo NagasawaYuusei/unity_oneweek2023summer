@@ -6,6 +6,8 @@ using UnityEditor;
 public class Samurai : Enemy
 {
     [SerializeField] private Status stat;
+    [SerializeField] private GameObject BAKUSAN;
+
     private Animator anim;
 
     private int AttackPower;
@@ -65,6 +67,7 @@ public class Samurai : Enemy
 
     public void DeathStateChange()
     {
+        Instantiate(BAKUSAN, this.transform.position, Quaternion.identity, this.transform);
         SamuraiState = EnemyState.Death;
     }
 

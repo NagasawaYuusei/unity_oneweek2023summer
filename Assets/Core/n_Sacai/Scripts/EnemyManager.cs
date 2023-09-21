@@ -26,6 +26,8 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
     private bool check = false;
     private int Max;
 
+    //private bool Spawn = false;
+
     private void Start()
     {
       
@@ -35,7 +37,7 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            EnemyInstantiate(WaveState.FirstImpact, 3);
+            EnemyInstantiate(WaveState.FirstImpact, 5);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -48,7 +50,11 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
             EnemyInstantiate(WaveState.ThirdImpact, 1);
         }
 
-        //Debug.Log(check);
+       /* if (Input.GetKeyDown(KeyCode.R))
+        {
+            Spawn = true;
+        }
+       */
 
         if(check)
         {
@@ -132,6 +138,7 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
                 BattleEnemy = Instantiate(enemy[1], new Vector3(InstancePos.position.x, InstancePos.position.y, InstancePos.position.z), Quaternion.identity);
             }
             Count++;
+            //Spawn = false;
         }
     }
 

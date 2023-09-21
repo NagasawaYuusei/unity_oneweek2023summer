@@ -15,8 +15,6 @@ public class Boss : Enemy
     public enum BossState {move,attackidle,idle,anticipation,attack,death};
     private BossState bosstate = BossState.move;
 
-    //private EnemyState BossState = EnemyState.Idle;
-
     private bool check = true;
 
     private bool isAttack;
@@ -70,7 +68,7 @@ public class Boss : Enemy
 
     public void IdolStateChange()
     {
-        bosstate = BossState.idle;
+        bosstate = BossState.death;
         anim.SetBool("isAttackIdle", false);
     }
 
