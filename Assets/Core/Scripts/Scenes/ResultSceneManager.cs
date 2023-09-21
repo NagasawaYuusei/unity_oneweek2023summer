@@ -56,6 +56,7 @@ public class ResultSceneManager : SingletonClass<ResultSceneManager>
     {
         // 初期化
         await InitializeAsync(cancellation);
+        await FadeManger.instance.Fade(Fade.Situation.Result, Fade.Type.FadeIn);
 
         m_isRunning = true;
 
@@ -66,6 +67,7 @@ public class ResultSceneManager : SingletonClass<ResultSceneManager>
 
         // 終了
         await FinalizeAsync(cancellation);
+        await FadeManger.instance.Fade(Fade.Situation.Result, Fade.Type.FadeOut);
 
         // 次のシーンへ
         SceneLoader.instance.LoadMainScene(m_nextScene, cancellation);
