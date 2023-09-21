@@ -18,6 +18,8 @@ public class Zako2 : Enemy
 
     private bool check = false;
 
+    private bool isAttack;
+
     private void Start()
     {
         BattleArea = GameObject.Find("BattleArea");
@@ -43,6 +45,7 @@ public class Zako2 : Enemy
                 break;
 
             case EnemyState.Attack:
+                if(!isAttack) Attack();
                 anim.SetBool("isAttack", true);
                 break;
 
@@ -69,7 +72,8 @@ public class Zako2 : Enemy
 
     public void Attack()
     {
-
+        isAttack = true;
+        PlayerController.Instance.Hit(AttackPower);
     }
 
     IEnumerator CountDown()

@@ -17,6 +17,8 @@ public class Samurai : Enemy
 
     private bool check = true;
 
+    private bool isAttack;
+
     private void Start()
     {
         BattleArea = GameObject.Find("BattleArea");
@@ -42,6 +44,7 @@ public class Samurai : Enemy
                 break;
 
             case EnemyState.Attack:
+                if(!isAttack) Attack();
                 anim.SetBool("isAttack", true);
                 break;
 
@@ -67,7 +70,8 @@ public class Samurai : Enemy
 
     public void Attack()
     {
-
+        isAttack = true;
+        PlayerController.Instance.Hit(AttackPower);
     }
 
     IEnumerator CountDown()

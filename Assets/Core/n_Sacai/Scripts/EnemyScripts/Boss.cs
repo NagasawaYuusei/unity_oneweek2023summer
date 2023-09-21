@@ -19,6 +19,8 @@ public class Boss : Enemy
 
     private bool check = true;
 
+    private bool isAttack;
+
     private void Start()
     {
         BattleArea = GameObject.Find("BattleArea");
@@ -44,6 +46,7 @@ public class Boss : Enemy
                 break;
 
             case BossState.attack:
+                if(!isAttack) Attack();
                 anim.SetBool("isAttack", true);
                 break;
 
@@ -90,7 +93,8 @@ public class Boss : Enemy
 
     public void Attack()
     {
-
+        isAttack = true;
+        PlayerController.Instance.Hit(AttackPower);
     }
 
     IEnumerator CountDown()

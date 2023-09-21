@@ -48,7 +48,7 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
             EnemyInstantiate(WaveState.ThirdImpact, 1);
         }
 
-        Debug.Log(check);
+        //Debug.Log(check);
 
         if(check)
         {

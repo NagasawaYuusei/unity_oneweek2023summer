@@ -75,7 +75,8 @@ public class PlayerController : MonoBehaviour
             m_coolDownTimer += Time.deltaTime;
             if(m_coolDownTimer >= m_coolDownTime)
             {
-                m_state = PlayerStateEnum.Idle;
+                m_coolDownTimer = 0;
+                StateChange(PlayerStateEnum.Idle);
             }
             else
             {
@@ -85,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            m_state = PlayerStateEnum.ParryWait;
+            StateChange(PlayerStateEnum.ParryWait);
         }
     }
 
@@ -141,7 +142,6 @@ public class PlayerController : MonoBehaviour
             case PlayerStateEnum.ParrySuccess:
                 m_state = PlayerStateEnum.ParrySuccess;
                 m_anim.Play("Parry_Player");
-                //エネミーにしてほしいことがあればここに書く
                 break;
             //攻撃受ける時
             case PlayerStateEnum.TakeHit:
@@ -158,6 +158,14 @@ public class PlayerController : MonoBehaviour
                 Debug.LogError("PlayerStateの例外");
                 break;
         }
+    }
+
+    /// <summary>
+    /// アニメーション戻す
+    /// </summary>
+    public void HasExitTime()
+    {
+        m_anim.Play("Idle_Player");
     }
 
     /// <summary>
