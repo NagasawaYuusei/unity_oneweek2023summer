@@ -5,7 +5,6 @@ using UnityEditor;
 
 public class Samurai : Enemy
 {
-    [SerializeField] private Status stat;
     [SerializeField] private GameObject BAKUSAN;
 
     private Animator anim;

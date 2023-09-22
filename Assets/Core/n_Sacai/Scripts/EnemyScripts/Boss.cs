@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Boss : Enemy
 {
-    [SerializeField] private Status stat;
     private Animator anim;
 
     private int AttackPower;

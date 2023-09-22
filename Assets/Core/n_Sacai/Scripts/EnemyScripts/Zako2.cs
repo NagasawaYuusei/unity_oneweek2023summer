@@ -5,7 +5,6 @@ using UnityEditor;
 
 public class Zako2 : Enemy
 {
-    [SerializeField] private Status stat;
     private Animator anim;
 
     private int AttackPower;

@@ -13,6 +13,11 @@ public class Status : ScriptableObject  //これはスクリプタブルオブ�
     private int[] _AttackPower;
 
     /// <summary>
+    /// 名前
+    /// </summary>
+    public string Name => _Name;
+
+    /// <summary>
     /// 移動速度
     /// </summary>
     public float MoveSpeed => _MoveSpeed;
