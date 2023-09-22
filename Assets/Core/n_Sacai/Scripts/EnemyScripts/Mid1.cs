@@ -23,7 +23,7 @@ public class Mid1 : Enemy
     {
         BattleArea = GameObject.Find("BattleArea");
         speed = stat.MoveSpeed;
-        AttackPower = stat.AttackPower1;
+        AttackPower = stat.GetAttackPower(0);
         anim = this.GetComponent<Animator>();
     }
 

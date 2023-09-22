@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60c0f165c4d80654a8501ac3a6f6d809, type: 3}
-  m_Name: Tengu
+  m_Name: Naginata
   m_EditorClassIdentifier: 
-  Name: "\u6CA2\u57CE"
-  AttackPower1: 10
-  AttackPower2: 10
-  AttackPower3: 0
-  MoveSpeed: 8
+  _Name: "\u5F14\u5175\u885B"
+  _MoveSpeed: 7
+  _AttackPower: 08000000
