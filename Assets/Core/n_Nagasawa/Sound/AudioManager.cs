@@ -1,5 +1,6 @@
 using UnityEngine;
 using Data;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class AudioManager : MonoBehaviour
     private float _bgmMasterVolume = 1;
     [SerializeField]
     private float _seMasterVolume = 1;
+
+    /// <summary>
+    /// BGMをフェードアウト中か
+    /// </summary>
+    bool _onFadeOutBGM = false;
 
     /// <summary>
     /// BGM音量
@@ -57,6 +63,8 @@ public class AudioManager : MonoBehaviour
         if (data == null)
             return;
 
+        _onFadeOutBGM = false;
+
         _audioBGM.clip = data.AudioClip;
         _audioBGM.volume = data.Volume * _bgmMasterVolume * _masterVolume;
         _audioBGM.Play();
@@ -67,6 +75,7 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public void StopBgm()
     {
+        _onFadeOutBGM = false;
         _audioBGM.Stop();
     }
 
@@ -90,5 +99,36 @@ public class AudioManager : MonoBehaviour
     public void StopSE()
     {
         _audioSE.Stop();
+    }
+
+    /// <summary>
+    /// BGMをフェードアウトして停止
+    /// フェードアウト中に再びこの関数が呼ばれた場合無視されます。
+    /// </summary>
+    /// <param name="sec">フェードアウト秒数</param>
+    public void FadeOutBgm(float sec)
+    {
+        if (_onFadeOutBGM)
+            return;
+
+        if (sec <= 0f)
+            StopBgm();
+        else
+            StartCoroutine(CoFadeOutBGM(sec));
+    }
+
+    IEnumerator CoFadeOutBGM(float sec)
+    {
+        _onFadeOutBGM = true;
+
+        float startVolume = _audioBGM.volume;
+        float time = sec;
+        while (0f < time)
+        {
+            time -= Time.deltaTime;
+            _audioBGM.volume = startVolume * (time / sec);
+            yield return null;
+        }
+        StopBgm();
     }
 }
