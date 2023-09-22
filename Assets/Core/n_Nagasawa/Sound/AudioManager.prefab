@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioBGM: {fileID: 9074024361498054205}
   _audioSE: {fileID: 9094770390682940640}
-  _seData: {fileID: 11400000, guid: 5fd3c376459784286880f6c7d8d62743, type: 2}
   _bgmData: {fileID: 11400000, guid: e13d7066e94e74d31b6da1404ce98a7b, type: 2}
+  _seData: {fileID: 11400000, guid: 5fd3c376459784286880f6c7d8d62743, type: 2}
   _masterVolume: 1
   _bgmMasterVolume: 1
   _seMasterVolume: 1
@@ -105,7 +105,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -233,10 +233,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
