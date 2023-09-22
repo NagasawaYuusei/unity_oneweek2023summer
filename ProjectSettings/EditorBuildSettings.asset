@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Core/Scenes/InGame/GameBack.unity
     guid: f2453272320224c1680aef79f579b30f
+  - enabled: 1
+    path: Assets/Core/Scenes/Title/Option.unity
+    guid: d612bea699a644cf28b63d4663a16f61
   m_configObjects: {}

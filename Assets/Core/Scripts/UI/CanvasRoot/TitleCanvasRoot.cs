@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class TitleCanvasRoot : CanvasRoot
 {
     [SerializeField]
-    Button m_nextBtn = null;
-    public Button nextBtn => m_nextBtn;
+    Button m_optionBtn = null;
+    /// <summary>
+    /// オプションボタン
+    /// </summary>
+    public Button optionBtn => m_optionBtn;
 }

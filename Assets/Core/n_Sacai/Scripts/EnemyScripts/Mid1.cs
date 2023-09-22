@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+//ここもSamuraiコピペ
+//やることはZako2と同じ
 public class Mid1 : Enemy
 {
     [SerializeField] private Status stat;
@@ -72,10 +74,5 @@ public class Mid1 : Enemy
     {
         isAttack = true;
         PlayerController.Instance.Hit(AttackPower);
-    }
-    IEnumerator CountDown()
-    {
-        yield return new WaitForSeconds(3f);
-        check = true;
     }
 }

@@ -6,27 +6,25 @@ using UnityEditor;
 
 public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
 {
-    private GameObject BattleEnemy = null;
-    [SerializeField] private Transform InstancePos;
+    private GameObject BattleEnemy = null;                      //生成したエネミーを入れる
+    [SerializeField] private Transform InstancePos;             //生成ポジション
 
-    [SerializeField] private GameObject[] FirstEnemyPrefab;
-    [SerializeField] private float FirstRatio = 0.6f;
+    [SerializeField] private GameObject[] FirstEnemyPrefab;     //1ウェーブ目の敵配列
+    [SerializeField] private float FirstRatio = 0.6f;           //生成比率
 
-    [SerializeField] private GameObject[] SecondEnemyPrefab;
-    [SerializeField] private float SecondRatio = 0.4f;
+    [SerializeField] private GameObject[] SecondEnemyPrefab;    //2ウェーブ目の敵配列
+    [SerializeField] private float SecondRatio = 0.4f;          
 
-    [SerializeField] private GameObject BossPrefab;
+    [SerializeField] private GameObject BossPrefab;             //ボス専用
    
-    private int Count = 0;
+    private int Count = 0;                                      //現在何体生成したかをカウント
 
-    public enum WaveState { FirstImpact, SecondImpact, ThirdImpact}
-    //public WaveState wave = WaveState.FirstImpact;
+    public enum WaveState { FirstImpact, SecondImpact, ThirdImpact}     //ウェーブステート（これを引数で指定して）
+ 
     private WaveState m_State = WaveState.FirstImpact;
 
-    private bool check = false;
-    private int Max;
-
-    //private bool Spawn = false;
+    private bool check = false;                                 //敵生成中はtrue、生成し終わるとfalse
+    private int Max;                                                    
 
     private void Start()
     {
@@ -35,6 +33,8 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
     
     private void Update()
     {
+        //デバッグ用操作
+        //Fキーでサコ敵、Eキーで強敵、Gキーでボス
         if (Input.GetKeyDown(KeyCode.F))
         {
             EnemyInstantiate(WaveState.FirstImpact, 5);
@@ -50,22 +50,17 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
             EnemyInstantiate(WaveState.ThirdImpact, 1);
         }
 
-       /* if (Input.GetKeyDown(KeyCode.R))
-        {
-            Spawn = true;
-        }
-       */
-
-        if(check)
+        if(check)       //生成フラグが立ってれば生成開始
         {
             switch (m_State)
             {
+                //指定されたウェーブに基づき条件分岐
                 case WaveState.FirstImpact:
                     if (Count < Max)
                     {
                         SpawnWave(FirstEnemyPrefab, FirstRatio);
                     }
-                    else if(BattleEnemy == null)
+                    else if(BattleEnemy == null)    //全ての敵を生成し終わり、画面内の敵も死亡したら生成フラグをfalseに
                     {
                         check = false;
                         Count = 0;
@@ -123,11 +118,15 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
         }      
     }
 
+
+    /// <Summary>
+    /// 生成したいウェーブの敵配列と比率を与えたら敵を生成
+    /// </Summary>
     private void SpawnWave(GameObject[] enemy,float ratio)
     {
         float RandomValue = Random.value;
 
-        if (BattleEnemy == null)
+        if (BattleEnemy == null)        //今は敵が死亡したら新しく次の敵を生成。このif文を変えたら自由なタイミングで生成可能。
         {
             if (RandomValue <= ratio)
             {
@@ -138,10 +137,12 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
                 BattleEnemy = Instantiate(enemy[1], new Vector3(InstancePos.position.x, InstancePos.position.y, InstancePos.position.z), Quaternion.identity);
             }
             Count++;
-            //Spawn = false;
         }
     }
 
+    /// <Summary>
+    /// ボス専用生成関数。引数なし
+    /// </Summary>
     private void BossWave()
     {
         BattleEnemy = Instantiate(BossPrefab, new Vector3(InstancePos.position.x, InstancePos.position.y, InstancePos.position.z), Quaternion.identity);

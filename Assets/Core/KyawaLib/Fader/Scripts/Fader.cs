@@ -24,6 +24,7 @@ namespace KyawaLib
         void Awake()
         {
             m_canvasRoot = gameObject.GetComponentInChildren<FaderCanvasRoot>();
+            m_canvasRoot.Image.raycastTarget = false;
         }
 
         /// <summary>

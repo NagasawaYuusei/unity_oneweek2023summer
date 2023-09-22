@@ -74,6 +74,7 @@ public class SceneLoader : KyawaLib.SingletonMonoBehaviour<SceneLoader>
     /// <returns></returns>
     public async UniTask UnloadSubSceneAsync(Scene scene, bool releaseUnusedResouces)
     {
+        var name = scene.name;
         bool onUnloaded = false;
         StartCoroutine(CoUnloadScene(scene, releaseUnusedResouces, (x) => onUnloaded = x));
         await UniTask.WaitUntil(() => onUnloaded == true,

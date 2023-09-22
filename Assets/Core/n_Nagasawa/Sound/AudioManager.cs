@@ -18,6 +18,23 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private float _seMasterVolume = 1;
 
+    /// <summary>
+    /// BGM音量
+    /// </summary>
+    public float bgmMasterVolume
+    {
+        get { return _bgmMasterVolume; }
+        set { _bgmMasterVolume = value; }
+    }
+    /// <summary>
+    /// SE音量
+    /// </summary>
+    public float seMasterVolume
+    {
+        get { return _seMasterVolume; }
+        set { _seMasterVolume = value; }
+    }
+
     void Awake()
     {
         if (Instance)
@@ -46,6 +63,14 @@ public class AudioManager : MonoBehaviour
     }
 
     /// <summary>
+    /// BGM停止
+    /// </summary>
+    public void StopBgm()
+    {
+        _audioBGM.Stop();
+    }
+
+    /// <summary>
     /// SE���Đ�
     /// </summary>
     /// <param name="se">�Đ�������SE</param>
@@ -57,5 +82,13 @@ public class AudioManager : MonoBehaviour
 
         _audioSE.volume = data.Volume * _seMasterVolume * _masterVolume;
         _audioSE.PlayOneShot(data.AudioClip);
+    }
+
+    /// <summary>
+    /// SE停止
+    /// </summary>
+    public void StopSE()
+    {
+        _audioSE.Stop();
     }
 }
