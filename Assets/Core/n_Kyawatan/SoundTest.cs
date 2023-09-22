@@ -39,6 +39,7 @@ public class SoundTest : MonoBehaviour
             () =>
             {
                 AudioManager.Instance.StopBgm();
+                //AudioManager.Instance.FadeOutBgm(0.5f);
             });
         m_seStopButton.onClick.AddListener(
             () =>
