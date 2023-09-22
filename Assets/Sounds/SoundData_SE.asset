@@ -12,4 +12,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbcaba4b3b67e4609ad608ae82621ba6, type: 3}
   m_Name: SoundData_SE
   m_EditorClassIdentifier: 
-  m_soundData: []
+  m_soundData:
+  - AudioClip: {fileID: 8300000, guid: cc5df55eae7f141419cdd1c532d2b1ec, type: 3}
+    Volume: 1
+    SeType: 0
+  - AudioClip: {fileID: 8300000, guid: 4f63082dde4b04319bc4c429f91f1dca, type: 3}
+    Volume: 1
+    SeType: 1
+  - AudioClip: {fileID: 8300000, guid: 169cb429e6ea84631976b703c1655cda, type: 3}
+    Volume: 1
+    SeType: 2
+  - AudioClip: {fileID: 8300000, guid: e3ee1cbe56c5446c7bf6b5794bac1ddf, type: 3}
+    Volume: 1
+    SeType: 3
+  - AudioClip: {fileID: 8300000, guid: 892bb2879389a4623b44e0074e508cea, type: 3}
+    Volume: 1
+    SeType: 4
+  - AudioClip: {fileID: 8300000, guid: b8ca8b20615ff450894f753f4e72d253, type: 3}
+    Volume: 1
+    SeType: 5
+  - AudioClip: {fileID: 8300000, guid: 492548f3bf78b42b1b7fa9da4e85db51, type: 3}
+    Volume: 1
+    SeType: 6
+  - AudioClip: {fileID: 8300000, guid: 46b2062614e9a428baae02f696870c58, type: 3}
+    Volume: 1
+    SeType: 7
+  - AudioClip: {fileID: 8300000, guid: 0a06b2b35ee2944dabe5e06700ef501a, type: 3}
+    Volume: 1
+    SeType: 8
+  - AudioClip: {fileID: 8300000, guid: 21c48a2a7b5774161b7441485e237958, type: 3}
+    Volume: 1
+    SeType: 9
+  - AudioClip: {fileID: 8300000, guid: 68b4bd7b4167b471783bd498a632c64a, type: 3}
+    Volume: 1
+    SeType: 10
+  - AudioClip: {fileID: 8300000, guid: 1cab8af31b318461bb967b0a22b1be25, type: 3}
+    Volume: 1
+    SeType: 11
+  - AudioClip: {fileID: 8300000, guid: 160c9c7f77fed4d53a0374721abc76e1, type: 3}
+    Volume: 1
+    SeType: 12
+  - AudioClip: {fileID: 8300000, guid: 3c6aa788535cf488aa99cb9eb51b0a8e, type: 3}
+    Volume: 1
+    SeType: 13
+  - AudioClip: {fileID: 8300000, guid: 3c3d82977fb7449769c44030afd73449, type: 3}
+    Volume: 1
+    SeType: 14
