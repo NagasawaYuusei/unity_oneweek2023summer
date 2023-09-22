@@ -40,7 +40,7 @@ namespace Data
                     var soundData = tgt.m_soundData;
                     if (soundData != null)
                     {
-                        var enumLength = Enum.GetValues(typeof(SoundType.BGM)).Length;
+                        var enumLength = SoundType.BGMCount;
                         var dataLength = soundData.Count;
                         if (enumLength != dataLength) // データ数確認
                         {
