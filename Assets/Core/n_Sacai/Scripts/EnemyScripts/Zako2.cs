@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+//現状Samuraiのコピペです
+//多段攻撃を行う場合、statからAttackPower2を参照してAttack関数に渡してください。(2回目以降の攻撃力が同じなら必要ない）
+//どういうアニメションか分からないのでなんとも言えないですが、一度アイドル状態を挟まずに攻撃が連続でくる場合2回目以降の攻撃タイミングでAdd Eventを呼び出すだけ
+//もしアイドル状態を一度挟むアニメーションの場合、何とかしてください！！
+
 public class Zako2 : Enemy
 {
     [SerializeField] private Status stat;
@@ -74,12 +79,6 @@ public class Zako2 : Enemy
     {
         isAttack = true;
         PlayerController.Instance.Hit(AttackPower);
-    }
-
-    IEnumerator CountDown()
-    {
-        yield return new WaitForSeconds(3f);
-        check = true;
     }
 
 }

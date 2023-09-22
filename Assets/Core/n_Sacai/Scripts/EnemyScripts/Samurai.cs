@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+//一発のみの攻撃を行うザコ敵1
 public class Samurai : Enemy
 {
-    [SerializeField] private Status stat;
-    [SerializeField] private GameObject BAKUSAN;
+    [SerializeField] private Status stat;           //ScriptableObjectを入れて
+    [SerializeField] private GameObject BAKUSAN;    //敵死亡時パーティクル
 
     private Animator anim;
 
-    private int AttackPower;
-    private float speed;
+    private int AttackPower;                        //攻撃力
+    private float speed;                            //生成後バトルエリアまで移動してくる速度
 
-    private GameObject BattleArea;
+    private GameObject BattleArea;                  //バトルポジション
 
-    private EnemyState SamuraiState = EnemyState.Idle;
+    private EnemyState SamuraiState = EnemyState.Idle;      //ザコ敵ステート
 
     private bool check = true;
 
@@ -33,55 +34,50 @@ public class Samurai : Enemy
     {
         switch (SamuraiState)
         {
-            case EnemyState.Idle:
+            case EnemyState.Idle:   //アイドル状態時は移動
                 if (this.transform.position == BattleArea.transform.position)
                 {
-                    SamuraiState = EnemyState.Anticipation;
+                    SamuraiState = EnemyState.Anticipation;     //バトルエリアについたら即時予備動作に遷移
                 }
                 base.MoveBattlePos(BattleArea.transform,speed);
                 break;
 
             case EnemyState.Anticipation:
-                anim.SetBool("isIdol", true);
+                anim.SetBool("isIdol", true);       //予備動作アニメーションを再生
                 break;
 
             case EnemyState.Attack:
-                if(!isAttack) Attack();
+                if(!isAttack) Attack();             //アタック状態ならプレイヤー側に伝えるAttack関数を一度だけ呼び出し
                 anim.SetBool("isAttack", true);
                 break;
 
             case EnemyState.Death:
-                if (check)
+                if (check)              //フェードアウト関数が連続で呼ばれるのを防ぐbool変数
                 {
-                    base.Death();
+                    base.Death();       //フェードアウト
                     check = false;
                 }
                 break;
         }
     }
 
+    //予備動作アニメーション終了時にAddEventで呼び出される
     public void AttackStateChange()
     {
         SamuraiState = EnemyState.Attack;
     }
 
+    //攻撃アニメーション終了時にAddEventで呼び出される
     public void DeathStateChange()
     {
-        Instantiate(BAKUSAN, this.transform.position, Quaternion.identity, this.transform);
+        Instantiate(BAKUSAN, this.transform.position, Quaternion.identity, this.transform);     //自分の配下にパーティクル生成
         SamuraiState = EnemyState.Death;
     }
 
+    //プレイヤー側に攻撃を伝える
     public void Attack()
     {
         isAttack = true;
         PlayerController.Instance.Hit(AttackPower);
     }
-
-    IEnumerator CountDown()
-    {
-        yield return new WaitForSeconds(2f);
-        anim.SetBool("isAttack", true);
-        check = true;
-    }
-
 }

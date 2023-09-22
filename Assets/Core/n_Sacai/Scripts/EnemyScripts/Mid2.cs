@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+
+//Samuraiコピペ
+//これが天狗になる場合,EnemyManagerのInstaceAreaとBattleAreaを調節する必要があります。
 public class Mid2 : Enemy
 {
     [SerializeField] private Status stat;
@@ -71,11 +74,5 @@ public class Mid2 : Enemy
     {
         isAttack = true;
         PlayerController.Instance.Hit(AttackPower);
-    }
-
-    IEnumerator CountDown()
-    {
-        yield return new WaitForSeconds(3f);
-        check = true;
     }
 }
