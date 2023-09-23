@@ -75,13 +75,15 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
         Debug.Log("Enemy Spawner ON.");
 
         var generateCount = data.generateCount;
-        while (0 < generateCount)
+        while (m_isWorking)
         {
             if (m_enemy == null)
             {
                 // 新しい敵を生成
                 var name = GetRandomEnemyName(data.spawnRatioData);
                 m_enemy = m_enemySpawner.SpawnEnemy(name);
+                if (m_enemy == null)
+                    break; // 強制終了
                 generateCount--;
             }
             else if (m_enemy.isDead)
@@ -89,6 +91,9 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
                 // 死亡したので破棄
                 Destroy(m_enemy.gameObject);
                 m_enemy = null;
+                // 死亡したのが最後の敵であれば終了
+                if (generateCount <= 0)
+                    break;
             }
             yield return null;
         }
@@ -118,5 +123,13 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
         if (m_isWorking)
             return;
         StartCoroutine(CoWoking(m_wavesData.bossWaveData));
+    }
+
+    /// <summary>
+    /// Wave中断（ゲームオーバー）
+    /// </summary>
+    public void StopWave()
+    {
+        m_isWorking = false;
     }
 }
