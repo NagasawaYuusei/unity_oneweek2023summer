@@ -24,6 +24,11 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
     SceneIndex.Main m_nextScene = SceneIndex.Main.Title;
 
     /// <summary>
+    /// プレイヤーのHP残量パーセンテージ（クリア時に使用）
+    /// </summary>
+    public int playerHpPercentage { get; private set; }
+
+    /// <summary>
     /// GameシーンのUI参照
     /// </summary>
     public GameCanvasRoot canvasRoot => m_canvasRoot;
@@ -94,16 +99,16 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         source.Cancel();
         source.Dispose();
 
-        // ゲームオーバー処理
         if (m_state == GameState.Over)
         {
+            // ゲームオーバー処理
             await GameOverProcess(cancellation);
         }
         await FadeManger.instance.Fade(Fade.Situation.Game, Fade.Type.FadeOut);
 
         // 次のシーンへ
         SceneLoader.instance.LoadMainScene(m_nextScene, cancellation);
-        Destroy();
+        //Destroy(); // ResultSceneManagerでプレイヤーのHP残量を取得してからResult側で破棄
     }
 
     /// <summary>
@@ -202,5 +207,6 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
     {
         m_state = GameState.Clear;
         m_nextScene = SceneIndex.Main.Result;
+        playerHpPercentage = PlayerController.Instance.GetPlayerHpPercentage();
     }
 }

@@ -6,9 +6,15 @@ using UnityEngine.UI;
 
 public class GameCanvasRoot : CanvasRoot
 {
-    /*
-     * GameSceneManager.instance.canvasRoot.〇〇 で各クラスからUIを参照することができます
-     * HPバーのUI参照にお役立てください
-     * 
-     */
+    [SerializeField]
+    Image m_fillImg = null;
+
+    /// <summary>
+    /// HPバーを設定
+    /// </summary>
+    /// <param name="fillAmount"></param>
+    public void SetHpFillAmount(float fillAmount)
+    {
+        m_fillImg.fillAmount = fillAmount;
+    }
 }

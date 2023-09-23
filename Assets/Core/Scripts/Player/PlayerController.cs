@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Header("クールダウンになるまでのパリィ時間")]
     float m_timeToCoolDown = 1;
 
+    /// <summary>プレイヤーの最大HP</summary>
+    int m_playerMaxHP;
     /// <summary>現在のレベル</summary>
     int m_currentLevel;
     /// <summary>パリィのタイマー</summary>
@@ -63,6 +65,7 @@ public class PlayerController : MonoBehaviour
     void SetUp()
     {
         m_anim = GetComponent<Animator>();
+        m_playerMaxHP = m_playerHP;
     }
 
     /// <summary>
@@ -184,6 +187,8 @@ public class PlayerController : MonoBehaviour
     void DownHP(int value)
     {
         m_playerHP -= value;
+        // HPバー設定
+        GameSceneManager.instance.canvasRoot.SetHpFillAmount(m_playerHP / (float)m_playerMaxHP);
         Debug.Log($"現在の体力は{m_playerHP}です");
 
         if(m_playerHP <= m_playerHP * m_changePlayerHPs[m_currentLevel])
@@ -194,6 +199,7 @@ public class PlayerController : MonoBehaviour
         if (m_playerHP <= 0)
         {
             //GameManagerからGameOver呼ぶ
+            GameSceneManager.instance.OnGameOver();
         }
     }
 
@@ -204,5 +210,15 @@ public class PlayerController : MonoBehaviour
         ParrySuccess,
         TakeHit,
         CoolTime
+    }
+
+    /// <summary>
+    /// プレイヤーの残りHPパーセンテージを取得
+    /// </summary>
+    /// <returns>パーセンテージ（0〜100）</returns>
+    public int GetPlayerHpPercentage()
+    {
+        var ratio = m_playerHP / (float)m_playerMaxHP;
+        return (int)(ratio * 100);
     }
 }
