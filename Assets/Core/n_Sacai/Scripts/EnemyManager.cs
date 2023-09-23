@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEditor;
 using Data;
+using System;
 
 public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
 {
@@ -56,13 +55,47 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
 
     /// <summary>
     /// スポーン情報のスポーン比率をもとに生成する敵をランダム決定する
+    /// 現状は生成する度に関数呼んでますが、配列にしてスポナー稼働開始時に一度に生成した方がいいです
     /// </summary>
     /// <param name="spawnRatioData"></param>
     /// <returns></returns>
     private string GetRandomEnemyName(WavesDataScrObj.SpawnRatioData[] spawnRatioData)
     {
-        // TODO:スポーン比率をもとにランダム決定
-        return spawnRatioData[0].name;
+        Debug.Assert(spawnRatioData != null);
+        Debug.Assert(0 < spawnRatioData.Length);
+
+        // 1体しかいない
+        if (spawnRatioData.Length == 1)
+            return spawnRatioData[0].name;
+
+        // 敵と乱数の結びつけ
+        var ratioSum = 0; // 比率の合計
+        var tuples = new List<Tuple<string, int>>();
+        foreach (var data in spawnRatioData)
+        {
+            // 比率0の敵は生成しない
+            if (0 < data.ratio)
+            {
+                ratioSum += data.ratio;
+                tuples.Add(new(data.name, ratioSum));
+            }
+        }
+
+        // 乱数生成
+        var rand = UnityEngine.Random.Range(0, ratioSum);
+        rand++; // 1〜ratioSum+1の数に
+
+        // 乱数をもとに敵を決定
+        var name = "!--NONE--!";
+        foreach (var tuple in tuples)
+        {
+            if (rand <= tuple.Item2)
+            {
+                name = tuple.Item1;
+                break;
+            }
+        };
+        return name;
     }
 
     /// <summary>
