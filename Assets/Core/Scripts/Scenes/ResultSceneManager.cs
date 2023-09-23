@@ -57,6 +57,8 @@ public class ResultSceneManager : SingletonClass<ResultSceneManager>
         // 初期化
         await InitializeAsync(cancellation);
         await FadeManger.instance.Fade(Fade.Situation.Result, Fade.Type.FadeIn);
+        // BGM開始
+        AudioManager.Instance.PlayBGM(SoundType.BGM.Result);
 
         m_isRunning = true;
 
@@ -67,6 +69,8 @@ public class ResultSceneManager : SingletonClass<ResultSceneManager>
 
         // 終了
         await FinalizeAsync(cancellation);
+        // BGM停止
+        AudioManager.Instance.FadeOutBgm(0.2f);
         await FadeManger.instance.Fade(Fade.Situation.Result, Fade.Type.FadeOut);
 
         // 次のシーンへ

@@ -8,17 +8,22 @@ static public class SoundType
     public enum BGM
     {
         FirstWave,
+        SecondWave,
         ThirdWave,
+        Result,
     }
 
     public enum SE
     {
+        Select, // 決定ボタン
+
         Do,
         DoDoDo,
         Parry1,
         Parry2,
         Parry3,
         Parry4,
+        ParryMiss,
         Atack,
         Hit,
         PlayerDead1,
@@ -27,7 +32,9 @@ static public class SoundType
         Zu,
         Kisatsu,
         DelayZako,
+        DelayBoss,
         BeforeBoss,
+        AttackBoss,
     }
 
     static public int BGMCount
