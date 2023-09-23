@@ -106,7 +106,9 @@ public class SoundTest : MonoBehaviour
     private Image CreateDefaultImage(GameObject obj)
     {
         Image image = obj.AddComponent<Image>();
+#if UNITY_EDITOR
         image.sprite = UnityEditor.AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
+#endif
         image.type = Image.Type.Sliced;
         return image;
     }
