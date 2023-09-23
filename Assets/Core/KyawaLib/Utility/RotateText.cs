@@ -46,7 +46,7 @@ public class RotateText : UIBehaviour, IMeshModifier
         }
     }
 
-    void OnValidate()
+    protected override void OnValidate()
     {
         textComponent = this.GetComponent<Text>();
         if (textComponent.text != null && textComponent.text != "")
