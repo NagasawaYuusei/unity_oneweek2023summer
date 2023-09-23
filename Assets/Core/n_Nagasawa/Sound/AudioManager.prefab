@@ -52,7 +52,7 @@ MonoBehaviour:
   _bgmData: {fileID: 11400000, guid: e13d7066e94e74d31b6da1404ce98a7b, type: 2}
   _seData: {fileID: 11400000, guid: 5fd3c376459784286880f6c7d8d62743, type: 2}
   _masterVolume: 1
-  _bgmMasterVolume: 1
+  _bgmMasterVolume: 0.5
   _seMasterVolume: 1
 --- !u!81 &-2941643457120688731
 AudioListener:
