@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c0f165c4d80654a8501ac3a6f6d809, type: 3}
   m_Name: Samurai2
   m_EditorClassIdentifier: 
-  Name: "\u591C\u5BB5"
-  AttackPower1: 10
-  AttackPower2: 0
-  AttackPower3: 0
-  MoveSpeed: 6
+  _Name: "\u591C\u5BB5"
+  _MoveSpeed: 6
+  _AttackPower: 0a000000

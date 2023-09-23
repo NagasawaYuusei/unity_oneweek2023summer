@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60c0f165c4d80654a8501ac3a6f6d809, type: 3}
-  m_Name: Boss
+  m_Name: Tengu
   m_EditorClassIdentifier: 
-  Name: "\u753B\u7709\u4E38"
-  AttackPower1: 10
-  AttackPower2: 5
-  AttackPower3: 8
-  MoveSpeed: 4
+  _Name: "\u6CA2\u57CE"
+  _MoveSpeed: 8
+  _AttackPower: 0a0000000a000000

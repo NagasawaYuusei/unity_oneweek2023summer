@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60c0f165c4d80654a8501ac3a6f6d809, type: 3}
-  m_Name: Naginata
+  m_Name: Boss
   m_EditorClassIdentifier: 
-  Name: "\u5F14\u5175\u885B"
-  AttackPower1: 8
-  AttackPower2: 0
-  AttackPower3: 0
-  MoveSpeed: 7
+  _Name: "\u753B\u7709\u4E38"
+  _MoveSpeed: 4
+  _AttackPower: 0a0000000500000008000000

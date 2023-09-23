@@ -3,149 +3,120 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEditor;
+using Data;
 
 public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
 {
-    private GameObject BattleEnemy = null;                      //生成したエネミーを入れる
-    [SerializeField] private Transform InstancePos;             //生成ポジション
+    /// <summary>
+    /// Waveデータ
+    /// </summary>
+    [SerializeField]
+    private WavesDataScrObj m_wavesData = null;
 
-    [SerializeField] private GameObject[] FirstEnemyPrefab;     //1ウェーブ目の敵配列
-    [SerializeField] private float FirstRatio = 0.6f;           //生成比率
+    /// <summary>
+    /// ボス前のWave数
+    /// </summary>
+    public int wavesCount => m_wavesData.waveData.Length;
 
-    [SerializeField] private GameObject[] SecondEnemyPrefab;    //2ウェーブ目の敵配列
-    [SerializeField] private float SecondRatio = 0.4f;          
+    /// <summary>
+    /// Enemyスポナー
+    /// </summary>
+    private EnemySpawner m_enemySpawner = null;
 
-    [SerializeField] private GameObject BossPrefab;             //ボス専用
-   
-    private int Count = 0;                                      //現在何体生成したかをカウント
+    private bool m_isWorking = false;
+    /// <summary>
+    /// スポナー稼働中か
+    /// </summary>
+    public bool isWorking => m_isWorking;
 
-    public enum WaveState { FirstImpact, SecondImpact, ThirdImpact}     //ウェーブステート（これを引数で指定して）
- 
-    private WaveState m_State = WaveState.FirstImpact;
-
-    private bool check = false;                                 //敵生成中はtrue、生成し終わるとfalse
-    private int Max;                                                    
+    /// <summary>
+    /// 現在プレイヤーと戦っている敵
+    /// </summary>
+    private Enemy m_enemy = null;
 
     private void Start()
     {
-      
+        m_enemySpawner = GetComponent<EnemySpawner>();
     }
-    
+
+#if false
     private void Update()
     {
-        //デバッグ用操作
-        //Fキーでサコ敵、Eキーで強敵、Gキーでボス
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            EnemyInstantiate(WaveState.FirstImpact, 5);
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            EnemyInstantiate(WaveState.SecondImpact, 4);
-        }
-
+        // スポーンテスト
         if (Input.GetKeyDown(KeyCode.G))
         {
-            EnemyInstantiate(WaveState.ThirdImpact, 1);
+            StartWave(0);
         }
-
-        if(check)       //生成フラグが立ってれば生成開始
+        else if (Input.GetKeyDown(KeyCode.B))
         {
-            switch (m_State)
-            {
-                //指定されたウェーブに基づき条件分岐
-                case WaveState.FirstImpact:
-                    if (Count < Max)
-                    {
-                        SpawnWave(FirstEnemyPrefab, FirstRatio);
-                    }
-                    else if(BattleEnemy == null)    //全ての敵を生成し終わり、画面内の敵も死亡したら生成フラグをfalseに
-                    {
-                        check = false;
-                        Count = 0;
-                    }
-                break;
-
-                case WaveState.SecondImpact:
-                    if (Count < Max)
-                    {
-                        SpawnWave(SecondEnemyPrefab, SecondRatio);
-                    }
-                    else if(BattleEnemy == null)
-                    {
-                        check = false;
-                        Count = 0;
-                    }
-                break;
-
-                case WaveState.ThirdImpact:
-                    if (Count < Max)
-                    {
-                        BossWave();
-                    }
-                    else if (BattleEnemy == null)
-                    {
-                        check = false;
-                        Count = 0;
-                    }
-                    break;
-            }
+            StartBossWave();
         }
     }
+#endif
 
-    
-    /// <Summary>
-    /// EnemyManagerが稼働しているかの判定関数.trueなら敵生成中もしくはまだ死亡していない.
-    /// </Summary>
-    public bool EnemyManagerState()
+    /// <summary>
+    /// スポーン情報のスポーン比率をもとに生成する敵をランダム決定する
+    /// </summary>
+    /// <param name="spawnRatioData"></param>
+    /// <returns></returns>
+    private string GetRandomEnemyName(WavesDataScrObj.SpawnRatioData[] spawnRatioData)
     {
-        //返り値falseなら生成終了
-        return check;
-
+        // TODO:スポーン比率をもとにランダム決定
+        return spawnRatioData[0].name;
     }
 
-    /// <Summary>
-    /// 生成したいウェーブの敵と生成数を引数で入れてください。生成終了したかどうかはEnemyMangerState関数で管理。
-    /// </Summary>
-    public void EnemyInstantiate(WaveState State,int Num)
+    /// <summary>
+    /// スポナー稼働コルーチン
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator CoWoking(WavesDataScrObj.WaveData data)
     {
-        if (!check)
+        m_isWorking = true;
+        Debug.Log("Enemy Spawner ON.");
+
+        var generateCount = data.generateCount;
+        while (0 < generateCount)
         {
-            Max = Num;
-            m_State = State;
-            check = true;
-        }      
-    }
-
-
-    /// <Summary>
-    /// 生成したいウェーブの敵配列と比率を与えたら敵を生成
-    /// </Summary>
-    private void SpawnWave(GameObject[] enemy,float ratio)
-    {
-        float RandomValue = Random.value;
-
-        if (BattleEnemy == null)        //今は敵が死亡したら新しく次の敵を生成。このif文を変えたら自由なタイミングで生成可能。
-        {
-            if (RandomValue <= ratio)
+            if (m_enemy == null)
             {
-                BattleEnemy = Instantiate(enemy[0], new Vector3(InstancePos.position.x, InstancePos.position.y, InstancePos.position.z), Quaternion.identity);
+                // 新しい敵を生成
+                var name = GetRandomEnemyName(data.spawnRatioData);
+                m_enemy = m_enemySpawner.SpawnEnemy(name);
+                generateCount--;
             }
-            else
+            else if (m_enemy.isDead)
             {
-                BattleEnemy = Instantiate(enemy[1], new Vector3(InstancePos.position.x, InstancePos.position.y, InstancePos.position.z), Quaternion.identity);
+                // 死亡したので破棄
+                Destroy(m_enemy.gameObject);
+                m_enemy = null;
             }
-            Count++;
+            yield return null;
         }
+
+        m_isWorking = false;
+        Debug.Log("Enemy Spawner OFF.");
+
     }
 
-    /// <Summary>
-    /// ボス専用生成関数。引数なし
-    /// </Summary>
-    private void BossWave()
+    /// <summary>
+    /// ボス前の指定Waveを開始
+    /// </summary>
+    /// <param name="waveIndex">指定Wave</param>
+    public void StartWave(int waveIndex)
     {
-        BattleEnemy = Instantiate(BossPrefab, new Vector3(InstancePos.position.x, InstancePos.position.y, InstancePos.position.z), Quaternion.identity);
-        Count++;
+        if (m_isWorking)
+            return;
+        Debug.Assert((0 <= waveIndex) && (waveIndex < wavesCount));
+        StartCoroutine(CoWoking(m_wavesData.waveData[waveIndex]));
+    }
+
+    /// <summary>
+    /// ボスのWaveを開始
+    /// </summary>
+    public void StartBossWave()
+    {
+        if (m_isWorking)
+            return;
+        StartCoroutine(CoWoking(m_wavesData.bossWaveData));
     }
 }
