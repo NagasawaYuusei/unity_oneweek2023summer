@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public float bgmMasterVolume
     {
-        get { return _bgmMasterVolume; }
+        get { return _audioBGM.volume; }
         set
         {
             _bgmMasterVolume = value;
@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public float seMasterVolume
     {
-        get { return _seMasterVolume; }
+        get { return _audioSE.volume; }
         set
         {
             _seMasterVolume = value;
