@@ -18,12 +18,12 @@ MonoBehaviour:
       _ratio: 1
     - _name: "\u591C\u5BB5"
       _ratio: 0
-    _generateCount: 5
+    _generateCount: 3
   - _spawnRatioData:
     - _name: "\u5F14\u5175\u885B"
       _ratio: 0
     - _name: "\u6CA2\u57CE"
       _ratio: 0
-    _generateCount: 5
+    _generateCount: 3
   _bossName: "\u753B\u7709\u4E38"
   _bossGenerateCount: 1
