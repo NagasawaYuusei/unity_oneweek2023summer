@@ -1,151 +1,168 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEditor;
+using Data;
+using System;
 
 public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
 {
-    private GameObject BattleEnemy = null;                      //生成したエネミーを入れる
-    [SerializeField] private Transform InstancePos;             //生成ポジション
+    /// <summary>
+    /// Waveデータ
+    /// </summary>
+    [SerializeField]
+    private WavesDataScrObj m_wavesData = null;
 
-    [SerializeField] private GameObject[] FirstEnemyPrefab;     //1ウェーブ目の敵配列
-    [SerializeField] private float FirstRatio = 0.6f;           //生成比率
+    /// <summary>
+    /// ボス前のWave数
+    /// </summary>
+    public int wavesCount => m_wavesData.waveData.Length;
 
-    [SerializeField] private GameObject[] SecondEnemyPrefab;    //2ウェーブ目の敵配列
-    [SerializeField] private float SecondRatio = 0.4f;          
+    /// <summary>
+    /// Enemyスポナー
+    /// </summary>
+    private EnemySpawner m_enemySpawner = null;
 
-    [SerializeField] private GameObject BossPrefab;             //ボス専用
-   
-    private int Count = 0;                                      //現在何体生成したかをカウント
+    private bool m_isWorking = false;
+    /// <summary>
+    /// スポナー稼働中か
+    /// </summary>
+    public bool isWorking => m_isWorking;
 
-    public enum WaveState { FirstImpact, SecondImpact, ThirdImpact}     //ウェーブステート（これを引数で指定して）
- 
-    private WaveState m_State = WaveState.FirstImpact;
-
-    private bool check = false;                                 //敵生成中はtrue、生成し終わるとfalse
-    private int Max;                                                    
+    /// <summary>
+    /// 現在プレイヤーと戦っている敵
+    /// </summary>
+    private Enemy m_enemy = null;
 
     private void Start()
     {
-      
+        m_enemySpawner = GetComponent<EnemySpawner>();
     }
-    
+
+#if false
     private void Update()
     {
-        //デバッグ用操作
-        //Fキーでサコ敵、Eキーで強敵、Gキーでボス
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            EnemyInstantiate(WaveState.FirstImpact, 5);
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            EnemyInstantiate(WaveState.SecondImpact, 4);
-        }
-
+        // スポーンテスト
         if (Input.GetKeyDown(KeyCode.G))
         {
-            EnemyInstantiate(WaveState.ThirdImpact, 1);
+            StartWave(0);
+        }
+        else if (Input.GetKeyDown(KeyCode.B))
+        {
+            StartBossWave();
+        }
+    }
+#endif
+
+    /// <summary>
+    /// スポーン情報のスポーン比率をもとに生成する敵をランダム決定する
+    /// 現状は生成する度に関数呼んでますが、配列にしてスポナー稼働開始時に一度に生成した方がいいです
+    /// </summary>
+    /// <param name="spawnRatioData"></param>
+    /// <returns></returns>
+    private string GetRandomEnemyName(WavesDataScrObj.SpawnRatioData[] spawnRatioData)
+    {
+        Debug.Assert(spawnRatioData != null);
+        Debug.Assert(0 < spawnRatioData.Length);
+
+        // 1体しかいない
+        if (spawnRatioData.Length == 1)
+            return spawnRatioData[0].name;
+
+        // 敵と乱数の結びつけ
+        var ratioSum = 0; // 比率の合計
+        var tuples = new List<Tuple<string, int>>();
+        foreach (var data in spawnRatioData)
+        {
+            // 比率0の敵は生成しない
+            if (0 < data.ratio)
+            {
+                ratioSum += data.ratio;
+                tuples.Add(new(data.name, ratioSum));
+            }
         }
 
-        if(check)       //生成フラグが立ってれば生成開始
+        // 乱数生成
+        var rand = UnityEngine.Random.Range(0, ratioSum);
+        rand++; // 1〜ratioSum+1の数に
+
+        // 乱数をもとに敵を決定
+        var name = "!--NONE--!";
+        foreach (var tuple in tuples)
         {
-            switch (m_State)
+            if (rand <= tuple.Item2)
             {
-                //指定されたウェーブに基づき条件分岐
-                case WaveState.FirstImpact:
-                    if (Count < Max)
-                    {
-                        SpawnWave(FirstEnemyPrefab, FirstRatio);
-                    }
-                    else if(BattleEnemy == null)    //全ての敵を生成し終わり、画面内の敵も死亡したら生成フラグをfalseに
-                    {
-                        check = false;
-                        Count = 0;
-                    }
+                name = tuple.Item1;
                 break;
+            }
+        };
+        return name;
+    }
 
-                case WaveState.SecondImpact:
-                    if (Count < Max)
-                    {
-                        SpawnWave(SecondEnemyPrefab, SecondRatio);
-                    }
-                    else if(BattleEnemy == null)
-                    {
-                        check = false;
-                        Count = 0;
-                    }
-                break;
+    /// <summary>
+    /// スポナー稼働コルーチン
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator CoWoking(WavesDataScrObj.WaveData data)
+    {
+        m_isWorking = true;
+        Debug.Log("Enemy Spawner ON.");
 
-                case WaveState.ThirdImpact:
-                    if (Count < Max)
-                    {
-                        BossWave();
-                    }
-                    else if (BattleEnemy == null)
-                    {
-                        check = false;
-                        Count = 0;
-                    }
+        var generateCount = data.generateCount;
+        while (m_isWorking)
+        {
+            if (m_enemy == null)
+            {
+                // 新しい敵を生成
+                var name = GetRandomEnemyName(data.spawnRatioData);
+                m_enemy = m_enemySpawner.SpawnEnemy(name);
+                if (m_enemy == null)
+                    break; // 強制終了
+                generateCount--;
+            }
+            else if (m_enemy.isDead)
+            {
+                // 死亡したので破棄
+                Destroy(m_enemy.gameObject);
+                m_enemy = null;
+                // 死亡したのが最後の敵であれば終了
+                if (generateCount <= 0)
                     break;
             }
+            yield return null;
         }
-    }
 
-    
-    /// <Summary>
-    /// EnemyManagerが稼働しているかの判定関数.trueなら敵生成中もしくはまだ死亡していない.
-    /// </Summary>
-    public bool EnemyManagerState()
-    {
-        //返り値falseなら生成終了
-        return check;
+        m_isWorking = false;
+        Debug.Log("Enemy Spawner OFF.");
 
     }
 
-    /// <Summary>
-    /// 生成したいウェーブの敵と生成数を引数で入れてください。生成終了したかどうかはEnemyMangerState関数で管理。
-    /// </Summary>
-    public void EnemyInstantiate(WaveState State,int Num)
+    /// <summary>
+    /// ボス前の指定Waveを開始
+    /// </summary>
+    /// <param name="waveIndex">指定Wave</param>
+    public void StartWave(int waveIndex)
     {
-        if (!check)
-        {
-            Max = Num;
-            m_State = State;
-            check = true;
-        }      
+        if (m_isWorking)
+            return;
+        Debug.Assert((0 <= waveIndex) && (waveIndex < wavesCount));
+        StartCoroutine(CoWoking(m_wavesData.waveData[waveIndex]));
     }
 
-
-    /// <Summary>
-    /// 生成したいウェーブの敵配列と比率を与えたら敵を生成
-    /// </Summary>
-    private void SpawnWave(GameObject[] enemy,float ratio)
+    /// <summary>
+    /// ボスのWaveを開始
+    /// </summary>
+    public void StartBossWave()
     {
-        float RandomValue = Random.value;
-
-        if (BattleEnemy == null)        //今は敵が死亡したら新しく次の敵を生成。このif文を変えたら自由なタイミングで生成可能。
-        {
-            if (RandomValue <= ratio)
-            {
-                BattleEnemy = Instantiate(enemy[0], new Vector3(InstancePos.position.x, InstancePos.position.y, InstancePos.position.z), Quaternion.identity);
-            }
-            else
-            {
-                BattleEnemy = Instantiate(enemy[1], new Vector3(InstancePos.position.x, InstancePos.position.y, InstancePos.position.z), Quaternion.identity);
-            }
-            Count++;
-        }
+        if (m_isWorking)
+            return;
+        StartCoroutine(CoWoking(m_wavesData.bossWaveData));
     }
 
-    /// <Summary>
-    /// ボス専用生成関数。引数なし
-    /// </Summary>
-    private void BossWave()
+    /// <summary>
+    /// Wave中断（ゲームオーバー）
+    /// </summary>
+    public void StopWave()
     {
-        BattleEnemy = Instantiate(BossPrefab, new Vector3(InstancePos.position.x, InstancePos.position.y, InstancePos.position.z), Quaternion.identity);
-        Count++;
+        m_isWorking = false;
     }
 }

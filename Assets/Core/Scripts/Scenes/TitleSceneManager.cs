@@ -48,6 +48,8 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
         // 初期化
         await InitializeAsync(cancellation);
         await FadeManger.instance.Fade(Fade.Situation.Title, Fade.Type.FadeIn);
+        // BGM開始
+        AudioManager.Instance.PlayBGM(SoundType.BGM.FirstWave);
 
         m_isRunning = true;
         m_canInput = true;
@@ -118,6 +120,8 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
         optionCanvasRoot.backBtn.onClick.AddListener(
             () =>
             {
+                // SE
+                AudioManager.Instance.PlaySE(SoundType.SE.Select);
                 onClose = true;
             });
 

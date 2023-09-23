@@ -19,6 +19,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private float _seMasterVolume = 1;
 
+    float _currentSeDataVolume = 1f;
+    float _currentBgmDataVolume = 1f;
+
     /// <summary>
     /// BGMをフェードアウト中か
     /// </summary>
@@ -29,16 +32,24 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public float bgmMasterVolume
     {
-        get { return _bgmMasterVolume; }
-        set { _bgmMasterVolume = value; }
+        get { return _audioBGM.volume; }
+        set
+        {
+            _bgmMasterVolume = value;
+            UpdateBgmVolume();
+        }
     }
     /// <summary>
     /// SE音量
     /// </summary>
     public float seMasterVolume
     {
-        get { return _seMasterVolume; }
-        set { _seMasterVolume = value; }
+        get { return _audioSE.volume; }
+        set
+        {
+            _seMasterVolume = value;
+            UpdateSeVolume();
+        }
     }
 
     void Awake()
@@ -53,6 +64,15 @@ public class AudioManager : MonoBehaviour
         Instance = this;
     }
 
+    void UpdateBgmVolume()
+    {
+        _audioBGM.volume = _currentBgmDataVolume * _bgmMasterVolume * _masterVolume;
+    }
+    void UpdateSeVolume()
+    {
+        _audioSE.volume = _currentSeDataVolume * _seMasterVolume * _masterVolume;
+    }
+
     /// <summary>
     /// BGM���Đ�
     /// </summary>
@@ -64,9 +84,9 @@ public class AudioManager : MonoBehaviour
             return;
 
         _onFadeOutBGM = false;
-
+        _currentBgmDataVolume = data.Volume;
+        UpdateBgmVolume();
         _audioBGM.clip = data.AudioClip;
-        _audioBGM.volume = data.Volume * _bgmMasterVolume * _masterVolume;
         _audioBGM.Play();
     }
 
@@ -77,6 +97,7 @@ public class AudioManager : MonoBehaviour
     {
         _onFadeOutBGM = false;
         _audioBGM.Stop();
+        _currentSeDataVolume = 1f;
     }
 
     /// <summary>
@@ -89,7 +110,8 @@ public class AudioManager : MonoBehaviour
         if (data == null)
             return;
 
-        _audioSE.volume = data.Volume * _seMasterVolume * _masterVolume;
+        _currentSeDataVolume = data.Volume;
+        UpdateSeVolume();
         _audioSE.PlayOneShot(data.AudioClip);
     }
 
@@ -99,6 +121,7 @@ public class AudioManager : MonoBehaviour
     public void StopSE()
     {
         _audioSE.Stop();
+        _currentSeDataVolume = 1f;
     }
 
     /// <summary>

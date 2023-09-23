@@ -7,7 +7,6 @@ using UnityEditor;
 //これが天狗になる場合,EnemyManagerのInstaceAreaとBattleAreaを調節する必要があります。
 public class Mid2 : Enemy
 {
-    [SerializeField] private Status stat;
     private Animator anim;
 
     private int AttackPower;
@@ -25,7 +24,7 @@ public class Mid2 : Enemy
     {
         BattleArea = GameObject.Find("BattleArea");
         speed = stat.MoveSpeed;
-        AttackPower = stat.AttackPower1;
+        AttackPower = stat.GetAttackPower(0);
         anim = this.GetComponent<Animator>();
     }
 

@@ -7,7 +7,6 @@ using UnityEditor;
 //やることはZako2と同じ
 public class Mid1 : Enemy
 {
-    [SerializeField] private Status stat;
     private Animator anim;
 
     private int AttackPower;
@@ -25,7 +24,7 @@ public class Mid1 : Enemy
     {
         BattleArea = GameObject.Find("BattleArea");
         speed = stat.MoveSpeed;
-        AttackPower = stat.AttackPower1;
+        AttackPower = stat.GetAttackPower(0);
         anim = this.GetComponent<Animator>();
     }
 

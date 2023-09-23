@@ -81,10 +81,18 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         m_state = GameState.Playing;
 
         /* シーン内処理 */
+        // 敵を生成
+        var source = CancellationTokenSource.CreateLinkedTokenSource(cancellation);
+        EnemySoawnProgress(source.Token).Forget();
+
+        // 終了まで待つ
         await UniTask.WaitUntil(() => isRunning == false, cancellationToken: cancellation);
 
         // 終了
         await FinalizeAsync(cancellation);
+        // 敵を生成中ならキャンセル
+        source.Cancel();
+        source.Dispose();
 
         // ゲームオーバー処理
         if (m_state == GameState.Over)
@@ -109,12 +117,51 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
     }
 
     /// <summary>
+    /// 敵生成処理
+    /// </summary>
+    /// <param name="cancellation"></param>
+    /// <returns></returns>
+    async UniTask EnemySoawnProgress(CancellationToken cancellation)
+    {
+        var enemyMng = EnemyManager.instance;
+        try
+        {
+            // ボス前のWaveを進行
+            var currentWaveCount = 0;
+            while (currentWaveCount < enemyMng.wavesCount)
+            {
+                if (!enemyMng.isWorking)
+                {
+                    Debug.Log($"=== Start Wave {currentWaveCount + 1} ===");
+                    enemyMng.StartWave(currentWaveCount);
+                    currentWaveCount++;
+                }
+                await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: cancellation);
+            }
+            // ボス前のWaveが終わるのを待つ
+            await UniTask.WaitUntil(() => (enemyMng.isWorking == false), cancellationToken: cancellation);
+
+            // ボスWaveを進行
+            Debug.Log("=== Start Boss Wave ===");
+            enemyMng.StartBossWave();
+            await UniTask.WaitUntil(() => (enemyMng.isWorking == false), cancellationToken: cancellation);
+
+            // ここまできたらクリア
+            OnGameClear();
+        }
+        catch
+        {
+            enemyMng.StopWave();
+        }
+    }
+
+    /// <summary>
     /// ゲームオーバー処理
     /// </summary>
     /// <returns></returns>
     async UniTask GameOverProcess(CancellationToken cancellation)
     {
-        bool isRunning = true;
+        bool isWaiting = true;
 
         var overScene = await SceneLoader.instance.LoadSubSceneAsync(SceneIndex.Sub.GameOver);
         SceneManager.SetActiveScene(overScene);
@@ -127,17 +174,17 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
             () =>
             {
                 m_nextScene = SceneIndex.Main.Title;
-                isRunning = false;
+                isWaiting = false;
             });
         overCanvasRoot.gameBtn.onClick.AddListener(
             () =>
             {
                 m_nextScene = SceneIndex.Main.Game;
-                isRunning = false;
+                isWaiting = false;
             });
 
         // プレイヤー入力待ち
-        await UniTask.WaitUntil(() => isRunning == false, cancellationToken: cancellation);
+        await UniTask.WaitUntil(() => isWaiting == false, cancellationToken: cancellation);
     }
 
     /// <summary>

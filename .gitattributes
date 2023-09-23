@@ -1,0 +1,2 @@
+Assets/Core/Fonts/SourceHanSerif-Medium-SDF.asset filter=lfs diff=lfs merge=lfs -text
+Assets/Core/Fonts/YujiSyuku-Regular-SDF.asset filter=lfs diff=lfs merge=lfs -text
