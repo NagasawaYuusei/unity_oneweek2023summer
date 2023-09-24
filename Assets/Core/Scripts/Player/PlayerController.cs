@@ -208,8 +208,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void RandomParrySE()
     {
-        int r = Random.Range(2, 6);
-        Debug.Log("ParrySE乱数決め、2～5");
+        int r = Random.Range(3, 7);
+        Debug.Log("ParrySE乱数決め、3～6");
         AudioManager.Instance.PlaySE((SoundType.SE)r);
     }
 
@@ -264,11 +264,11 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// アニメーション戻す エフェクト版
+    /// 音を再生する
     /// </summary>
-    public void EffectHasExitTime()
+    public void AnimationPlaySE(SoundType.SE se)
     {
-        m_effectAnim.Play("Idle_PlayerEffect");
+        AudioManager.Instance.PlaySE(se);
     }
 
     /// <summary>
@@ -278,6 +278,13 @@ public class PlayerController : MonoBehaviour
     {
         m_isHit = true;
         m_waitDamage = damage;
+    }
+
+    public void DeadAnimationEnd()
+    {
+        //GameManagerからGameOver呼ぶ
+        AudioManager.Instance.PlaySE(SoundType.SE.PlayerDead1);
+        GameSceneManager.instance.OnGameOver();
     }
 
     /// <summary>
@@ -298,8 +305,7 @@ public class PlayerController : MonoBehaviour
 
         if (m_playerHP <= 0)
         {
-            //GameManagerからGameOver呼ぶ
-            GameSceneManager.instance.OnGameOver();
+            m_anim.Play("Down_Player");
         }
     }
 
