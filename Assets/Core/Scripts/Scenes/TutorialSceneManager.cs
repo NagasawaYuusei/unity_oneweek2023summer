@@ -50,10 +50,14 @@ public class TutorialSceneManager : SingletonClass<TutorialSceneManager>
         m_isRunning = true;
 
         // チュートリアル処理
-        TutorialProcess(cancellation).Forget();
+        var source = CancellationTokenSource.CreateLinkedTokenSource(cancellation);
+        TutorialProcess(source.Token).Forget();
 
         // 終了まで待つ
         await UniTask.WaitUntil(() => isRunning == false, cancellationToken: cancellation);
+        // チュートリアル中ならキャンセル
+        source?.Cancel();
+        source?.Dispose();
 
         // 終了
         await FinalizeAsync(cancellation);

@@ -37,7 +37,7 @@ public class TutorialEnemy : Enemy
     /// </summary>
     public void OnAttack()
     {
-        PlayerController.Instance.Hit(0);
+        PlayerController.Instance.Hit(0, this, true);
         m_animator.SetBool("isAttack", true);
     }
 
