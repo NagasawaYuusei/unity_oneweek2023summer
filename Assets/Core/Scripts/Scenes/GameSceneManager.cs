@@ -251,5 +251,6 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         m_state = GameState.Clear;
         m_nextScene = SceneIndex.Main.Result;
         playerHpPercentage = PlayerController.Instance.GetPlayerHpPercentage();
+        AudioManager.Instance.PlaySE(SE.Kisatsu);
     }
 }
