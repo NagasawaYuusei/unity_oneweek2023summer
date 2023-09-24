@@ -13,6 +13,12 @@ namespace Data
         private WaveData[] _waveData = null;
 
         [SerializeField]
+        Sprite _bossBackground = null;
+
+        [SerializeField]
+        SoundType.BGM _bossBgm = SoundType.BGM.ThirdWave;
+
+        [SerializeField]
         private string _bossName = string.Empty;
 
         [SerializeField, ReadOnly]
@@ -29,11 +35,19 @@ namespace Data
         public WaveData bossWaveData { get; private set; } = null;
 
         /// <summary>
-        /// 各Waveでスポーンする敵の種類と数
+        /// 各Waveでスポーンする敵の種類と数、使用する背景とBGM
         /// </summary>
         [Serializable]
         public class WaveData
         {
+            [SerializeField]
+            private Sprite _background = null;
+            public Sprite background => _background;
+
+            [SerializeField]
+            private SoundType.BGM _bgm = SoundType.BGM.FirstWave;
+            public SoundType.BGM bgm => _bgm;
+
             [SerializeField]
             private SpawnRatioData[] _spawnRatioData;
             public SpawnRatioData[] spawnRatioData => _spawnRatioData;
@@ -42,8 +56,11 @@ namespace Data
             private int _generateCount = 0;
             public int generateCount => _generateCount;
 
-            public WaveData(SpawnRatioData[] spawnRatioData, int generateCount)
+            public WaveData(Sprite background, SoundType.BGM bgm,
+                SpawnRatioData[] spawnRatioData, int generateCount)
             {
+                _background = background;
+                _bgm = bgm;
                 _spawnRatioData = spawnRatioData;
                 _generateCount = generateCount;
             }
@@ -74,6 +91,8 @@ namespace Data
         {
             // ボスのWaveDataを作成
             bossWaveData = new WaveData(
+                _bossBackground,
+                _bossBgm,
                 new SpawnRatioData[] { new SpawnRatioData(_bossName, 1) },
                 _bossGenerateCount);
         }

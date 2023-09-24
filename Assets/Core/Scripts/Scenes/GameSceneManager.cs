@@ -3,6 +3,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using KyawaLib;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameSceneManager : SingletonClass<GameSceneManager>
 {
@@ -22,6 +23,11 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
     /// 次に遷移するシーン
     /// </summary>
     SceneIndex.Main m_nextScene = SceneIndex.Main.Title;
+
+    /// <summary>
+    /// 背景
+    /// </summary>
+    Background m_background = null;
 
     /// <summary>
     /// プレイヤーのHP残量パーセンテージ（クリア時に使用）
@@ -55,6 +61,9 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         SceneManager.SetActiveScene(enemyScene);
 
         await UniTask.DelayFrame(1, cancellationToken: cancellation);
+
+        m_background = GameObject.FindObjectOfType<Background>();
+        Debug.Assert(m_background);
 
         m_canvasRoot = GameObject.FindObjectOfType<GameCanvasRoot>();
         Debug.Assert(m_canvasRoot);
@@ -95,6 +104,7 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
 
         // 終了
         await FinalizeAsync(cancellation);
+        AudioManager.Instance.FadeOutBgm(0.2f);
         // 敵を生成中ならキャンセル
         source.Cancel();
         source.Dispose();
@@ -135,22 +145,40 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
             var currentWaveCount = 0;
             while (currentWaveCount < enemyMng.wavesCount)
             {
-                if (!enemyMng.isWorking)
-                {
-                    Debug.Log($"=== Start Wave {currentWaveCount + 1} ===");
-                    enemyMng.StartWave(currentWaveCount);
-                    currentWaveCount++;
-                }
+                Debug.Log($"=== Start Wave {currentWaveCount + 1} ===");
+
+                // BGMと背景
+                enemyMng.GetBackgroundSpriteAndBGM(currentWaveCount, out var background, out var bgm);
+                await m_background.ChangeSky(background, 0.5f, cancellation: cancellation);
+                AudioManager.Instance.PlayBGM(bgm);
+
+                // 敵生成開始
+                await UniTask.WaitForSeconds(1f, cancellationToken: cancellation);
+                enemyMng.StartWave(currentWaveCount);
+                // 終了まで待つ
+                await UniTask.WaitWhile(() => (enemyMng.isWorking == true), cancellationToken: cancellation);
+
+                // 次のWaveへ
+                AudioManager.Instance.FadeOutBgm(0.5f);
+                await UniTask.WaitForSeconds(1f, cancellationToken: cancellation);
+                currentWaveCount++;
                 await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: cancellation);
             }
-            // ボス前のWaveが終わるのを待つ
-            await UniTask.WaitUntil(() => (enemyMng.isWorking == false), cancellationToken: cancellation);
-
             // ボスWaveを進行
-            Debug.Log("=== Start Boss Wave ===");
-            enemyMng.StartBossWave();
-            await UniTask.WaitUntil(() => (enemyMng.isWorking == false), cancellationToken: cancellation);
+            {
+                Debug.Log("=== Start Boss Wave ===");
 
+                // BGMと背景
+                enemyMng.GetBossBackgroundSpriteAndBGM(out var background, out var bgm);
+                await m_background.ChangeSky(background, 0.5f, cancellation: cancellation);
+                AudioManager.Instance.PlayBGM(bgm);
+
+                // ボス生成
+                await UniTask.WaitForSeconds(1f, cancellationToken: cancellation);
+                enemyMng.StartBossWave();
+                // 終了まで待つ
+                await UniTask.WaitUntil(() => (enemyMng.isWorking == false), cancellationToken: cancellation);
+            }
             // ここまできたらクリア
             OnGameClear();
         }

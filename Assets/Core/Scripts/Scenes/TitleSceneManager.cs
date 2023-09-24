@@ -73,6 +73,8 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
 
         // 終了
         await FinalizeAsync(cancellation);
+        // BGM停止
+        AudioManager.Instance.FadeOutBgm(0.2f);
         await FadeManger.instance.Fade(Fade.Situation.Title, Fade.Type.FadeOut);
 
         // 次のシーンへ
