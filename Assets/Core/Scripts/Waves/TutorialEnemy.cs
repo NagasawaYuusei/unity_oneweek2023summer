@@ -24,7 +24,6 @@ public class TutorialEnemy : Enemy
         m_animator.SetBool("isIdol", false);
         m_animator.SetBool("isAttack", false);
         m_onDeath = false;
-        onHit = false;
     }
 
     /// <summary>
@@ -43,8 +42,6 @@ public class TutorialEnemy : Enemy
         m_onDeath = true;
     }
 
-    public bool onHit { get; private set; } = false;
-
     // 以下、Animationからの呼び出し
 
     public void AttackStateChange()
@@ -53,7 +50,6 @@ public class TutorialEnemy : Enemy
     }
     public void Attack()
     {
-        onHit = true;
         PlayerController.Instance.Hit(0, this, true);
     }
     public void DeathStateChange()
