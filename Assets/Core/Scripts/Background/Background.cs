@@ -10,6 +10,13 @@ public class Background : MonoBehaviour
 
     public bool isSkyChaging { get; private set; } = false;
 
+    public void ChangeSky(Sprite sprite)
+    {
+        m_skyRenderer.sprite = sprite;
+        m_skyRenderer.color = Color.white;
+        isSkyChaging = false;
+    }
+
     /// <summary>
     /// 空を変更
     /// </summary>
@@ -33,7 +40,8 @@ public class Background : MonoBehaviour
         await DOVirtual.Float(0f, 1f, duration,
             (value) =>
             {
-                m_skyRenderer.color = new Color(1, 1, 1, value);
+                if (isSkyChaging)
+                    m_skyRenderer.color = new Color(1, 1, 1, value);
             })
             .SetDelay(delay)
             .SetEase(ease)

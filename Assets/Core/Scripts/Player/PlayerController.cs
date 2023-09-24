@@ -311,7 +311,7 @@ public class PlayerController : MonoBehaviour
     {
         m_playerHP -= value;
         // HPバー設定
-        GameSceneManager.instance.canvasRoot.SetHpFillAmount(m_playerHP / (float)m_playerMaxHP);
+        GameSceneManager.instance?.canvasRoot.SetHpFillAmount(m_playerHP / (float)m_playerMaxHP);
         Debug.Log($"現在の体力は{m_playerHP}です");
         if (m_enemyAnim)
         {
@@ -337,6 +337,8 @@ public class PlayerController : MonoBehaviour
         TakeHit,
         CoolTime
     }
+
+    public PlayerStateEnum state => m_state;
 
     /// <summary>
     /// プレイヤーの残りHPパーセンテージを取得
