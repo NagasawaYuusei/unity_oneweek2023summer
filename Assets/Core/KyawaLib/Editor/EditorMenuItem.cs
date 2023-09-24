@@ -23,5 +23,16 @@ namespace KyawaLib
             ScreenCapture.CaptureScreenshot(path);
             Debug.Log($"Captured Screenshot. : {path}");
         }
+
+        /// <summary>
+        /// ゲーム中のデバッグボタンを表示するか（ゲーム画面を開く前のシーンで設定）
+        /// </summary>
+        [MenuItem("KyawaLib/InGame Debug Button")]
+        static void OnIngameDebugButton()
+        {
+            var menuPath = "KyawaLib/InGame Debug Button";
+            Menu.SetChecked(menuPath, !DebugItem.instance.onIngameDebugButton);
+            DebugItem.instance.onIngameDebugButton = Menu.GetChecked(menuPath);
+        }
     }
 }

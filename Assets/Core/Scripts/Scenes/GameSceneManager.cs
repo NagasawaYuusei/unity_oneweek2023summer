@@ -3,7 +3,6 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using KyawaLib;
 using UnityEngine.SceneManagement;
-using static SoundType;
 
 public class GameSceneManager : SingletonClass<GameSceneManager>
 {
@@ -63,21 +62,24 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         m_canvasRoot = GameObject.FindObjectOfType<GameCanvasRoot>();
         Debug.Assert(m_canvasRoot);
 
-#if DEBUG
-        var backCanvasRoot = GameObject.FindObjectOfType<GameBackCanvasRoot>();
-        Debug.Assert(backCanvasRoot);
-        backCanvasRoot.clearBtn.gameObject.SetActive(true);
-        backCanvasRoot.clearBtn.onClick.AddListener(
-            () =>
-            {
-                OnGameClear();
-            });
-        backCanvasRoot.gameoverBtn.gameObject.SetActive(true);
-        backCanvasRoot.gameoverBtn.onClick.AddListener(
-            () =>
-            {
-                OnGameOver();
-            });
+#if UNITY_EDITOR
+        if (DebugItem.instance.onIngameDebugButton)
+        {
+            var backCanvasRoot = GameObject.FindObjectOfType<GameBackCanvasRoot>();
+            Debug.Assert(backCanvasRoot);
+            backCanvasRoot.clearBtn.gameObject.SetActive(true);
+            backCanvasRoot.clearBtn.onClick.AddListener(
+                () =>
+                {
+                    OnGameClear();
+                });
+            backCanvasRoot.gameoverBtn.gameObject.SetActive(true);
+            backCanvasRoot.gameoverBtn.onClick.AddListener(
+                () =>
+                {
+                    OnGameOver();
+                });
+        }
 #endif
     }
 
@@ -172,7 +174,7 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
                 Debug.Log("=== Start Boss Wave ===");
 
                 // ボス前SE
-                AudioManager.Instance.PlaySE(SE.BeforeBoss);
+                AudioManager.Instance.PlaySE(SoundType.SE.BeforeBoss);
                 // BGMと背景
                 enemyMng.GetBossBackgroundSpriteAndBGM(out var background, out var bgm);
                 await m_background.ChangeSky(background, 0.5f, cancellation: cancellation);
@@ -251,6 +253,6 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         m_state = GameState.Clear;
         m_nextScene = SceneIndex.Main.Result;
         playerHpPercentage = PlayerController.Instance.GetPlayerHpPercentage();
-        AudioManager.Instance.PlaySE(SE.Kisatsu);
+        AudioManager.Instance.PlaySE(SoundType.SE.Kisatsu);
     }
 }
