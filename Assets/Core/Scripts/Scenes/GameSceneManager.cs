@@ -178,7 +178,7 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
                 AudioManager.Instance.PlayBGM(bgm);
 
                 // ボス生成
-                await UniTask.WaitForSeconds(1f, cancellationToken: cancellation);
+                await UniTask.WaitForSeconds(2f, cancellationToken: cancellation);
                 enemyMng.StartBossWave();
                 // 終了まで待つ
                 await UniTask.WaitUntil(() => (enemyMng.isWorking == false), cancellationToken: cancellation);

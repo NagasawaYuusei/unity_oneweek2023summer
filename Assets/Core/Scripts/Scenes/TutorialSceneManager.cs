@@ -89,12 +89,9 @@ public class TutorialSceneManager : SingletonClass<TutorialSceneManager>
         // 敵が刀を振り上げる
         await UniTask.WaitForSeconds(0.8f, cancellationToken: cancellation);
         enemy.OnAnticipation();
-        await UniTask.WaitForSeconds(0.5f, cancellationToken: cancellation);
-        // 敵が刀を振り下ろす
-        enemy.OnAttack();
         while (true)
         {
-            if (player.state == PlayerController.PlayerStateEnum.ParrySuccess)
+            if (player.parrySuccess)
             {
                 // 成功　敵が死んでチュートリアル終了
                 enemy.OnDeath();
@@ -105,7 +102,6 @@ public class TutorialSceneManager : SingletonClass<TutorialSceneManager>
             }
             else if (player.state == PlayerController.PlayerStateEnum.TakeHit)
             {
-                /*
                 // 失敗　チュートリアルもう一度
                 await m_canvasRoot.ChangeTutorialText("もう一度", cancellation);
                 await UniTask.WaitForSeconds(0.5f, cancellationToken: cancellation);
@@ -113,9 +109,9 @@ public class TutorialSceneManager : SingletonClass<TutorialSceneManager>
                 await UniTask.WaitUntil(() => (Input.anyKeyDown == true), cancellationToken: cancellation);
                 enemy.Reset();
                 TutorialProcess(cancellation).Forget();
-                */
-                await UniTask.WaitForSeconds(3f, cancellationToken: cancellation);
-                m_isRunning = false;
+
+                //await UniTask.WaitForSeconds(3f, cancellationToken: cancellation);
+                //m_isRunning = false;
                 break;
             }
             await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: cancellation);
