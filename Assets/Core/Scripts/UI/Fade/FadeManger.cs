@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Data;
 using KyawaLib;
@@ -17,6 +18,10 @@ public class FadeManger : SingletonMonoBehaviour<FadeManger>
     FadeDataScrObj m_gameFadeData = null;
     [SerializeField]
     FadeDataScrObj m_resultFadeData = null;
+    [SerializeField]
+    FadeDataScrObj m_tutorialFadeData = null;
+
+    Dictionary<Fade.Situation, FadeDataScrObj> m_dict = null;
 
     /// <summary>
     /// 初期化　必ず最初に呼び出します.
@@ -24,6 +29,14 @@ public class FadeManger : SingletonMonoBehaviour<FadeManger>
     public void Initialize()
     {
         m_fader = Instantiate(m_faderPrefab, transform).GetComponent<Fader>();
+
+        m_dict = new Dictionary<Fade.Situation, FadeDataScrObj>
+            {
+                { global::Fade.Situation.Title, m_titleFadeData },
+                { global::Fade.Situation.Game, m_gameFadeData },
+                { global::Fade.Situation.Result, m_resultFadeData },
+                { global::Fade.Situation.Tutorial, m_tutorialFadeData },
+            };
     }
 
     /// <summary>
@@ -34,21 +47,20 @@ public class FadeManger : SingletonMonoBehaviour<FadeManger>
     /// <returns></returns>
     public async UniTask Fade(Fade.Situation situation, Fade.Type type)
     {
-        FadeDataScrObj fadeDataObj = null;
-        switch (situation)
+        FadeDataScrObj fadeDataObj;
+        if (m_dict.TryGetValue(situation, out fadeDataObj))
         {
-            case global::Fade.Situation.Title:
-                fadeDataObj = m_titleFadeData;
-                break;
-            case global::Fade.Situation.Game:
-                fadeDataObj = m_gameFadeData;
-                break;
-            case global::Fade.Situation.Result:
-                fadeDataObj = m_resultFadeData;
-                break;
+            if (fadeDataObj == null)
+            {
+                Debug.LogError($"{situation}のフェードデータがNullです。");
+                return;
+            }
         }
-        if (fadeDataObj == null)
+        else
+        {
+            Debug.LogError($"{situation}のフェードデータが見つかりませんでした。");
             return;
+        }
 
         if (type == global::Fade.Type.FadeIn)
         {

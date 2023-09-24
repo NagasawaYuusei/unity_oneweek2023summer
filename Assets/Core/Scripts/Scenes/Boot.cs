@@ -65,9 +65,9 @@ public class Boot : MonoBehaviour
             return;
         }
 #endif
-        // Titleから開始します
+        // Tutorialから開始します
         await FadeManger.instance.fader.FadeOut(0);
-        SceneLoader.instance.LoadMainScene(SceneIndex.Main.Title, m_cancellation);
+        SceneLoader.instance.LoadMainScene(SceneIndex.Main.Tutorial, m_cancellation);
 
     }
 

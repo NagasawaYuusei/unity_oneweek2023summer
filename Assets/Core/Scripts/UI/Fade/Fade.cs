@@ -10,6 +10,7 @@ static public class Fade
         Title,
         Game,
         Result,
+        Tutorial,
     }
 
     /// <summary>

@@ -3,7 +3,6 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using KyawaLib;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 public class TitleSceneManager : SingletonClass<TitleSceneManager>
 {
