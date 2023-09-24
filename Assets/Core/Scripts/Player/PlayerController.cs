@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Header("Playerの体力")]
     int m_playerHP = 100;
 
-    [SerializeField, Header("Playerのレベル到達HP")]
+    [Range(0f, 1f), SerializeField, Header("Playerのレベル到達HP")]
     float[] m_changePlayerHPs = new float[] {0.9f, 0.6f};
 
     [SerializeField, Header("Playerの各レベル受付時間")]
@@ -19,6 +20,27 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField, Header("クールダウンになるまでのパリィ時間")]
     float m_timeToCoolDown = 1;
+
+    [SerializeField, Header("ヒットストップにかける時間")]
+    float m_hitStopTime = 0.4f;
+
+    [SerializeField,Range(0f,1f),Header("ヒットストップの強さ")]
+    float m_hitStopPower = 0.5f;
+
+    [SerializeField, Header("文字が出現するまでの時間")]
+    float m_mojiAdventTime = 0.5f;
+
+    [SerializeField, Header("文字が残り続ける時間")]
+    float m_mojiRemainTime = 0.5f;
+
+    [SerializeField, Header("文字が消えるまでの時間")]
+    float m_mojiRetireTime = 1.2f;
+
+    [SerializeField, Header("DontTouch")]
+    CameraShake m_cameraShake;
+
+    [SerializeField, Header("DontTouch")]
+    Sprite[] m_mojiSpriteTextures;
 
     /// <summary>プレイヤーの最大HP</summary>
     int m_playerMaxHP;
@@ -36,6 +58,10 @@ public class PlayerController : MonoBehaviour
     int m_waitDamage;
     /// <summary>アニメーター</summary>
     Animator m_anim;
+    /// <summary>エフェクトのアニメーター</summary>
+    Animator m_effectAnim;
+    /// <summary>文字エフェクトのスプライトレンダラー</summary>
+    SpriteRenderer m_mojiSp;
 
     void Awake()
     {
@@ -66,6 +92,8 @@ public class PlayerController : MonoBehaviour
     {
         m_anim = GetComponent<Animator>();
         m_playerMaxHP = m_playerHP;
+        m_effectAnim = transform.GetChild(0).GetComponent<Animator>();
+        m_mojiSp = transform.GetChild(1).GetComponent<SpriteRenderer>();
     }
 
     /// <summary>
@@ -93,6 +121,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// パリィ処理(あとで改良したい)
+    /// </summary>
     void Parry()
     {
         if (m_isHit && m_state == PlayerStateEnum.ParryWait)
@@ -145,11 +176,19 @@ public class PlayerController : MonoBehaviour
             case PlayerStateEnum.ParrySuccess:
                 m_state = PlayerStateEnum.ParrySuccess;
                 m_anim.Play("Parry_Player");
+                m_effectAnim.Play("Parry_PlayerEffect");
+                m_cameraShake.Shake();
+                StartCoroutine(HitStop());
+                MojiEffect(false);
+                RandomParrySE();
                 break;
             //攻撃受ける時
             case PlayerStateEnum.TakeHit:
                 m_state = PlayerStateEnum.TakeHit;
                 m_anim.Play("Hit_Player");
+                m_effectAnim.Play("Hit_ParryEffect");
+                AudioManager.Instance.PlaySE(SoundType.SE.Hit);
+                MojiEffect(true);
                 DownHP(m_waitDamage);
                 break;
             //クールタイムの時
@@ -164,11 +203,72 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
+    /// ランダムにParrySEを流す
+    /// もし要素数変わってるなら違う音が鳴るから注意
+    /// </summary>
+    void RandomParrySE()
+    {
+        int r = Random.Range(2, 6);
+        Debug.Log("ParrySE乱数決め、2～5");
+        AudioManager.Instance.PlaySE((SoundType.SE)r);
+    }
+
+    /// <summary>
+    /// 文字エフェクトスプライト決め
+    /// </summary>
+    /// <param name="on">trueならHit,falseならParry</param>
+    void MojiEffect(bool on)
+    {
+        if(on)
+        {
+            m_mojiSp.sprite = m_mojiSpriteTextures[0];
+        }
+        else
+        {
+            int r = Random.Range(1, 3);
+            m_mojiSp.sprite = m_mojiSpriteTextures[r];
+        }
+        StartCoroutine(MojiEffectMethod());
+    }
+
+    /// <summary>
+    /// HitStop処理
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator HitStop()
+    {
+        float hitStopPower = 1 - m_hitStopPower;
+        float hitStipTime = m_hitStopTime / 2;
+        DOVirtual.Float(1.0f, hitStopPower, hitStipTime, onVirtualUpdate: (time) =>{ Time.timeScale = time; });
+        yield return new WaitForSeconds(hitStipTime);
+        DOVirtual.Float(hitStopPower, 1, hitStipTime, onVirtualUpdate: (time) => { Time.timeScale = time; });
+    }
+
+    /// <summary>
+    /// 文字エフェクト処理
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator MojiEffectMethod()
+    {
+        m_mojiSp.DOColor(new Color(1, 1, 1, 1), m_mojiAdventTime);
+        yield return new WaitForSeconds(m_mojiAdventTime + m_mojiRemainTime);
+        m_mojiSp.DOColor(new Color(1, 1, 1, 0), m_mojiRetireTime);
+    }
+
+    /// <summary>
     /// アニメーション戻す
     /// </summary>
     public void HasExitTime()
     {
         m_anim.Play("Idle_Player");
+    }
+
+    /// <summary>
+    /// アニメーション戻す エフェクト版
+    /// </summary>
+    public void EffectHasExitTime()
+    {
+        m_effectAnim.Play("Idle_PlayerEffect");
     }
 
     /// <summary>
