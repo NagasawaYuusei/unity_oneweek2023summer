@@ -105,6 +105,7 @@ public class TutorialSceneManager : SingletonClass<TutorialSceneManager>
             }
             else if (player.state == PlayerController.PlayerStateEnum.TakeHit)
             {
+                /*
                 // 失敗　チュートリアルもう一度
                 await m_canvasRoot.ChangeTutorialText("もう一度", cancellation);
                 await UniTask.WaitForSeconds(0.5f, cancellationToken: cancellation);
@@ -112,6 +113,9 @@ public class TutorialSceneManager : SingletonClass<TutorialSceneManager>
                 await UniTask.WaitUntil(() => (Input.anyKeyDown == true), cancellationToken: cancellation);
                 enemy.Reset();
                 TutorialProcess(cancellation).Forget();
+                */
+                await UniTask.WaitForSeconds(3f, cancellationToken: cancellation);
+                m_isRunning = false;
                 break;
             }
             await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: cancellation);
