@@ -49,6 +49,9 @@ public class TutorialSceneManager : SingletonClass<TutorialSceneManager>
 
         m_isRunning = true;
 
+        // チュートリアル処理
+        TutorialProcess(cancellation).Forget();
+
         // 終了まで待つ
         await UniTask.WaitUntil(() => isRunning == false, cancellationToken: cancellation);
 
@@ -69,5 +72,46 @@ public class TutorialSceneManager : SingletonClass<TutorialSceneManager>
     {
         /* 終了処理 */
         await UniTask.CompletedTask;
+    }
+
+    async UniTask TutorialProcess(CancellationToken cancellation)
+    {
+        // チュートリアルテキストを表示
+        await m_canvasRoot.ChangeTutorialText("攻撃を受けろ！\n[space]", cancellation);
+        await UniTask.WaitForSeconds(0.8f, cancellationToken: cancellation);
+        // チュートリアルの敵とプレイヤーを取得
+        var enemy = GameObject.FindObjectOfType<TutorialEnemy>();
+        var player = PlayerController.Instance;
+        // 敵が刀を振り上げる
+        await UniTask.WaitForSeconds(0.8f, cancellationToken: cancellation);
+        enemy.OnAnticipation();
+        await UniTask.WaitForSeconds(0.5f, cancellationToken: cancellation);
+        // 敵が刀を振り下ろす
+        enemy.OnAttack();
+        while (true)
+        {
+            if (player.state == PlayerController.PlayerStateEnum.ParrySuccess)
+            {
+                // 成功　敵が死んでチュートリアル終了
+                enemy.OnDeath();
+                await m_canvasRoot.ChangeTutorialText("ワザマエ!!", cancellation);
+                await UniTask.WaitForSeconds(3f, cancellationToken: cancellation);
+                m_isRunning = false;
+                break;
+            }
+            else if (player.state == PlayerController.PlayerStateEnum.TakeHit)
+            {
+                // 失敗　チュートリアルもう一度
+                await m_canvasRoot.ChangeTutorialText("もう一度", cancellation);
+                await UniTask.WaitForSeconds(0.5f, cancellationToken: cancellation);
+                // 入力があるまで待つ
+                await UniTask.WaitUntil(() => (Input.anyKeyDown == true), cancellationToken: cancellation);
+                enemy.Reset();
+                TutorialProcess(cancellation).Forget();
+                break;
+            }
+            await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: cancellation);
+        }
+
     }
 }
