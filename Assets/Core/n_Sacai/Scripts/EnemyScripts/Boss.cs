@@ -87,7 +87,7 @@ public class Boss : Enemy
             case BossState.death:
                 if (check)
                 {
-                    Instantiate(BAKUSAN, this.transform.position, Quaternion.identity, this.transform);
+                    Instantiate(BAKUSAN, this.transform.position, Quaternion.identity);
                     bosstate = BossState.death;
                     anim.Play("Down_Boss");
                     base.Death();

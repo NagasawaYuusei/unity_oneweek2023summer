@@ -66,7 +66,7 @@ public class Samurai : Enemy
 
     public void DeathStateChange()
     {
-        Instantiate(BAKUSAN, this.transform.position, Quaternion.identity, this.transform);
+        Instantiate(BAKUSAN, this.transform.position, Quaternion.identity);
         SamuraiState = EnemyState.Death;
     }
 

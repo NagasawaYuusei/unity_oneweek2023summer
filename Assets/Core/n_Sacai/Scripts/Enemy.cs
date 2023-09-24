@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.01f);
-            c.a -= 0.005f;
+            c.a -= 0.01f;
             renderer.color = new Color(c.r,c.g,c.b,c.a);
             if(c.a <= 0f)
             {
