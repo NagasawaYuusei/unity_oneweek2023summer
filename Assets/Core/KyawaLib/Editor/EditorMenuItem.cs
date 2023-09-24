@@ -31,8 +31,8 @@ namespace KyawaLib
         static void OnIngameDebugButton()
         {
             var menuPath = "KyawaLib/InGame Debug Button";
-            Menu.SetChecked(menuPath, !DebugItem.instance.onIngameDebugButton);
             DebugItem.instance.onIngameDebugButton = Menu.GetChecked(menuPath);
+            Menu.SetChecked(menuPath, !DebugItem.instance.onIngameDebugButton);
         }
     }
 }
