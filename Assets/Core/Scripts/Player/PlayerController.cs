@@ -82,8 +82,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        PlayerInput();
-        Parry();
+        if (0 < m_playerHP)
+        {
+            PlayerInput();
+            Parry();
+        }
     }
 
     /// <summary>
