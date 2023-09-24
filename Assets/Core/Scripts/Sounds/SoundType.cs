@@ -10,7 +10,6 @@ static public class SoundType
         FirstWave,
         SecondWave,
         ThirdWave,
-        Result,
     }
 
     public enum SE
@@ -35,6 +34,8 @@ static public class SoundType
         DelayBoss,
         BeforeBoss,
         AttackBoss,
+
+        Result, // kawata:BG扱いですが一度だけ再生とのことでSEの方に持ってきました
     }
 
     static public int BGMCount

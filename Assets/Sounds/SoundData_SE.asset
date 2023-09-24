@@ -70,3 +70,6 @@ MonoBehaviour:
   - AudioClip: {fileID: 8300000, guid: 59653fd1ff3274641a7402c8eed373b1, type: 3}
     Volume: 1
     SeType: 18
+  - AudioClip: {fileID: 8300000, guid: 10077239d8b594aeb8438953568340a4, type: 3}
+    Volume: 1
+    SeType: 19

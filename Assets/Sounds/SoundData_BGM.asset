@@ -25,7 +25,3 @@ MonoBehaviour:
     Volume: 1
     IntroAudioClip: {fileID: 0}
     BgmType: 2
-  - AudioClip: {fileID: 8300000, guid: 10077239d8b594aeb8438953568340a4, type: 3}
-    Volume: 1
-    IntroAudioClip: {fileID: 0}
-    BgmType: 3
