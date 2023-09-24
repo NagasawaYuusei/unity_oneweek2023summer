@@ -18,9 +18,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Header("クールダウンの時間")]
     float m_coolDownTime = 3;
 
-    [SerializeField, Header("クールダウンになるまでのパリィ時間")]
-    float m_timeToCoolDown = 1;
-
     [SerializeField, Header("ヒットストップにかける時間")]
     float m_hitStopTime = 0.4f;
 
@@ -56,12 +53,16 @@ public class PlayerController : MonoBehaviour
     bool m_isHit;
     /// <summary>攻撃待ちのダメージ</summary>
     int m_waitDamage;
+    /// <summary>攻撃中のエネミー</summary>
+    Enemy m_enemy;
     /// <summary>アニメーター</summary>
     Animator m_anim;
     /// <summary>エフェクトのアニメーター</summary>
     Animator m_effectAnim;
     /// <summary>文字エフェクトのスプライトレンダラー</summary>
     SpriteRenderer m_mojiSp;
+    /// <summary>EnemyのヒットAnimはいるかどうか</summary>
+    bool m_enemyAnim;
 
     void Awake()
     {
@@ -115,14 +116,14 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && m_state == PlayerStateEnum.Idle)
         {
             StateChange(PlayerStateEnum.ParryWait);
         }
     }
 
     /// <summary>
-    /// パリィ処理(あとで改良したい)
+    /// パリィ処理
     /// </summary>
     void Parry()
     {
@@ -133,19 +134,19 @@ public class PlayerController : MonoBehaviour
             m_parryTimer = 0;
             return;
         }
+        else if (m_isHit)
+        {
+            StateChange(PlayerStateEnum.TakeHit);
+            m_isHit = false;
+            m_parryTimer = 0;
+            return;
+        }
 
-        if (m_state == PlayerStateEnum.ParryWait || m_isHit)
+        if (m_state == PlayerStateEnum.ParryWait)
         {
             m_parryTimer += Time.deltaTime;
-            if(m_isHit && m_parryTimer > m_changeReception[m_currentLevel] / 2)
-            {
-                StateChange(PlayerStateEnum.TakeHit);
-                m_isHit = false;
-                m_parryTimer = 0;
-                return;
-            }
 
-            if(m_parryTimer > m_timeToCoolDown)
+            if(m_parryTimer > m_changeReception[m_currentLevel])
             {
                 StateChange(PlayerStateEnum.CoolTime);
                 m_isHit = false;
@@ -178,9 +179,14 @@ public class PlayerController : MonoBehaviour
                 m_anim.Play("Parry_Player");
                 m_effectAnim.Play("Parry_PlayerEffect");
                 m_cameraShake.Shake();
-                StartCoroutine(HitStop());
+                if(m_enemyAnim)
+                {
+                    m_enemy.Collect();
+                }
                 MojiEffect(false);
                 RandomParrySE();
+                StartCoroutine(HitStop());
+                StateChange(PlayerStateEnum.Idle);
                 break;
             //攻撃受ける時
             case PlayerStateEnum.TakeHit:
@@ -194,6 +200,7 @@ public class PlayerController : MonoBehaviour
             //クールタイムの時
             case PlayerStateEnum.CoolTime:
                 m_state = PlayerStateEnum.CoolTime;
+                AudioManager.Instance.PlaySE(SoundType.SE.ParryMiss);
                 break;
             //例外
             default:
@@ -255,6 +262,13 @@ public class PlayerController : MonoBehaviour
         m_mojiSp.DOColor(new Color(1, 1, 1, 0), m_mojiRetireTime);
     }
 
+
+    IEnumerator HitAnim()
+    {
+        yield return new WaitForSeconds(0.75f);
+        StateChange(PlayerStateEnum.Idle);
+    }
+
     /// <summary>
     /// アニメーション戻す
     /// </summary>
@@ -274,10 +288,12 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// 攻撃を受け付ける
     /// </summary>
-    public void Hit(int damage)
+    public void Hit(int damage, Enemy enemy, bool anim)
     {
         m_isHit = true;
         m_waitDamage = damage;
+        m_enemy = enemy;
+        m_enemyAnim = anim;
     }
 
     public void DeadAnimationEnd()
@@ -297,6 +313,10 @@ public class PlayerController : MonoBehaviour
         // HPバー設定
         GameSceneManager.instance.canvasRoot.SetHpFillAmount(m_playerHP / (float)m_playerMaxHP);
         Debug.Log($"現在の体力は{m_playerHP}です");
+        if (m_enemyAnim)
+        {
+            StartCoroutine(HitAnim());
+        }
 
         if(m_playerHP <= m_playerHP * m_changePlayerHPs[m_currentLevel])
         {

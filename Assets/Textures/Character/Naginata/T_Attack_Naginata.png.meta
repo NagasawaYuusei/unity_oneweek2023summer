@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c07123293167fe349882ac269c7cc49f
-      internalID: 1349312779
+      spriteID: fbc8e7b7e9cfaa248ac14160c7699956
+      internalID: 925295249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_100
+      name: T_Attack_Naginata_1
       rect:
         serializedVersion: 2
         x: 1200
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b7265c02c58d0b4299f898d41d10fec
-      internalID: 2001392569
+      spriteID: 85f2fba224e99704497c214ed9e0fd23
+      internalID: 1583434163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_200
+      name: T_Attack_Naginata_2
       rect:
         serializedVersion: 2
         x: 2400
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4855202e2142c94983183dc160ed29b
-      internalID: -231979172
+      spriteID: 1b020feae2a67b342b0b664263ddd2f1
+      internalID: 1466561271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_300
+      name: T_Attack_Naginata_3
       rect:
         serializedVersion: 2
         x: 3600
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46a4089bcec4a6944a81fb2f6a4e2e09
-      internalID: -52020566
+      spriteID: c01f8f955df8cd34ba2f311b3a2c87ec
+      internalID: -1759043931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_400
+      name: T_Attack_Naginata_4
       rect:
         serializedVersion: 2
         x: 4800
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95c52332934d39c42b2799bfbd05081f
-      internalID: -1884924035
+      spriteID: dec7faf3d55e15a48a9d70d1dcddb590
+      internalID: -894513231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_500
+      name: T_Attack_Naginata_5
       rect:
         serializedVersion: 2
         x: 6000
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02cb6c8ca265078469ce34371cd93be1
-      internalID: -1625790651
+      spriteID: ed0b1b31e7617ac4f8a10abb137bb6a1
+      internalID: 2123391962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_600
+      name: T_Attack_Naginata_6
       rect:
         serializedVersion: 2
         x: 7200
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8aace94425a25c14488b38c08ca524ca
-      internalID: 1314634838
+      spriteID: d386696b1003b59439aed586e197c47e
+      internalID: 452309169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_700
+      name: T_Attack_Naginata_7
       rect:
         serializedVersion: 2
         x: 8400
@@ -278,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3159574af37ac7d42b71613b825f7715
-      internalID: -647427462
+      spriteID: 8bdbcff438473764099c84a75eac8a88
+      internalID: 722461094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_80
+      name: T_Attack_Naginata_8
       rect:
         serializedVersion: 2
         x: 9600
@@ -299,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b385d630c6ccc449be5a8585e949ca5
-      internalID: -16036682
+      spriteID: bfe6bd7298bdd1e4ca434cec2c9ced80
+      internalID: -1198313048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_90
+      name: T_Attack_Naginata_9
       rect:
         serializedVersion: 2
         x: 10800
@@ -320,8 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e19d74bb828b7174c96bd22a3be2dfa5
-      internalID: -459130255
+      spriteID: 5727f56be56e1874489f595347104755
+      internalID: 650609359
       vertices: []
       indices: 
       edges: []
@@ -341,8 +341,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02a219e41cd23ad4088b060fe8220b09
-      internalID: 1850130695
+      spriteID: 18a9cbead720be2499938c47f58fca24
+      internalID: 341709770
       vertices: []
       indices: 
       edges: []
@@ -362,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d399d9ead8c816f44b18e829d5fba438
-      internalID: -853243731
+      spriteID: d3d81ae8dd995d94da0c3b603dd8961d
+      internalID: -1243595178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_120
+      name: T_Attack_Naginata_12
       rect:
         serializedVersion: 2
         x: 1200
@@ -383,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8dedd41fe1874c4abe812d1d52d6ab4
-      internalID: 821212244
+      spriteID: c59e40d1659e9c147bee1ef4dcce6d96
+      internalID: 1900452364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_130
+      name: T_Attack_Naginata_13
       rect:
         serializedVersion: 2
         x: 2400
@@ -404,14 +404,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12a7d8962aa4e1a4ba2bfe344dbf226f
-      internalID: 1237684380
+      spriteID: 667ca19f7fbf6264d966cffb827d9ad2
+      internalID: -665266672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_140
+      name: T_Attack_Naginata_14
       rect:
         serializedVersion: 2
         x: 3600
@@ -425,14 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31972f3ad1219a44e8b76f4b59793812
-      internalID: 1442015081
+      spriteID: 196afe3ac06d3e6408f6ffaa90d55a08
+      internalID: -964642960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_150
+      name: T_Attack_Naginata_15
       rect:
         serializedVersion: 2
         x: 4800
@@ -446,14 +446,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 941be8154a513d944aae1fb088e971e3
-      internalID: -107531731
+      spriteID: 3d127b84a1fcaf14d98690458a34d0eb
+      internalID: 1462500844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_160
+      name: T_Attack_Naginata_16
       rect:
         serializedVersion: 2
         x: 6000
@@ -467,14 +467,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10f44e21e7b83ed4da78abc08e9b5187
-      internalID: 573141210
+      spriteID: 28bd6b85d3e6ce64aa61b319f49ae91a
+      internalID: 337814226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_170
+      name: T_Attack_Naginata_17
       rect:
         serializedVersion: 2
         x: 7200
@@ -488,14 +488,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2795315284ba96d4e9aa8d8d33896aca
-      internalID: 1264631559
+      spriteID: a4cf70bd515db9848bf445af7509201e
+      internalID: 92966496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_180
+      name: T_Attack_Naginata_18
       rect:
         serializedVersion: 2
         x: 8400
@@ -509,14 +509,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08cb68e8692e53a4ebb10473e5c88541
-      internalID: 1213358462
+      spriteID: 8a1f8117f1e0aa4428ac6bb2da333b99
+      internalID: -635981128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_190
+      name: T_Attack_Naginata_19
       rect:
         serializedVersion: 2
         x: 9600
@@ -530,8 +530,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a76258674d48744a8a461a897692490
-      internalID: -373729225
+      spriteID: fc4e2f2ad43c0f840be2cb499a217f27
+      internalID: 118543911
       vertices: []
       indices: 
       edges: []
@@ -551,14 +551,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2726ff96560cd2439c2073fb8f85e5d
-      internalID: -203428683
+      spriteID: eb78aa90a39f4d34db62658718eedffb
+      internalID: 923766300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_210
+      name: T_Attack_Naginata_21
       rect:
         serializedVersion: 2
         x: 12000
@@ -572,8 +572,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4b1797578a09e240b22e82eb1ec15ad
-      internalID: -910126673
+      spriteID: 1c1b471cfb4f5524fb37d567dd2a23c5
+      internalID: 848963884
       vertices: []
       indices: 
       edges: []
@@ -593,14 +593,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5b7c02541f80b74384a8d4c7c67c409
-      internalID: 1280552366
+      spriteID: bd6228f00c16ec64daefc87fec5ad860
+      internalID: 861984552
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_230
+      name: T_Attack_Naginata_23
       rect:
         serializedVersion: 2
         x: 1200
@@ -614,14 +614,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b561c85c65f80fb48b8e18b15a1e476f
-      internalID: 1384432140
+      spriteID: 6d4d7baec24d45f4a8e1c03cca8c3841
+      internalID: 1289771372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_240
+      name: T_Attack_Naginata_24
       rect:
         serializedVersion: 2
         x: 2400
@@ -635,14 +635,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c136f679fc832d14ea4f975f75651470
-      internalID: -1411353982
+      spriteID: 23bd63929e5d78241bbdf2520a81bcf6
+      internalID: 1316334622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_250
+      name: T_Attack_Naginata_25
       rect:
         serializedVersion: 2
         x: 3600
@@ -656,14 +656,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e670af94a94659645b2d01d6bc7417c2
-      internalID: 1885032286
+      spriteID: e05ef1057490cff4d949a2e90dbbae0c
+      internalID: -1521744272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_260
+      name: T_Attack_Naginata_26
       rect:
         serializedVersion: 2
         x: 4800
@@ -677,14 +677,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8ebced9b51231c46ba1a04d305f3f0d
-      internalID: 1031552437
+      spriteID: e40d1de13344fa7498b78db0ee9a3e56
+      internalID: 1007854470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Attack_Naginata_270
+      name: T_Attack_Naginata_27
       rect:
         serializedVersion: 2
         x: 6000
@@ -698,8 +698,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b420cabc20161d045b50ef45d40551d2
-      internalID: 1294547041
+      spriteID: eea16603fd387cb4893e272133830c45
+      internalID: 691270138
       vertices: []
       indices: 
       edges: []
@@ -719,8 +719,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb9e4071f7377d243835c23579a5bc5b
-      internalID: -798059984
+      spriteID: 323ef6358e8399548925f8da14c1c0d1
+      internalID: -32504962
       vertices: []
       indices: 
       edges: []
@@ -740,8 +740,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cd44f215ff687f478fec280fb97f651
-      internalID: -134875263
+      spriteID: 8af947b90ae34c940ad3f11e36f789f6
+      internalID: -1402870293
       vertices: []
       indices: 
       edges: []
@@ -761,8 +761,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68be71922d8005347a65a9841349be4c
-      internalID: 125696510
+      spriteID: 95899d02b5f00674c8bc8f2089e18fd4
+      internalID: -1687129766
       vertices: []
       indices: 
       edges: []
@@ -782,8 +782,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69cee3842be52fa4a8fae46fb5f7cf73
-      internalID: -2015649691
+      spriteID: 411b044205aa54849834d18b1971e82f
+      internalID: -1074662536
       vertices: []
       indices: 
       edges: []
@@ -803,8 +803,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e4769296c41ce54485e14ec6b0081ab
-      internalID: -656029415
+      spriteID: 909b6fd720e12324cb90c50837766f1d
+      internalID: 377520824
       vertices: []
       indices: 
       edges: []
@@ -824,8 +824,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b1ba060d8bccae4a8900b3a1f8605f6
-      internalID: -1844668097
+      spriteID: a17186b92efc5cb45b4ab5606f138f8f
+      internalID: 1387025143
       vertices: []
       indices: 
       edges: []
@@ -845,8 +845,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f0c64198acf05241ab2e5f726e22840
-      internalID: -1800004078
+      spriteID: ce4f96306c1c8f548bb9e517c974724b
+      internalID: -274711714
       vertices: []
       indices: 
       edges: []
@@ -866,8 +866,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b1ddff642b2ec849ab4fe6edb9f9962
-      internalID: -1998374756
+      spriteID: cbe5dae842e25004387d58b594730564
+      internalID: -737833402
       vertices: []
       indices: 
       edges: []
@@ -887,8 +887,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b00105fa4cbffa40ab191feabe7f5b6
-      internalID: -762470896
+      spriteID: f7f550418105b6a458b4f11ae7479861
+      internalID: 1287041692
       vertices: []
       indices: 
       edges: []
@@ -908,8 +908,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a5b48847bf4d344e929a9b4a44c2bb8
-      internalID: 269511829
+      spriteID: 2d3aef6b85491d34b826eea34ef5a4b3
+      internalID: 1474481065
       vertices: []
       indices: 
       edges: []
@@ -929,8 +929,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 669948204f3dbf04987d72872c826f79
-      internalID: -31086179
+      spriteID: 3afd02b4292a8fa4c92cfe549a6df55e
+      internalID: -1964328000
       vertices: []
       indices: 
       edges: []
@@ -950,8 +950,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a456495ed1a1c04080ff3a20d56735b
-      internalID: -866347936
+      spriteID: 8613617cdea4f2b4d9ac6f07da44b030
+      internalID: -158207519
       vertices: []
       indices: 
       edges: []
@@ -971,8 +971,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fe322e8097245f428469bb870151f05
-      internalID: 1568095549
+      spriteID: 61bebacadcacf2c4aaa753545911dfd6
+      internalID: 276451052
       vertices: []
       indices: 
       edges: []
@@ -992,8 +992,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fdb2eaf15e4db84483bb84b9561bc29
-      internalID: 96321188
+      spriteID: f556c8dac3ecde749a8c1dd0a480e1df
+      internalID: 1102085192
       vertices: []
       indices: 
       edges: []
@@ -1013,8 +1013,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59557279aa1e4a54ca89fd8ec347aa27
-      internalID: 1798460043
+      spriteID: 3b487fa97e3f6f84fa996e591a6a530f
+      internalID: 978507954
       vertices: []
       indices: 
       edges: []
@@ -1034,8 +1034,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65be0b71b7eb2c546a1fb053b8fcfbd2
-      internalID: 668498192
+      spriteID: af7d646d677b7b7408b459da7563be79
+      internalID: -2122084173
       vertices: []
       indices: 
       edges: []
@@ -1055,8 +1055,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c037d822801cc0e489936808fbbee3e7
-      internalID: 1539212499
+      spriteID: 2e8660eb314686a4588a0a96b2006058
+      internalID: 88883259
       vertices: []
       indices: 
       edges: []
@@ -1076,8 +1076,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cf5fbb54addd5943825b98a6e86038e
-      internalID: 1169564018
+      spriteID: 3611e80d7cb817c4b85f8be838622a65
+      internalID: -1753102004
       vertices: []
       indices: 
       edges: []
@@ -1097,8 +1097,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1def66ed26afba448841adf583e07491
-      internalID: -1993740153
+      spriteID: 90835024066bb414088995dd22dd529c
+      internalID: 197915647
       vertices: []
       indices: 
       edges: []
@@ -1118,8 +1118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c07cfa4def4412a409437ae77372de65
-      internalID: 44219221
+      spriteID: f7355cb5976456d408a5fd137d4627bc
+      internalID: 27369037
       vertices: []
       indices: 
       edges: []
@@ -1139,8 +1139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8dd5aa21978b61342a01903f4f8459fa
-      internalID: -1786923369
+      spriteID: 5d05cdf5553e21648a80c3f96ea10305
+      internalID: -222436854
       vertices: []
       indices: 
       edges: []
@@ -1160,8 +1160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e02cc59b1f0e9cd4e88779b8aac3edc1
-      internalID: -639524677
+      spriteID: f937720830a401d45999f15387e0087e
+      internalID: -821201159
       vertices: []
       indices: 
       edges: []
@@ -1181,8 +1181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b94889e77b6c0904d934474f30b1afa8
-      internalID: -1912527150
+      spriteID: 6e70a90871e4f58498688e20a834f138
+      internalID: 708256758
       vertices: []
       indices: 
       edges: []
@@ -1202,8 +1202,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05ecea9c54ee505448c05b31848e2298
-      internalID: -1317772647
+      spriteID: aa79c47c2bebf2c46861afd1ff20727f
+      internalID: -294437471
       vertices: []
       indices: 
       edges: []
@@ -1223,8 +1223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43152ed1b7778ed468cba3086aafb021
-      internalID: 306467959
+      spriteID: 6fd0f6b05cf761348b8090713c89a2e3
+      internalID: 667868376
       vertices: []
       indices: 
       edges: []
@@ -1244,8 +1244,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e299e7f9c3cd39428e0dd72e3a1c664
-      internalID: -160385112
+      spriteID: e9f88ed365a218144b882930883f1e7e
+      internalID: 1078945756
       vertices: []
       indices: 
       edges: []
@@ -1265,8 +1265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6c1c361d549d7f4e89b4807ac2ca61d
-      internalID: 1410291458
+      spriteID: 72357f9de0bac614995840203192ffba
+      internalID: 1614464731
       vertices: []
       indices: 
       edges: []
@@ -1282,61 +1282,61 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      T_Attack_Naginata_250: 1885032286
-      T_Attack_Naginata_48: -1786923369
-      T_Attack_Naginata_140: 1442015081
-      T_Attack_Naginata_42: 1798460043
-      T_Attack_Naginata_51: -1317772647
-      T_Attack_Naginata_700: -647427462
-      T_Attack_Naginata_150: -107531731
-      T_Attack_Naginata_230: 1384432140
-      T_Attack_Naginata_41: 96321188
-      T_Attack_Naginata_47: 44219221
-      T_Attack_Naginata_39: -866347936
-      T_Attack_Naginata_30: 125696510
-      T_Attack_Naginata_34: -1800004078
-      T_Attack_Naginata_600: 1314634838
-      T_Attack_Naginata_120: 821212244
-      T_Attack_Naginata_10: 1850130695
-      T_Attack_Naginata_200: -231979172
-      T_Attack_Naginata_80: -16036682
-      T_Attack_Naginata_210: -910126673
-      T_Attack_Naginata_54: 1410291458
-      T_Attack_Naginata_37: 269511829
-      T_Attack_Naginata_130: 1237684380
-      T_Attack_Naginata_52: 306467959
-      T_Attack_Naginata_45: 1169564018
-      T_Attack_Naginata_22: 1280552366
-      T_Attack_Naginata_0: 1349312779
-      T_Attack_Naginata_46: -1993740153
-      T_Attack_Naginata_90: -459130255
-      T_Attack_Naginata_43: 668498192
-      T_Attack_Naginata_32: -656029415
-      T_Attack_Naginata_270: 1294547041
-      T_Attack_Naginata_49: -639524677
-      T_Attack_Naginata_31: -2015649691
-      T_Attack_Naginata_400: -1884924035
-      T_Attack_Naginata_36: -762470896
-      T_Attack_Naginata_500: -1625790651
-      T_Attack_Naginata_170: 1264631559
-      T_Attack_Naginata_40: 1568095549
-      T_Attack_Naginata_28: -798059984
-      T_Attack_Naginata_33: -1844668097
-      T_Attack_Naginata_180: 1213358462
-      T_Attack_Naginata_38: -31086179
-      T_Attack_Naginata_44: 1539212499
-      T_Attack_Naginata_11: -853243731
-      T_Attack_Naginata_50: -1912527150
-      T_Attack_Naginata_190: -373729225
-      T_Attack_Naginata_53: -160385112
-      T_Attack_Naginata_240: -1411353982
-      T_Attack_Naginata_300: -52020566
-      T_Attack_Naginata_20: -203428683
-      T_Attack_Naginata_260: 1031552437
-      T_Attack_Naginata_29: -134875263
-      T_Attack_Naginata_160: 573141210
-      T_Attack_Naginata_35: -1998374756
-      T_Attack_Naginata_100: 2001392569
+      T_Attack_Naginata_48: -222436854
+      T_Attack_Naginata_42: 978507954
+      T_Attack_Naginata_51: -294437471
+      T_Attack_Naginata_23: 1289771372
+      T_Attack_Naginata_41: 1102085192
+      T_Attack_Naginata_17: 92966496
+      T_Attack_Naginata_27: 691270138
+      T_Attack_Naginata_39: -158207519
+      T_Attack_Naginata_30: -1687129766
+      T_Attack_Naginata_34: -274711714
+      T_Attack_Naginata_10: 341709770
+      T_Attack_Naginata_7: 722461094
+      T_Attack_Naginata_19: 118543911
+      T_Attack_Naginata_47: 27369037
+      T_Attack_Naginata_54: 1614464731
+      T_Attack_Naginata_37: 1474481065
+      T_Attack_Naginata_4: -894513231
+      T_Attack_Naginata_1: 1583434163
+      T_Attack_Naginata_5: 2123391962
+      T_Attack_Naginata_8: -1198313048
+      T_Attack_Naginata_45: -1753102004
+      T_Attack_Naginata_26: 1007854470
+      T_Attack_Naginata_25: -1521744272
+      T_Attack_Naginata_22: 861984552
+      T_Attack_Naginata_24: 1316334622
+      T_Attack_Naginata_0: 925295249
+      T_Attack_Naginata_46: 197915647
+      T_Attack_Naginata_52: 667868376
+      T_Attack_Naginata_43: -2122084173
+      T_Attack_Naginata_32: 377520824
+      T_Attack_Naginata_21: 848963884
+      T_Attack_Naginata_2: 1466561271
+      T_Attack_Naginata_3: -1759043931
+      T_Attack_Naginata_49: -821201159
+      T_Attack_Naginata_6: 452309169
+      T_Attack_Naginata_31: -1074662536
+      T_Attack_Naginata_12: 1900452364
+      T_Attack_Naginata_18: -635981128
+      T_Attack_Naginata_36: 1287041692
+      T_Attack_Naginata_40: 276451052
+      T_Attack_Naginata_9: 650609359
+      T_Attack_Naginata_28: -32504962
+      T_Attack_Naginata_33: 1387025143
+      T_Attack_Naginata_38: -1964328000
+      T_Attack_Naginata_44: 88883259
+      T_Attack_Naginata_11: -1243595178
+      T_Attack_Naginata_50: 708256758
+      T_Attack_Naginata_16: 337814226
+      T_Attack_Naginata_14: -964642960
+      T_Attack_Naginata_53: 1078945756
+      T_Attack_Naginata_20: 923766300
+      T_Attack_Naginata_29: -1402870293
+      T_Attack_Naginata_15: 1462500844
+      T_Attack_Naginata_35: -737833402
+      T_Attack_Naginata_13: -665266672
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -34,10 +34,10 @@ MonoBehaviour:
   - AudioClip: {fileID: 8300000, guid: b8ca8b20615ff450894f753f4e72d253, type: 3}
     Volume: 1
     SeType: 6
-  - AudioClip: {fileID: 8300000, guid: 59653fd1ff3274641a7402c8eed373b1, type: 3}
+  - AudioClip: {fileID: 8300000, guid: 5eee4cdf9d4e9484cb934eb048b3234d, type: 3}
     Volume: 1
     SeType: 7
-  - AudioClip: {fileID: 8300000, guid: 5eee4cdf9d4e9484cb934eb048b3234d, type: 3}
+  - AudioClip: {fileID: 8300000, guid: 492548f3bf78b42b1b7fa9da4e85db51, type: 3}
     Volume: 1
     SeType: 8
   - AudioClip: {fileID: 8300000, guid: 46b2062614e9a428baae02f696870c58, type: 3}

@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ad52d1859382e843acfacf3efaaffb1
-      internalID: -931329215
+      spriteID: 150bd904de1dcd14aaacde4f496e3747
+      internalID: 552081862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_2
+      name: T_Hit_Naginata_1
       rect:
         serializedVersion: 2
         x: 1200
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a8ed4137f13392439afad21b94f35e0
-      internalID: 1020740611
+      spriteID: da8ed6e6818088a4aa1c6a8e4b4874a9
+      internalID: 1149901311
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_4
+      name: T_Hit_Naginata_2
       rect:
         serializedVersion: 2
         x: 2400
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0923f3867a143114c9f580d519f440f7
-      internalID: 1836625338
+      spriteID: b6cbc88e44c35b14caec0df9e1365446
+      internalID: -585042887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_6
+      name: T_Hit_Naginata_3
       rect:
         serializedVersion: 2
         x: 3600
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9dff946d2411e64d9dd906210246cfc
-      internalID: 224675351
+      spriteID: bb1be6d30fcedb44cb085c673925fc23
+      internalID: -1239700768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_8
+      name: T_Hit_Naginata_4
       rect:
         serializedVersion: 2
         x: 4800
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da9d6c4c7a318834aa5ff999c3d2168f
-      internalID: -1547623248
+      spriteID: 0aa6ef20d6dc09a4789c4409c19b1190
+      internalID: 1648482570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_
+      name: T_Hit_Naginata_5
       rect:
         serializedVersion: 2
         x: 6000
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a7a36363cd5b5b42b8c90ff1441174e
-      internalID: 610507626
+      spriteID: cf6ddd976c5fc45418b1e93993c18caa
+      internalID: 2084770718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_12
+      name: T_Hit_Naginata_6
       rect:
         serializedVersion: 2
         x: 7200
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3282b690d53676b4faf6d4bec7cd6105
-      internalID: -1472404955
+      spriteID: dc4e7536519820447bfb971116e430fa
+      internalID: -69876258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_14
+      name: T_Hit_Naginata_7
       rect:
         serializedVersion: 2
         x: 8400
@@ -278,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14db5c89b0cca5b439e15d4bc3e13577
-      internalID: -406595771
+      spriteID: 3767841a4a8f9ab4896badc8840100d2
+      internalID: 320473291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_16
+      name: T_Hit_Naginata_8
       rect:
         serializedVersion: 2
         x: 9600
@@ -299,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f76bcc7b7771cc4eb5daae5f0bba10e
-      internalID: 1154737222
+      spriteID: 07471106c5d7350458b7a64724ac7339
+      internalID: 1976856551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_18
+      name: T_Hit_Naginata_9
       rect:
         serializedVersion: 2
         x: 10800
@@ -320,14 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b55aaf3c07de5d49ba75f66625b791d
-      internalID: 1670344279
+      spriteID: c401630a71acdf7439d12ddf9fe13564
+      internalID: 1616310357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_20
+      name: T_Hit_Naginata_10
       rect:
         serializedVersion: 2
         x: 12000
@@ -341,14 +341,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dde0cd4fa44d4241807cf9260a40822
-      internalID: -684935543
+      spriteID: 4a314a6886d822646aec18a706ab0353
+      internalID: -292995902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_22
+      name: T_Hit_Naginata_11
       rect:
         serializedVersion: 2
         x: 13200
@@ -362,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cf166fbc4004964ab742ab7f6091105
-      internalID: -1219862001
+      spriteID: 0541d6fc890de234990679c8e2205925
+      internalID: 1670794003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_1
+      name: T_Hit_Naginata_12
       rect:
         serializedVersion: 2
         x: 0
@@ -383,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2e17f0c21a7a46488f80a9c516fc67a
-      internalID: -1795716467
+      spriteID: d00b4193a7ff3f64dbf4b00a7c4be494
+      internalID: 671255365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_3
+      name: T_Hit_Naginata_13
       rect:
         serializedVersion: 2
         x: 1200
@@ -404,14 +404,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fbb5112f8eaf1449a398f6e508baeeb
-      internalID: -1908334837
+      spriteID: b3f898e4bf5bfa54c917c2aeaa8f215d
+      internalID: -1192642398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_5
+      name: T_Hit_Naginata_14
       rect:
         serializedVersion: 2
         x: 2400
@@ -425,14 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48a983a38e734184b9ac1ab2b64a82e0
-      internalID: -693662176
+      spriteID: cfb440e7a28575a4fbf816db220d4d44
+      internalID: 977560703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_7
+      name: T_Hit_Naginata_15
       rect:
         serializedVersion: 2
         x: 3600
@@ -446,14 +446,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88441a6f91cdf12449e9fe0985f24e9e
-      internalID: -1442845747
+      spriteID: 7ea2d103a6511764db892c0494447ceb
+      internalID: 1576174569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_9
+      name: T_Hit_Naginata_16
       rect:
         serializedVersion: 2
         x: 4800
@@ -467,14 +467,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5a61b77024ee0b468750d415ac5ff89
-      internalID: -461394825
+      spriteID: 90b0a786377a40f4e8289ef433857c0b
+      internalID: 536700787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_11
+      name: T_Hit_Naginata_17
       rect:
         serializedVersion: 2
         x: 6000
@@ -488,14 +488,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ce7f3e362961fd4ba6fed6eef412db9
-      internalID: -1647694710
+      spriteID: 64ec7d9424158bf48a6dea9d33f18729
+      internalID: -1079565225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_13
+      name: T_Hit_Naginata_18
       rect:
         serializedVersion: 2
         x: 7200
@@ -509,14 +509,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 331fa7208f4b9b743b441f781c44b165
-      internalID: 1036323345
+      spriteID: 8c707ed63e248184c8ba654815e7ffe3
+      internalID: -220559434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_15
+      name: T_Hit_Naginata_19
       rect:
         serializedVersion: 2
         x: 8400
@@ -530,14 +530,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac8a80ccf4cb1fb46836635518dc66b1
-      internalID: 224037090
+      spriteID: 070e3752754b3c14abf2a62fcc85cb33
+      internalID: -105806655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_17
+      name: T_Hit_Naginata_20
       rect:
         serializedVersion: 2
         x: 9600
@@ -551,14 +551,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ada82a24b50c4a543a3951cce40ee242
-      internalID: 1407776464
+      spriteID: 4cf17c16919a22448b816f49c281a227
+      internalID: -477216303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_19
+      name: T_Hit_Naginata_21
       rect:
         serializedVersion: 2
         x: 10800
@@ -572,14 +572,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cc0897de6dd87e458af9dcd0a2daf72
-      internalID: -1512734207
+      spriteID: f8fda65ff85c07b4bb37ac697630e443
+      internalID: 13153244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_Naginata_21
+      name: T_Hit_Naginata_22
       rect:
         serializedVersion: 2
         x: 12000
@@ -593,8 +593,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30e615f0e92cad94890944f26cacbca6
-      internalID: 682492575
+      spriteID: b131a4f86f3570c449cfc4453267eeb5
+      internalID: 1458410926
       vertices: []
       indices: 
       edges: []
@@ -614,8 +614,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b363fb2723b61c4d9848a081762ee54
-      internalID: -365916552
+      spriteID: 301689d236451894da5e904e5afc077e
+      internalID: 1093219488
       vertices: []
       indices: 
       edges: []
@@ -631,30 +631,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      T_Hit_Naginata_20: -684935543
-      T_Hit_Naginata_2: 1020740611
-      T_Hit_Naginata_19: -1512734207
-      T_Hit_Naginata_14: -406595771
-      T_Hit_Naginata_3: -1908334837
-      T_Hit_Naginata_: 610507626
-      T_Hit_Naginata_4: 1836625338
-      T_Hit_Naginata_12: -1472404955
-      T_Hit_Naginata_17: 1407776464
-      T_Hit_Naginata_21: 682492575
-      T_Hit_Naginata_5: -693662176
-      T_Hit_Naginata_9: -461394825
-      T_Hit_Naginata_11: -1647694710
-      T_Hit_Naginata_18: 1670344279
-      T_Hit_Naginata_22: -1219862001
-      T_Hit_Naginata_16: 1154737222
-      T_Hit_Naginata_23: -365916552
-      T_Hit_Naginata_0: -931329215
-      T_Hit_Naginata_6: 224675351
-      T_Hit_Naginata_8: -1547623248
-      T_Hit_Naginata_13: 1036323345
-      T_Hit_Naginata_15: 224037090
-      T_Hit_Naginata_1: -1795716467
-      T_Hit_Naginata_7: -1442845747
+      T_Hit_Naginata_10: -292995902
+      T_Hit_Naginata_20: -477216303
+      T_Hit_Naginata_2: -585042887
+      T_Hit_Naginata_19: -105806655
+      T_Hit_Naginata_14: 977560703
+      T_Hit_Naginata_3: -1239700768
+      T_Hit_Naginata_12: 671255365
+      T_Hit_Naginata_4: 1648482570
+      T_Hit_Naginata_17: -1079565225
+      T_Hit_Naginata_21: 13153244
+      T_Hit_Naginata_5: 2084770718
+      T_Hit_Naginata_9: 1616310357
+      T_Hit_Naginata_11: 1670794003
+      T_Hit_Naginata_18: -220559434
+      T_Hit_Naginata_22: 1458410926
+      T_Hit_Naginata_16: 536700787
+      T_Hit_Naginata_23: 1093219488
+      T_Hit_Naginata_0: 552081862
+      T_Hit_Naginata_6: -69876258
+      T_Hit_Naginata_8: 1976856551
+      T_Hit_Naginata_13: -1192642398
+      T_Hit_Naginata_15: 1576174569
+      T_Hit_Naginata_1: 1149901311
+      T_Hit_Naginata_7: 320473291
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
