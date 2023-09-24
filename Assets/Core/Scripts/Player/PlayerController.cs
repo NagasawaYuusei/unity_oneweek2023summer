@@ -291,6 +291,9 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void Hit(int damage, Enemy enemy, bool anim)
     {
+        if (m_playerHP <= 0)
+            return;
+
         m_isHit = true;
         m_waitDamage = damage;
         m_enemy = enemy;
@@ -310,6 +313,9 @@ public class PlayerController : MonoBehaviour
     /// <param name="value">減少値</param>
     void DownHP(int value)
     {
+        if (m_playerHP <= 0)
+            return;
+
         m_playerHP -= value;
         // HPバー設定
         GameSceneManager.instance?.canvasRoot.SetHpFillAmount(m_playerHP / (float)m_playerMaxHP);

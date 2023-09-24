@@ -96,11 +96,12 @@ public class Boss : Enemy
                 break;
         }
         bosstate = state;
+        Debug.Log($"state : {state}, count : {count}");
     }
 
     public void HitEnd()
     {
-        if(count == 1)
+        if(count <= 1)
         {
             StateChange(BossState.dbDelay);
         }
