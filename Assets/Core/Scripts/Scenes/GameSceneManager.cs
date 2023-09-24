@@ -3,12 +3,11 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using KyawaLib;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+using static SoundType;
 
 public class GameSceneManager : SingletonClass<GameSceneManager>
 {
     GameCanvasRoot m_canvasRoot = null;
-    GameBackCanvasRoot m_backCanvasRoot = null;
 
     enum GameState
     {
@@ -35,13 +34,9 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
     public int playerHpPercentage { get; private set; }
 
     /// <summary>
-    /// GameシーンのUI参照
+    /// UI参照
     /// </summary>
     public GameCanvasRoot canvasRoot => m_canvasRoot;
-    /// <summary>
-    /// GameBackシーンのUI参照
-    /// </summary>
-    public GameBackCanvasRoot backCanvasRoot => m_backCanvasRoot;
 
     /// <summary>
     /// 実行中か
@@ -68,18 +63,22 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         m_canvasRoot = GameObject.FindObjectOfType<GameCanvasRoot>();
         Debug.Assert(m_canvasRoot);
 
-        m_backCanvasRoot = GameObject.FindObjectOfType<GameBackCanvasRoot>();
-        Debug.Assert(m_backCanvasRoot);
-        m_backCanvasRoot.clearBtn.onClick.AddListener(
+#if DEBUG
+        var backCanvasRoot = GameObject.FindObjectOfType<GameBackCanvasRoot>();
+        Debug.Assert(backCanvasRoot);
+        backCanvasRoot.clearBtn.gameObject.SetActive(true);
+        backCanvasRoot.clearBtn.onClick.AddListener(
             () =>
             {
                 OnGameClear();
             });
-        m_backCanvasRoot.gameoverBtn.onClick.AddListener(
+        backCanvasRoot.gameoverBtn.gameObject.SetActive(true);
+        backCanvasRoot.gameoverBtn.onClick.AddListener(
             () =>
             {
                 OnGameOver();
             });
+#endif
     }
 
     /// <summary>
@@ -172,13 +171,16 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
             {
                 Debug.Log("=== Start Boss Wave ===");
 
+                // ボス前SE
+                AudioManager.Instance.PlaySE(SE.BeforeBoss);
                 // BGMと背景
                 enemyMng.GetBossBackgroundSpriteAndBGM(out var background, out var bgm);
                 await m_background.ChangeSky(background, 0.5f, cancellation: cancellation);
-                AudioManager.Instance.PlayBGM(bgm);
-
-                // ボス生成
                 await UniTask.WaitForSeconds(2f, cancellationToken: cancellation);
+                AudioManager.Instance.PlayBGM(bgm);
+                await UniTask.WaitForSeconds(2f, cancellationToken: cancellation);
+                AudioManager.Instance.StopSE(); // ボス前SEが長いので止める
+                // ボス生成
                 enemyMng.StartBossWave();
                 // 終了まで待つ
                 await UniTask.WaitUntil(() => (enemyMng.isWorking == false), cancellationToken: cancellation);
