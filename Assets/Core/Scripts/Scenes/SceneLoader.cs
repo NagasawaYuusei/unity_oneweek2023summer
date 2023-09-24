@@ -45,6 +45,14 @@ public class SceneLoader : KyawaLib.SingletonMonoBehaviour<SceneLoader>
                     manager.Run(cancellation).Forget();
                     return true;
                 }
+            case SceneIndex.Main.Tutorial:
+                {
+                    TutorialSceneManager.instance?.Destroy();
+                    var manager = TutorialSceneManager.Create();
+                    SceneManager.LoadScene((int)name, LoadSceneMode.Single);
+                    manager.Run(cancellation).Forget();
+                    return true;
+                }
         }
         return false;
     }

@@ -11,6 +11,7 @@ static public class SceneIndex
         Title = 1,
         Game = 2,
         Result = 3,
+        Tutorial = 8,
     }
 
     /// <summary>

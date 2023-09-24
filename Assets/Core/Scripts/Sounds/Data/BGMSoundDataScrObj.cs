@@ -18,12 +18,13 @@ namespace Data
         List<BGMSoundData> m_soundData = null;
 
         [Serializable]
-        class BGMSoundData : SoundData
+        public class BGMSoundData : SoundData
         {
+            public AudioClip IntroAudioClip;
             public SoundType.BGM BgmType;
         }
 
-        public SoundData GetSoundData(SoundType.BGM bgmType)
+        public BGMSoundData GetSoundData(SoundType.BGM bgmType)
         {
             return m_soundData?.Find(data => data.BgmType == bgmType);
         }

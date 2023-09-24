@@ -237,6 +237,7 @@ MonoBehaviour:
   m_titleFadeData: {fileID: 11400000, guid: e577027834f614a4daf4d82e67a2430f, type: 2}
   m_gameFadeData: {fileID: 11400000, guid: 85d8046aa907748209fc8c22acd2632c, type: 2}
   m_resultFadeData: {fileID: 11400000, guid: df7011e457803440bbe1501cfc4ff5d9, type: 2}
+  m_tutorialFadeData: {fileID: 11400000, guid: 13b95e270331245b5ad5c11ecc829455, type: 2}
 --- !u!1 &5276731000277853333
 GameObject:
   m_ObjectHideFlags: 0

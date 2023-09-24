@@ -46,6 +46,14 @@ public class ResultSceneManager : SingletonClass<ResultSceneManager>
                 m_nextScene = SceneIndex.Main.Game;
                 m_isRunning = false;
             });
+
+        // プレイヤーのHP残量からワザマエ判定
+        if (GameSceneManager.instance != null)
+        {
+            int percentage = GameSceneManager.instance.playerHpPercentage;
+            m_canvasRoot.SetRankSprite(percentage);
+            GameSceneManager.instance.Destroy();
+        }
     }
 
     /// <summary>

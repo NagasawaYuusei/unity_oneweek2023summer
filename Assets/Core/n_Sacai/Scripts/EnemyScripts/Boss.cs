@@ -43,7 +43,7 @@ public class Boss : Enemy
                 break;
 
             case BossState.attack:
-                if(!isAttack) Attack();
+                //if(!isAttack) Attack();
                 anim.SetBool("isAttack", true);
                 break;
 
@@ -88,10 +88,10 @@ public class Boss : Enemy
         bosstate = BossState.death;
     }
 
-    public void Attack()
+    public void Attack(bool on)
     {
         isAttack = true;
-        PlayerController.Instance.Hit(AttackPower);
+        PlayerController.Instance.Hit(AttackPower, this, on);
     }
 
     IEnumerator CountDown()

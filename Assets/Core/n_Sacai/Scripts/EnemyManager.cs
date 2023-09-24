@@ -165,4 +165,30 @@ public class EnemyManager : KyawaLib.SingletonMonoBehaviour<EnemyManager>
     {
         m_isWorking = false;
     }
+
+    /// <summary>
+    /// ボス前の指定Waveで使用する背景とBGMを取得
+    /// </summary>
+    /// <param name="waveIndex">指定Wave</param>
+    /// <param name="background">使用する背景</param>
+    /// <param name="bgm">使用するBGM</param>
+    public void GetBackgroundSpriteAndBGM(int waveIndex, out Sprite background, out SoundType.BGM bgm)
+    {
+        Debug.Assert((0 <= waveIndex) && (waveIndex < wavesCount));
+        var data = m_wavesData.waveData[waveIndex];
+        background = data.background;
+        bgm = data.bgm;
+    }
+
+    /// <summary>
+    /// ボスのWaveで使用する背景とBGMを取得
+    /// </summary>
+    /// <param name="background">使用する背景</param>
+    /// <param name="bgm">使用するBGM</param>
+    public void GetBossBackgroundSpriteAndBGM(out Sprite background, out SoundType.BGM bgm)
+    {
+        var data = m_wavesData.bossWaveData;
+        background = data.background;
+        bgm = data.bgm;
+    }
 }

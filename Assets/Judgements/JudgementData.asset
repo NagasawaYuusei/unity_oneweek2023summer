@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c604fcc6d921143d4b0118066a25c095, type: 3}
+  m_Name: JudgementData
+  m_EditorClassIdentifier: 
+  m_ranks:
+  - _maxPercentage: 20
+    _sprite: {fileID: 21300000, guid: 728a9113bb6964fe695f832d2bfa7420, type: 3}
+  - _maxPercentage: 80
+    _sprite: {fileID: 21300000, guid: 63a427ecad52d43c8bc72425ae480520, type: 3}
+  - _maxPercentage: 100
+    _sprite: {fileID: 21300000, guid: 57c4cc490436240cfb03997097fec1d1, type: 3}

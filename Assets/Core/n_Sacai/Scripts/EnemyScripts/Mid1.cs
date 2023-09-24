@@ -7,6 +7,8 @@ using UnityEditor;
 //やることはZako2と同じ
 public class Mid1 : Enemy
 {
+    [SerializeField] private GameObject BAKUSAN;
+
     private Animator anim;
 
     private int AttackPower;
@@ -16,9 +18,7 @@ public class Mid1 : Enemy
 
     private EnemyState Mid1State = EnemyState.Idle;
 
-    private bool check = false;
-
-    private bool isAttack;
+    private bool check = true;
 
     private void Start()
     {
@@ -45,13 +45,16 @@ public class Mid1 : Enemy
                 break;
 
             case EnemyState.Attack:
-                if(!isAttack) Attack();
                 anim.SetBool("isAttack", true);
                 break;
 
             case EnemyState.Death:
                 if (check)
                 {
+                    if (isParry)
+                    {
+                        anim.Play("Hit_Nata");
+                    }
                     base.Death();
                     check = false;
                 }
@@ -66,12 +69,17 @@ public class Mid1 : Enemy
 
     public void DeathStateChange()
     {
+        Instantiate(BAKUSAN, this.transform.position, Quaternion.identity, this.transform);
         Mid1State = EnemyState.Death;
     }
 
-    public void Attack()
+    public void Attack(HitAnim hit)
     {
-        isAttack = true;
-        PlayerController.Instance.Hit(AttackPower);
+        bool on = false;
+        if(hit == HitAnim.on)
+        {
+            on = true;
+        }
+        PlayerController.Instance.Hit(AttackPower, this, on);
     }
 }

@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioSource _audioBGM;
     [SerializeField] AudioSource _audioSE;
+    [SerializeField] AudioSource _audioBGM_intro;
 
     [SerializeField] BGMSoundDataScrObj _bgmData;
     [SerializeField] SESoundDataScrObj _seData;
@@ -66,7 +67,9 @@ public class AudioManager : MonoBehaviour
 
     void UpdateBgmVolume()
     {
-        _audioBGM.volume = _currentBgmDataVolume * _bgmMasterVolume * _masterVolume;
+        var volume = _currentBgmDataVolume * _bgmMasterVolume * _masterVolume; ;
+        _audioBGM.volume = volume;
+        _audioBGM_intro.volume = volume;
     }
     void UpdateSeVolume()
     {
@@ -86,8 +89,23 @@ public class AudioManager : MonoBehaviour
         _onFadeOutBGM = false;
         _currentBgmDataVolume = data.Volume;
         UpdateBgmVolume();
-        _audioBGM.clip = data.AudioClip;
-        _audioBGM.Play();
+
+        if (data.IntroAudioClip != null)
+        {
+            // イントロあり
+            _audioBGM_intro.clip = data.IntroAudioClip;
+            _audioBGM.clip = data.AudioClip;
+            // イントロ再生開始
+            _audioBGM_intro.PlayScheduled(AudioSettings.dspTime);
+            //イントロ終了後にループ部分の再生を開始
+            _audioBGM.PlayScheduled(AudioSettings.dspTime + (_audioBGM_intro.clip.samples / (float)_audioBGM_intro.clip.frequency));
+        }
+        else
+        {
+            // イントロなし
+            _audioBGM.clip = data.AudioClip;
+            _audioBGM.Play();
+        }
     }
 
     /// <summary>
@@ -97,6 +115,7 @@ public class AudioManager : MonoBehaviour
     {
         _onFadeOutBGM = false;
         _audioBGM.Stop();
+        _audioBGM_intro.Stop();
         _currentSeDataVolume = 1f;
     }
 
@@ -149,7 +168,9 @@ public class AudioManager : MonoBehaviour
         while (0f < time)
         {
             time -= Time.deltaTime;
-            _audioBGM.volume = startVolume * (time / sec);
+            var volume = startVolume *(time / sec);
+            _audioBGM.volume = volume;
+            _audioBGM_intro.volume = startVolume;
             yield return null;
         }
         StopBgm();
