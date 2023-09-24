@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Boss : Enemy
 {
+    [SerializeField] private GameObject BAKUSAN;
+
     private Animator anim;
 
     private int AttackPower;
@@ -11,94 +13,114 @@ public class Boss : Enemy
 
     private GameObject BattleArea;
 
-    public enum BossState {move,attackidle,idle,anticipation,attack,death};
+    int count;
+
+    public enum BossState
+    {
+        move,
+        anticipation,
+        attack,
+        attackidle,
+        idle,
+        dbDelay,
+        dbAttack,
+        lastDelay,
+        lastAttack,
+        hit,
+        death
+    };
     private BossState bosstate = BossState.move;
 
     private bool check = true;
 
-    private bool isAttack;
-
     private void Start()
     {
+        transform.position = new Vector2(3f, 0);
         BattleArea = GameObject.Find("BattleArea");
         speed = stat.MoveSpeed;
         AttackPower = stat.GetAttackPower(0);
         anim = this.GetComponent<Animator>();
+        StateChange(BossState.move);
     }
 
-    private void Update()
+    public void StateChange(BossState state)
     {
-        switch (bosstate)
+        if(isParry && count != 2)
+        {
+            state = BossState.hit;
+        }
+        switch(state)
         {
             case BossState.move:
-                if (this.transform.position == BattleArea.transform.position)
-                {
-                    bosstate = BossState.anticipation;
-                }
-                base.MoveBattlePos(BattleArea.transform, speed);
+                anim.Play("Instantiate_Boss");
                 break;
-
             case BossState.anticipation:
-                anim.SetBool("isDelay", true);
+                anim.Play("Delay_Boss");
                 break;
-
             case BossState.attack:
-                //if(!isAttack) Attack();
-                anim.SetBool("isAttack", true);
+                anim.Play("Attack_Boss");
                 break;
-
             case BossState.attackidle:
-                anim.SetBool("isAttackIdle", true);
+                anim.Play("Attack_to_Idle_Boss");
+                count++;
                 break;
-
             case BossState.idle:
-                anim.SetBool("isIdol", true);
+                anim.Play("Idle_Boss");
                 break;
-
+            case BossState.dbDelay:
+                anim.Play("DBDelay_Boss");
+                break;
+            case BossState.dbAttack:
+                anim.Play("DBAttack_Boss");
+                count++;
+                break;
+            case BossState.lastDelay:
+                anim.Play("SPDelay_Boss");
+                break;
+            case BossState.lastAttack:
+                anim.Play("SPAttack_Boss");
+                break;
+            case BossState.hit:
+                anim.Play("Hit_Boss");
+                isParry = false;
+                break;
             case BossState.death:
                 if (check)
                 {
+                    Instantiate(BAKUSAN, this.transform.position, Quaternion.identity, this.transform);
+                    bosstate = BossState.death;
+                    anim.Play("Down_Boss");
                     base.Death();
                     check = false;
                 }
                 break;
         }
+        bosstate = state;
     }
 
-    public void IdolStateChange()
+    public void HitEnd()
     {
-        bosstate = BossState.death;
-        anim.SetBool("isAttackIdle", false);
+        if(count == 1)
+        {
+            StateChange(BossState.dbDelay);
+        }
+        else if(count == 2)
+        {
+            StateChange(BossState.lastDelay);
+        }
+        else
+        {
+            Debug.LogError("reigai");
+        }
     }
 
-    public void AttackIdolStateChange()
+    public void Attack(HitAnim anim)
     {
-        bosstate = BossState.attackidle;
-        anim.SetBool("isAttack", false);
-    }
-
-    public void AttackStateChange()
-    {
-        bosstate = BossState.attack;
-        anim.SetBool("isDelay", false);
-    }
-
-    public void DeathStateChange()
-    {
-        bosstate = BossState.death;
-    }
-
-    public void Attack(bool on)
-    {
-        isAttack = true;
+        bool on = false;
+        if (anim == HitAnim.on)
+        {
+            on = true;
+        }
         PlayerController.Instance.Hit(AttackPower, this, on);
     }
-
-    IEnumerator CountDown()
-    {
-        yield return new WaitForSeconds(2f);
-        anim.SetBool("isAttack", true);
-        check = true;
-    }
-
 }

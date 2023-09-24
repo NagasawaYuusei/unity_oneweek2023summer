@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 83405e84517a8e04b89d645ba59907e8
+guid: f1cf6e24349fec84e818506cbf5a0214
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,11 +42,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -115,7 +115,1141 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a07f794de72a3ea4a8ea2bbd77942742
+      internalID: 568940025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_1
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 4000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b106b531dc86c2744a6aa25926165210
+      internalID: 679391124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_2
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 4000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bed5dfb43bc724ea6d51e134af32a2
+      internalID: 1993489254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_3
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 4000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5287d0b0098167e4aab1e717cb3e3bed
+      internalID: 1222132503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_4
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 4000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3f4b8e3b635774fa65a3d880236c58
+      internalID: -293560924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_5
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 4000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9f01b2a6097f946bdb5811b93633ef
+      internalID: 1140369898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_6
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 4000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1f951379929784ebaf2b10ad4188db
+      internalID: 1918966902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_7
+      rect:
+        serializedVersion: 2
+        x: 9800
+        y: 4000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c74744e95494e042a5170c3d6b0d5d8
+      internalID: 1080724482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_8
+      rect:
+        serializedVersion: 2
+        x: 11200
+        y: 4000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc00a78b4acea34f928f09fd6b6d6de
+      internalID: 1197433258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_9
+      rect:
+        serializedVersion: 2
+        x: 12600
+        y: 4000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d00d35ab85b09004aba67a449d8dedc3
+      internalID: 841691522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_10
+      rect:
+        serializedVersion: 2
+        x: 14000
+        y: 4000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca66c5804acdf3245a5f962834354764
+      internalID: -1631151046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4945d1e5ed263c4abe3550bbe82b0c1
+      internalID: -1950930376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_12
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 3000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36eca496d9e07624ea8b4a42c02525dc
+      internalID: 20053440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_13
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 3000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6afb1997611d9354c84b30c8791cc04d
+      internalID: 1244842259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_14
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 3000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40076bda2dfd25a42b39b61476c95884
+      internalID: 402936075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_15
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 3000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d9f322b86098704d993fb1388b9a4ef
+      internalID: -1274049975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_16
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 3000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd47388c2e64a84481c4810e2e826b4
+      internalID: 763684588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_17
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 3000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0c2e92a9173ac43bd2187ffead2fb1
+      internalID: 720666395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_18
+      rect:
+        serializedVersion: 2
+        x: 9800
+        y: 3000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28b18a1272713942b7e168f84dd8498
+      internalID: 485024572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_19
+      rect:
+        serializedVersion: 2
+        x: 11200
+        y: 3000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5c4c1e6407e209429c259fac2090b6c
+      internalID: -1284022715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_20
+      rect:
+        serializedVersion: 2
+        x: 12600
+        y: 3000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1026c96fee043c4abbcbce23d4bb0f0
+      internalID: 1398939668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_21
+      rect:
+        serializedVersion: 2
+        x: 14000
+        y: 3000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f9cfa3471d87da43983c2ad5fb07400
+      internalID: -483330047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd41600a2bdc354384133b6c3b4b790
+      internalID: -2005802892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_23
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bdda9430ee22e64f86d2c28690d5b3b
+      internalID: 543950021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_24
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c849381f84666041861c9cf9d48738d
+      internalID: 145276824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_25
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8616f978f04704c9d20bc5a1bd6b7b
+      internalID: -228206182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_26
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1c7ba28081117448b41368b9c6dee1
+      internalID: 1210768114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_27
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d12572523c5864f83ea21c5f6eec72
+      internalID: -525378431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_28
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3c32d35db3ffd47b3eeda545aeb721
+      internalID: -1238003768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_29
+      rect:
+        serializedVersion: 2
+        x: 9800
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90270e1302a5044d9a87f965801aa34
+      internalID: 1539020329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_30
+      rect:
+        serializedVersion: 2
+        x: 11200
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89461a04c5dd0e84f945872fa6829818
+      internalID: -1107182491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_31
+      rect:
+        serializedVersion: 2
+        x: 12600
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169ce34ba8df08d45a25905a715c36a4
+      internalID: 1017493009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_32
+      rect:
+        serializedVersion: 2
+        x: 14000
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0522c3720569f4aae3851237fdde67
+      internalID: -594604404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b88286558e0987944811b86c05b09715
+      internalID: 1061712867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_34
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ffce55648c074940a725c88697e78c2
+      internalID: -1879902441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_35
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0909ac04cb346543b87239814bc0432
+      internalID: 734245001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_36
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aacdcbf0301ec5c48899698bd950728d
+      internalID: -1951715588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_37
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533db564f1ae1ba4eb9521e9e0e17255
+      internalID: -131167034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_38
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7488b7d45afeff48a4db1cc35615de0
+      internalID: 1701557251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_39
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeba0984ac79f4b4eb8346fb46c9b863
+      internalID: -1835530738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_40
+      rect:
+        serializedVersion: 2
+        x: 9800
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bedae391d2a9d5429240235de8c6b9b
+      internalID: 1718019515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_41
+      rect:
+        serializedVersion: 2
+        x: 11200
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b0456b11ae9d1a4f80515bb9ab0d28d
+      internalID: 1455941955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_42
+      rect:
+        serializedVersion: 2
+        x: 12600
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7479c564fddf1d4e814237ae359cac4
+      internalID: -1952089666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_43
+      rect:
+        serializedVersion: 2
+        x: 14000
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3654c1c5e43394ba2efa6f9a1e2882
+      internalID: -1341826461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca689527cc67e34f8f05fb2d256888d
+      internalID: 162126954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_45
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22ea9b75de3e5f48bf2f6b7b9956c39
+      internalID: 1413199769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_46
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c364bf6da5121cc469572b6623693fac
+      internalID: -1671834086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_47
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa4efde763d68db439ea70ad3a89db6c
+      internalID: -796683256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_48
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57499ca9af3ef124bb4dd8b68ea35be2
+      internalID: -27733172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_49
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad044350df6f41746a6aff84d4a0b833
+      internalID: 62369164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_50
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694c9e63fbc554b41aa2403e9cac8288
+      internalID: 2090915029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_51
+      rect:
+        serializedVersion: 2
+        x: 9800
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00e082beb2deed48a88582829f12618
+      internalID: -1535944584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_52
+      rect:
+        serializedVersion: 2
+        x: 11200
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adee8926d220c75448889524d1f30d83
+      internalID: 524524374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPAttack_Boss_53
+      rect:
+        serializedVersion: 2
+        x: 12600
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437c9ad0d38b4d7419270441a1a5b6a6
+      internalID: -371950370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +1260,61 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_SPAttack_Boss_35: 734245001
+      T_SPAttack_Boss_18: 485024572
+      T_SPAttack_Boss_31: 1017493009
+      T_SPAttack_Boss_22: -2005802892
+      T_SPAttack_Boss_15: -1274049975
+      T_SPAttack_Boss_9: 841691522
+      T_SPAttack_Boss_17: 720666395
+      T_SPAttack_Boss_24: 145276824
+      T_SPAttack_Boss_26: 1210768114
+      T_SPAttack_Boss_41: 1455941955
+      T_SPAttack_Boss_47: -796683256
+      T_SPAttack_Boss_3: 1222132503
+      T_SPAttack_Boss_25: -228206182
+      T_SPAttack_Boss_8: 1197433258
+      T_SPAttack_Boss_16: 763684588
+      T_SPAttack_Boss_36: -1951715588
+      T_SPAttack_Boss_37: -131167034
+      T_SPAttack_Boss_0: 568940025
+      T_SPAttack_Boss_27: -525378431
+      T_SPAttack_Boss_39: -1835530738
+      T_SPAttack_Boss_1: 679391124
+      T_SPAttack_Boss_52: 524524374
+      T_SPAttack_Boss_46: -1671834086
+      T_SPAttack_Boss_10: -1631151046
+      T_SPAttack_Boss_11: -1950930376
+      T_SPAttack_Boss_53: -371950370
+      T_SPAttack_Boss_2: 1993489254
+      T_SPAttack_Boss_4: -293560924
+      T_SPAttack_Boss_6: 1918966902
+      T_SPAttack_Boss_21: -483330047
+      T_SPAttack_Boss_50: 2090915029
+      T_SPAttack_Boss_29: 1539020329
+      T_SPAttack_Boss_14: 402936075
+      T_SPAttack_Boss_42: -1952089666
+      T_SPAttack_Boss_49: 62369164
+      T_SPAttack_Boss_48: -27733172
+      T_SPAttack_Boss_30: -1107182491
+      T_SPAttack_Boss_19: -1284022715
+      T_SPAttack_Boss_28: -1238003768
+      T_SPAttack_Boss_43: -1341826461
+      T_SPAttack_Boss_51: -1535944584
+      T_SPAttack_Boss_34: -1879902441
+      T_SPAttack_Boss_13: 1244842259
+      T_SPAttack_Boss_40: 1718019515
+      T_SPAttack_Boss_45: 1413199769
+      T_SPAttack_Boss_23: 543950021
+      T_SPAttack_Boss_38: 1701557251
+      T_SPAttack_Boss_12: 20053440
+      T_SPAttack_Boss_32: -594604404
+      T_SPAttack_Boss_7: 1080724482
+      T_SPAttack_Boss_33: 1061712867
+      T_SPAttack_Boss_44: 162126954
+      T_SPAttack_Boss_20: 1398939668
+      T_SPAttack_Boss_5: 1140369898
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

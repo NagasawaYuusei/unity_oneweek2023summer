@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cbec721bcbaac6a439aa6a408be00b59
+guid: d2617aa04b5845a42b1a14fabeba18e7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,11 +42,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -115,7 +115,637 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a5e08bdde83004d9c7883e92b86677
+      internalID: -1046188447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_1
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6703f98e2e90ea47bfd4d89ec1d03b9
+      internalID: -1189754756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_2
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f27d7ea91e5fe40aa55f1fac93ed7f
+      internalID: -72541721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_3
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1589a429702d1a94098a8ac0745f6b6b
+      internalID: -447445475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_4
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e33bc9751c658ca4e9331fa54e3e6ea1
+      internalID: 135887877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_5
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe52924680aa3b4da16bcdf6651c61d
+      internalID: 801413521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_6
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bcd3f8c6f85ed14781d741a9faa1f99
+      internalID: 31631893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_7
+      rect:
+        serializedVersion: 2
+        x: 9800
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b31fb7ba7114b940b97ddeaf75fdad4
+      internalID: 129768065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_8
+      rect:
+        serializedVersion: 2
+        x: 11200
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55652277fec6ab44e9e5eb9a7d87e145
+      internalID: 1239183503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_9
+      rect:
+        serializedVersion: 2
+        x: 12600
+        y: 2000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8be68b2b9bdfb4449f9304c4a0baf08
+      internalID: 1067780852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc6dc0ff1d5daa4a9e882f7cbcc6ab7
+      internalID: 302033033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_11
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c4eda012bcd7342bfb228c75c26e4d
+      internalID: 1911543178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_12
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae4cf4f330a9d2419e5f8223cca7106
+      internalID: -1404214931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_13
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eeff8d44887be5409f5716ea18e059a
+      internalID: -521755858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_14
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d139122e55fddf646a5070d24a217fd1
+      internalID: 34360822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_15
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce5687bc916fa374f851628e3bbbc19f
+      internalID: -2106746779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_16
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35450d08ff58da54d978492ee5527bf1
+      internalID: 134837359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_17
+      rect:
+        serializedVersion: 2
+        x: 9800
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4449f14e48f59944193dca37a5e97adf
+      internalID: -1580933897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_18
+      rect:
+        serializedVersion: 2
+        x: 11200
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb6ecaa5d5aa3c4fb8b197ac4cb651c
+      internalID: -1674222446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_19
+      rect:
+        serializedVersion: 2
+        x: 12600
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65b100a3ca3bff41ab836e37ef38eae
+      internalID: -325889193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5892f157902d54cb0fec01dc984572
+      internalID: -230607254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_21
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b57bb49a8b243469a6760ad1f68ccc
+      internalID: -1989392404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_22
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e02bd31abf18544ab8e6c55ebfd54e9
+      internalID: 477188985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_23
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89c62340f7af79748b5c3c11811d3f29
+      internalID: -531845281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_24
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e166b41a4ceb64d9b9a1d41e228dcf
+      internalID: -616901093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_25
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4ee03b700b3d546a66efef335740a5
+      internalID: 1851096258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_26
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aee3b98917e0804abb7691e1684b918
+      internalID: -1549237343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_27
+      rect:
+        serializedVersion: 2
+        x: 9800
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f322c68e59cecdf4587acbd5ba3fb5f0
+      internalID: -229053372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_28
+      rect:
+        serializedVersion: 2
+        x: 11200
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7262ca25679ce634cada7789c0a4826f
+      internalID: -974305715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_SPDelay_Boss_29
+      rect:
+        serializedVersion: 2
+        x: 12600
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd22ed9dbfcdfd848ad111c81a92769d
+      internalID: -1658690581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +756,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_SPDelay_Boss_3: -447445475
+      T_SPDelay_Boss_4: 135887877
+      T_SPDelay_Boss_0: -1046188447
+      T_SPDelay_Boss_8: 1239183503
+      T_SPDelay_Boss_13: -521755858
+      T_SPDelay_Boss_17: -1580933897
+      T_SPDelay_Boss_14: 34360822
+      T_SPDelay_Boss_21: -1989392404
+      T_SPDelay_Boss_7: 129768065
+      T_SPDelay_Boss_16: 134837359
+      T_SPDelay_Boss_28: -974305715
+      T_SPDelay_Boss_24: -616901093
+      T_SPDelay_Boss_15: -2106746779
+      T_SPDelay_Boss_12: -1404214931
+      T_SPDelay_Boss_23: -531845281
+      T_SPDelay_Boss_11: 1911543178
+      T_SPDelay_Boss_5: 801413521
+      T_SPDelay_Boss_2: -72541721
+      T_SPDelay_Boss_10: 302033033
+      T_SPDelay_Boss_19: -325889193
+      T_SPDelay_Boss_6: 31631893
+      T_SPDelay_Boss_18: -1674222446
+      T_SPDelay_Boss_22: 477188985
+      T_SPDelay_Boss_27: -229053372
+      T_SPDelay_Boss_26: -1549237343
+      T_SPDelay_Boss_29: -1658690581
+      T_SPDelay_Boss_1: -1189754756
+      T_SPDelay_Boss_20: -230607254
+      T_SPDelay_Boss_25: 1851096258
+      T_SPDelay_Boss_9: 1067780852
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

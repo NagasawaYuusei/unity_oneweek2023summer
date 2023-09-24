@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4a923de5ae3b57f448522b66e6505cd0
+guid: ef368edec87b0414891e804bd8181fbf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -115,7 +115,406 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9e6a4bf47aede4ca3f5230298993a9
+      internalID: 458564412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_1
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aa1c5a5a771e7b46ad561a606661c95
+      internalID: 406012240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_2
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1a01bf03c90c2458c7a0cd021c1dc2
+      internalID: 1124012917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_3
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39125abc7db529d49afc48b34bd6bad9
+      internalID: 425917761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_4
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c6060aa7e807bb4ca6f7365f71b5791
+      internalID: -247714331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_5
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ce977ab5751f641a56f5db5772600b
+      internalID: -286853116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_6
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f248cd6ce1b178f42a5d64a08de206ad
+      internalID: 1240436199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_7
+      rect:
+        serializedVersion: 2
+        x: 9800
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 205b07e27a77c014fbf4356b8c24c008
+      internalID: -489477466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_8
+      rect:
+        serializedVersion: 2
+        x: 11200
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03851ab8edc2c814c8b7dc3552c558eb
+      internalID: 1893621687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_9
+      rect:
+        serializedVersion: 2
+        x: 12600
+        y: 1000
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5e90a523f59d2468858b1380ff9e7f
+      internalID: 1966893468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46061ad8080c792429f8fe050ed549e5
+      internalID: 1678134526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_11
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a6d12b25b542941b5f128518e1b085
+      internalID: 1483147661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_12
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e038aa53b38ab4083a3dbbe1b3ee65
+      internalID: 479104753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_13
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85700aa015de9c34b9443adf6d470d34
+      internalID: -1561500064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_14
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a496f9ad534abd243a91f34317330974
+      internalID: -1646746375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_15
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5294e3e10c97b724a90917d39965090b
+      internalID: 1081978834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_16
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ef4c86ace58d24fbd75d722c3bde00
+      internalID: -1391163205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_17
+      rect:
+        serializedVersion: 2
+        x: 9800
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785036acf5b6d6c4392ff6447a937083
+      internalID: 1666170460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_DBDelay_Boss_18
+      rect:
+        serializedVersion: 2
+        x: 11200
+        y: 0
+        width: 1400
+        height: 1000
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d20847db3e9f14dbf32a394c054b2d
+      internalID: -169658883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +525,26 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_DBDelay_Boss_12: 479104753
+      T_DBDelay_Boss_11: 1483147661
+      T_DBDelay_Boss_10: 1678134526
+      T_DBDelay_Boss_5: -286853116
+      T_DBDelay_Boss_9: 1966893468
+      T_DBDelay_Boss_17: 1666170460
+      T_DBDelay_Boss_0: 458564412
+      T_DBDelay_Boss_13: -1561500064
+      T_DBDelay_Boss_14: -1646746375
+      T_DBDelay_Boss_4: -247714331
+      T_DBDelay_Boss_1: 406012240
+      T_DBDelay_Boss_16: -1391163205
+      T_DBDelay_Boss_8: 1893621687
+      T_DBDelay_Boss_7: -489477466
+      T_DBDelay_Boss_15: 1081978834
+      T_DBDelay_Boss_18: -169658883
+      T_DBDelay_Boss_6: 1240436199
+      T_DBDelay_Boss_3: 425917761
+      T_DBDelay_Boss_2: 1124012917
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
