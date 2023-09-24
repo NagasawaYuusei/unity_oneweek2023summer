@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe890400f770c44fd8a9103ad9e47f47, type: 3}
   m_Name: 10_TutorialFadeData
   m_EditorClassIdentifier: 
-  m_fadeData:
+  m_fadeInData:
     _duration: 0.2
+    _color: {r: 0, g: 0, b: 0, a: 1}
+    _delay: 0
+    _ease: 1
+  m_fadeOutData:
+    _duration: 1
     _color: {r: 0, g: 0, b: 0, a: 1}
     _delay: 0
     _ease: 1

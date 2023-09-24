@@ -25,7 +25,7 @@ public class TutorialSceneManager : SingletonClass<TutorialSceneManager>
     /// <returns></returns>
     async UniTask InitializeAsync(CancellationToken cancellation)
     {
-        await UniTask.DelayFrame(1);
+        await UniTask.DelayFrame(1, cancellationToken: cancellation);
 
         m_canvasRoot = GameObject.FindObjectOfType<TutorialCanvasRoot>();
         Debug.Assert(m_canvasRoot);

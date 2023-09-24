@@ -26,7 +26,7 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
     /// <returns></returns>
     async UniTask InitializeAsync(CancellationToken cancellation)
     {
-        await UniTask.DelayFrame(1);
+        await UniTask.DelayFrame(1, cancellationToken:cancellation);
 
         m_canvasRoot = GameObject.FindObjectOfType<TitleCanvasRoot>();
         Debug.Assert(m_canvasRoot);
@@ -97,7 +97,7 @@ public class TitleSceneManager : SingletonClass<TitleSceneManager>
 
         // オプションシーンをロード
         var optionScene = await SceneLoader.instance.LoadSubSceneAsync(SceneIndex.Sub.TitleOption);
-        await UniTask.DelayFrame(1);
+        await UniTask.DelayFrame(1, cancellationToken: cancellation);
 
         var optionCanvasRoot = GameObject.FindObjectOfType<OptionCanvasRoot>();
         Debug.Assert(optionCanvasRoot);

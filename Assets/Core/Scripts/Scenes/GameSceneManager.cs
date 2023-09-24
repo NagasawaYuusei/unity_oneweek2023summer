@@ -54,7 +54,7 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         SceneManager.SetActiveScene(backScene);
         SceneManager.SetActiveScene(enemyScene);
 
-        await UniTask.DelayFrame(1);
+        await UniTask.DelayFrame(1, cancellationToken: cancellation);
 
         m_canvasRoot = GameObject.FindObjectOfType<GameCanvasRoot>();
         Debug.Assert(m_canvasRoot);
@@ -171,7 +171,7 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         var overScene = await SceneLoader.instance.LoadSubSceneAsync(SceneIndex.Sub.GameOver);
         SceneManager.SetActiveScene(overScene);
 
-        await UniTask.DelayFrame(1);
+        await UniTask.DelayFrame(1, cancellationToken: cancellation);
 
         var overCanvasRoot = GameObject.FindObjectOfType<GameOverCanvasRoot>();
         Debug.Assert(overCanvasRoot);
