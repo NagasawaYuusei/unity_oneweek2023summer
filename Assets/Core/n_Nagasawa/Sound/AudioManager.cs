@@ -63,6 +63,10 @@ public class AudioManager : MonoBehaviour
         }
 
         Instance = this;
+
+        // 初期ボリューム設定
+        UpdateBgmVolume();
+        UpdateSeVolume();
     }
 
     void UpdateBgmVolume()
