@@ -137,6 +137,7 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
     async UniTask EnemySoawnProgress(CancellationToken cancellation)
     {
         var enemyMng = EnemyManager.instance;
+        var cameraZoom = GameObject.FindObjectOfType<CameraZoom>();
         try
         {
             // ボス前のWaveを進行
@@ -151,7 +152,7 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
                 AudioManager.Instance.PlayBGM(bgm);
 
                 // 敵生成開始
-                await UniTask.WaitForSeconds(1f, cancellationToken: cancellation);
+                await UniTask.WaitForSeconds(2f, cancellationToken: cancellation);
                 enemyMng.StartWave(currentWaveCount);
                 // 終了まで待つ
                 await UniTask.WaitWhile(() => (enemyMng.isWorking == true), cancellationToken: cancellation);
@@ -160,6 +161,11 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
                 AudioManager.Instance.FadeOutBgm(0.5f);
                 await UniTask.WaitForSeconds(1f, cancellationToken: cancellation);
                 currentWaveCount++;
+                // カメラ演出
+                var posTask = cameraZoom.SetCameraPosition(currentWaveCount, cancellation);
+                var zoomTask = cameraZoom.SetCameraSize(currentWaveCount, cancellation);
+                await UniTask.WhenAll(posTask, zoomTask);
+
                 await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: cancellation);
             }
             // ボスWaveを進行
