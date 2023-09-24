@@ -77,7 +77,7 @@ public class Zako2 : Enemy
     public void Attack()
     {
         isAttack = true;
-        PlayerController.Instance.Hit(AttackPower);
+        //PlayerController.Instance.Hit(AttackPower);
     }
 
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public enum EnemyState {Idle, Anticipation, Attack,Death}
+    public enum HitAnim { off, on}
     protected EnemyState State = EnemyState.Idle;
 
     /// <summary>
@@ -17,6 +18,8 @@ public class Enemy : MonoBehaviour
     /// </summary>
     protected Status stat;
 
+    protected bool isParry;
+
     /// <summary>
     /// ステータスを設定（最初に呼び出します）
     /// </summary>
@@ -24,6 +27,16 @@ public class Enemy : MonoBehaviour
     public void SetStatus(Status status)
     {
         stat = status;
+    }
+
+    public void Collect()
+    {
+        isParry = true;
+    }
+        
+    public void AnimationPlaySE(SoundType.SE se)
+    {
+        AudioManager.Instance.PlaySE(se);
     }
 
     protected virtual void MoveBattlePos(Transform BattlePos,float speed)

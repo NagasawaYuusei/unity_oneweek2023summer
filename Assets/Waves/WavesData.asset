@@ -18,16 +18,12 @@ MonoBehaviour:
     _spawnRatioData:
     - _name: "\u4ECA\u5BB5"
       _ratio: 1
-    - _name: "\u591C\u5BB5"
-      _ratio: 0
     _generateCount: 3
   - _background: {fileID: 21300000, guid: bf9d401cd800c4944a7777a02d56f1bd, type: 3}
     _bgm: 1
     _spawnRatioData:
     - _name: "\u5F14\u5175\u885B"
-      _ratio: 0
-    - _name: "\u6CA2\u57CE"
-      _ratio: 0
+      _ratio: 1
     _generateCount: 3
   _bossBackground: {fileID: 21300000, guid: 0ff54a3bfe83e4228921d8a2a07c9858, type: 3}
   _bossBgm: 2
