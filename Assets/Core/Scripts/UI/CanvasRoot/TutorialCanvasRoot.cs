@@ -16,6 +16,9 @@ public class TutorialCanvasRoot : CanvasRoot
     [SerializeField]
     TextMeshProUGUI m_tutorialTxt = null;
 
+    [SerializeField]
+    Image m_wazamaeImg = null;
+
     CanvasGroup m_group = null; // コード書き換えるのが面倒くさいのでCanvasRootでTextフェードしてます
 
     void Start()
@@ -41,8 +44,22 @@ public class TutorialCanvasRoot : CanvasRoot
         }
         // テキストを設定
         m_tutorialTxt.text = text;
-        // フェードイン
-        await m_group.DOFade(1f, 0.2f)
+        // 何かテキストが表示されていればフェードイン
+        if (!string.IsNullOrEmpty(m_tutorialTxt.text))
+        {
+            await m_group.DOFade(1f, 0.2f)
+                .WithCancellation(cancellation);
+        }
+    }
+
+    /// <summary>
+    /// ワザマエ!!テクスチャを表示
+    /// </summary>
+    /// <param name="cancellation"></param>
+    /// <returns></returns>
+    public async UniTask EnableWazamaeImage(CancellationToken cancellation)
+    {
+        await m_wazamaeImg.DOFade(1f, 0.2f)
             .WithCancellation(cancellation);
     }
 }

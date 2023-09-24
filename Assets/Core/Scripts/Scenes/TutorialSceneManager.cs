@@ -95,7 +95,8 @@ public class TutorialSceneManager : SingletonClass<TutorialSceneManager>
             {
                 // 成功　敵が死んでチュートリアル終了
                 enemy.OnDeath();
-                await m_canvasRoot.ChangeTutorialText("ワザマエ!!", cancellation);
+                await m_canvasRoot.ChangeTutorialText(string.Empty, cancellation);
+                await m_canvasRoot.EnableWazamaeImage(cancellation);
                 await UniTask.WaitForSeconds(3f, cancellationToken: cancellation);
                 m_isRunning = false;
                 break;
