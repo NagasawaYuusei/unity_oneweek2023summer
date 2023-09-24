@@ -175,6 +175,7 @@ public class PlayerController : MonoBehaviour
                 break;
             //パリィ成功時
             case PlayerStateEnum.ParrySuccess:
+                parrySuccess = true; // チュートリアル用
                 m_state = PlayerStateEnum.ParrySuccess;
                 m_anim.Play("Parry_Player");
                 m_effectAnim.Play("Parry_PlayerEffect");
@@ -339,6 +340,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public PlayerStateEnum state => m_state;
+    public bool parrySuccess { get; private set; } = false; // チュートリアル用
 
     /// <summary>
     /// プレイヤーの残りHPパーセンテージを取得

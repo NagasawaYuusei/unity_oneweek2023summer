@@ -8,6 +8,7 @@ public class TutorialEnemy : Enemy
     GameObject m_deathParticle = null;
 
     Animator m_animator = null;
+    bool m_onDeath = false; // パリィが失敗したら死なない、成功したときにtrue担って死ぬ
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class TutorialEnemy : Enemy
         m_animator.SetTrigger("idle");
         m_animator.SetBool("isIdol", false);
         m_animator.SetBool("isAttack", false);
+        m_onDeath = false;
     }
 
     /// <summary>
@@ -33,20 +35,29 @@ public class TutorialEnemy : Enemy
     }
 
     /// <summary>
-    /// 攻撃動作
-    /// </summary>
-    public void OnAttack()
-    {
-        PlayerController.Instance.Hit(0, this, true);
-        m_animator.SetBool("isAttack", true);
-    }
-
-    /// <summary>
     /// 死亡
     /// </summary>
     public void OnDeath()
     {
-        Instantiate(m_deathParticle, transform.position, Quaternion.identity, transform);
-        Death();
+        m_onDeath = true;
+    }
+
+    // 以下、Animationからの呼び出し
+
+    public void AttackStateChange()
+    {
+        m_animator.SetBool("isAttack", true);
+    }
+    public void Attack()
+    {
+        PlayerController.Instance.Hit(0, this, true);
+    }
+    public void DeathStateChange()
+    {
+        if (m_onDeath)
+        {
+            Instantiate(m_deathParticle, transform.position, Quaternion.identity, transform);
+            Death();
+        }
     }
 }
