@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: SoundData_BGM
   m_EditorClassIdentifier: 
   m_soundData:
-  - AudioClip: {fileID: 8300000, guid: 48108f3fedb4d470b90a0917b7aa7214, type: 3}
+  - AudioClip: {fileID: 8300000, guid: 589a6f08ceb354bcab388da7bbe284fa, type: 3}
     Volume: 1
     BgmType: 0
-  - AudioClip: {fileID: 8300000, guid: f7761c80eb21046dcacc60fb2b0ee903, type: 3}
+  - AudioClip: {fileID: 8300000, guid: ed0946896b36d48e6a18c734b5726320, type: 3}
     Volume: 1
     BgmType: 1
-  - AudioClip: {fileID: 8300000, guid: b9ae7977ea516415797cfba05a40937d, type: 3}
+  - AudioClip: {fileID: 8300000, guid: a28c85fd1280e4ed8b87551680585331, type: 3}
     Volume: 1
     BgmType: 2
-  - AudioClip: {fileID: 8300000, guid: c3e5a715c511442b38d12eca0dffcdd5, type: 3}
+  - AudioClip: {fileID: 8300000, guid: 10077239d8b594aeb8438953568340a4, type: 3}
     Volume: 1
     BgmType: 3
