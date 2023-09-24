@@ -109,11 +109,9 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         source.Cancel();
         source.Dispose();
 
-        if (m_state == GameState.Over)
-        {
-            // ゲームオーバー処理
-            await GameOverProcess(cancellation);
-        }
+        // ゲームオーバー処理　クリアも無理やり入れました一緒に使います
+        await GameOverProcess(cancellation);
+
         await FadeManger.instance.Fade(Fade.Situation.Game, Fade.Type.FadeOut);
 
         // 次のシーンへ
@@ -203,6 +201,15 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
 
         var overCanvasRoot = GameObject.FindObjectOfType<GameOverCanvasRoot>();
         Debug.Assert(overCanvasRoot);
+
+        // クリア用
+        if (m_state == GameState.Clear)
+        {
+            overCanvasRoot.SetClear();
+            await UniTask.WaitForSeconds(2f, cancellationToken: cancellation);
+            return;
+        }
+
         overCanvasRoot.titleBtn.onClick.AddListener(
             () =>
             {
