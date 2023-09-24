@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Samurai1
   m_EditorClassIdentifier: 
   _Name: "\u4ECA\u5BB5"
-  _MoveSpeed: 6
-  _AttackPower: 0a000000
+  _MoveSpeed: 20
+  _AttackPower: 14000000

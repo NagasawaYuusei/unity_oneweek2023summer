@@ -647,8 +647,60 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1301103407}
     - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
-      propertyPath: m_changeReception.Array.data[0]
+      propertyPath: m_hitStopTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_coolDownTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_hitStopPower
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_mojiAdventTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_mojiRemainTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_mojiRetireTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_changePlayerHPs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_changeReception.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_changePlayerHPs.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_changePlayerHPs.Array.data[1]
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_changePlayerHPs.Array.data[2]
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_changeReception.Array.data[0]
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_changeReception.Array.data[1]
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155614720502177594, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
+      propertyPath: m_changeReception.Array.data[2]
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3155614720502177596, guid: c8ffc7f711281124f8123493ef2613f6, type: 3}
       propertyPath: m_RootOrder

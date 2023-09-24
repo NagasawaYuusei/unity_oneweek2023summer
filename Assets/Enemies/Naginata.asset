@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Naginata
   m_EditorClassIdentifier: 
   _Name: "\u5F14\u5175\u885B"
-  _MoveSpeed: 7
-  _AttackPower: 08000000
+  _MoveSpeed: 40
+  _AttackPower: 1e000000

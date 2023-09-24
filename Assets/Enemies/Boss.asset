@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Boss
   m_EditorClassIdentifier: 
   _Name: "\u753B\u7709\u4E38"
-  _MoveSpeed: 4
-  _AttackPower: 0a0000000500000008000000
+  _MoveSpeed: 20
+  _AttackPower: 280000001e00000014000000
