@@ -1281,7 +1281,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u308A\u3056\u3000\u3055\u306E\u3000\u3072\u308B\n\n\u3051\u308D\u3000\u305F\u3089\u3080\u3000\u307F\u304A\n\n\u3055\u304B\u3044\u3000\u304D\u3083\u308F\u305F\u3000\u307E\u308B\n\n\u3057\u3085\u3046"
+  m_text: "\u308A\u3056\u3000\u3055\u306E\u3000\u3072\u308B\n\n\u3051\u308D\u3000\u305F\u3089\u3080\u3000\u307F\u304A\n\n\u3082\u306A\u3057\u3000\u304D\u3083\u308F\u305F\u3000\u307E\u308B\n\n\u3057\u3085\u3046"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4584ed8e6ff7f4d9cbe1544272a09604, type: 2}
   m_sharedMaterial: {fileID: -1424785544248566464, guid: 4584ed8e6ff7f4d9cbe1544272a09604, type: 2}
