@@ -105,14 +105,14 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
 
         // 終了
         await FinalizeAsync(cancellation);
-        AudioManager.Instance.FadeOutBgm(0.2f);
         // 敵を生成中ならキャンセル
         source.Cancel();
         source.Dispose();
 
         // ゲームオーバー処理　クリアも無理やり入れました一緒に使います
         await GameOverProcess(cancellation);
-
+        // BGM停止
+        AudioManager.Instance.FadeOutBgm(0.2f);
         await FadeManger.instance.Fade(Fade.Situation.Game, Fade.Type.FadeOut);
 
         // 次のシーンへ
@@ -147,44 +147,57 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
             {
                 Debug.Log($"=== Start Wave {currentWaveCount + 1} ===");
 
-                // BGMと背景
+                // 背景とBGMを取得
                 enemyMng.GetBackgroundSpriteAndBGM(currentWaveCount, out var background, out var bgm);
-                await m_background.ChangeSky(background, 0.5f, cancellation: cancellation);
+                // BGM再生
                 AudioManager.Instance.PlayBGM(bgm);
+                await UniTask.WaitForSeconds(1f, cancellationToken: cancellation);
+                // 背景とカメラを更新
+                var skyTask = m_background.ChangeSky(background, 2f, cancellation: cancellation);
+                var cameraTask = cameraZoom.UpdateCamera(currentWaveCount, cancellation);
+                await UniTask.WhenAll(skyTask, cameraTask);
 
-                // 敵生成開始
                 await UniTask.WaitForSeconds(2f, cancellationToken: cancellation);
+
+                // 敵生成開始　終了まで待つ
                 enemyMng.StartWave(currentWaveCount);
-                // 終了まで待つ
                 await UniTask.WaitWhile(() => (enemyMng.isWorking == true), cancellationToken: cancellation);
 
-                // 次のWaveへ
-                AudioManager.Instance.FadeOutBgm(0.5f);
-                await UniTask.WaitForSeconds(1f, cancellationToken: cancellation);
-                currentWaveCount++;
-                // カメラ演出
-                var posTask = cameraZoom.SetCameraPosition(currentWaveCount, cancellation);
-                var zoomTask = cameraZoom.SetCameraSize(currentWaveCount, cancellation);
-                await UniTask.WhenAll(posTask, zoomTask);
+                await UniTask.WaitForSeconds(2f, cancellationToken: cancellation);
 
+                // NGM停止
+                AudioManager.Instance.FadeOutBgm(1f);
+                await UniTask.WaitForSeconds(2f, cancellationToken: cancellation);
+                // 次のWaveへ
+                currentWaveCount++;
                 await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: cancellation);
             }
             // ボスWaveを進行
             {
+                await UniTask.WaitForSeconds(2f, cancellationToken: cancellation);
+
                 Debug.Log("=== Start Boss Wave ===");
 
                 // ボス前SE
                 AudioManager.Instance.PlaySE(SoundType.SE.BeforeBoss);
-                // BGMと背景
+                await UniTask.WaitForSeconds(4f, cancellationToken: cancellation);
+                // ボス前SEが長いので止める
+                AudioManager.Instance.StopSE();
+
+                // 背景とBGMを取得
                 enemyMng.GetBossBackgroundSpriteAndBGM(out var background, out var bgm);
-                await m_background.ChangeSky(background, 0.5f, cancellation: cancellation);
-                await UniTask.WaitForSeconds(2f, cancellationToken: cancellation);
+                // BGM再生
                 AudioManager.Instance.PlayBGM(bgm);
-                await UniTask.WaitForSeconds(2f, cancellationToken: cancellation);
-                AudioManager.Instance.StopSE(); // ボス前SEが長いので止める
-                // ボス生成
+                await UniTask.WaitForSeconds(1f, cancellationToken: cancellation);
+                // 背景とカメラを更新
+                var skyTask = m_background.ChangeSky(background, 2f, cancellation: cancellation);
+                var cameraTask = cameraZoom.UpdateCamera(currentWaveCount, cancellation);
+                await UniTask.WhenAll(skyTask, cameraTask);
+
+                await UniTask.WaitForSeconds(1f, cancellationToken: cancellation);
+
+                // ボス生成　終了まで待つ
                 enemyMng.StartBossWave();
-                // 終了まで待つ
                 await UniTask.WaitUntil(() => (enemyMng.isWorking == false), cancellationToken: cancellation);
             }
             // ここまできたらクリア
@@ -203,6 +216,20 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
     async UniTask GameOverProcess(CancellationToken cancellation)
     {
         bool isWaiting = true;
+
+        // クリア用
+        if (m_state == GameState.Clear)
+        {
+            // パーティクル再生
+            ParticlePlayer.instance.PlayHanabiraParticle(
+                new Vector3(PlayerController.Instance.transform.position.x, 1, 0));
+            // BGM停止
+            AudioManager.Instance.FadeOutBgm(1f);
+            await UniTask.WaitForSeconds(0.5f, cancellationToken: cancellation);
+            // SE再生
+            AudioManager.Instance.PlaySE(SoundType.SE.Kisatsu);
+            await UniTask.WaitForSeconds(0.5f, cancellationToken: cancellation);
+        }
 
         var overScene = await SceneLoader.instance.LoadSubSceneAsync(SceneIndex.Sub.GameOver);
         SceneManager.SetActiveScene(overScene);
@@ -253,6 +280,5 @@ public class GameSceneManager : SingletonClass<GameSceneManager>
         m_state = GameState.Clear;
         m_nextScene = SceneIndex.Main.Result;
         playerHpPercentage = PlayerController.Instance.GetPlayerHpPercentage();
-        AudioManager.Instance.PlaySE(SoundType.SE.Kisatsu);
     }
 }

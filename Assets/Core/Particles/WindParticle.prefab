@@ -4838,8 +4838,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 890489351
-  m_SortingLayer: 3
+  m_SortingLayerID: -2064983419
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_RenderMode: 5
   m_MeshDistribution: 0

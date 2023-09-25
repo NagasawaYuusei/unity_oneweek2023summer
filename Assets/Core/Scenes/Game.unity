@@ -524,15 +524,15 @@ MonoBehaviour:
   _preset:
   - _position: {x: 0, y: 3.4}
     _size: 5
-    _duration: 0.5
+    _duration: 2
     _ease: 3
   - _position: {x: 0, y: 4}
     _size: 5.5
-    _duration: 0.5
+    _duration: 2
     _ease: 3
   - _position: {x: 0, y: 5}
     _size: 6
-    _duration: 0.5
+    _duration: 2
     _ease: 3
 --- !u!1 &2117819289
 GameObject:

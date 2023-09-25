@@ -36,32 +36,49 @@ public class CameraZoom : MonoBehaviour
         m_camera = GetComponent<Camera>();
     }
 
-    public async UniTask SetCameraPosition(int index,
+    async UniTask SetCameraPosition(Vector3 pos, float duration, Ease ease,
         CancellationToken cancellation = default)
     {
-        var data = _preset[index];
-
-        var targetPos = new Vector3(data.position.x, data.position.y, m_camera.transform.position.z);
-        await transform.DOMove(targetPos, data.duration)
-            .SetEase(data.ease)
+        await transform.DOMove(pos, duration)
+            .SetEase(ease)
             .SetUpdate(UpdateType.Normal)
             .WithCancellation(cancellation);
     }
 
-    public async UniTask SetCameraSize(int index,
-    CancellationToken cancellation = default)
+    async UniTask SetCameraSize(float from, float to,float duration, Ease ease,
+        CancellationToken cancellation = default)
     {
-        var data = _preset[index];
-
-        var startSize = m_camera.orthographicSize;
-        await DOVirtual.Float(startSize, data.size, data.duration,
+        await DOVirtual.Float(from, to, duration,
             (value) =>
             {
                 if (m_camera)
                     m_camera.orthographicSize = value;
             })
-            .SetEase(data.ease)
+            .SetEase(ease)
             .SetUpdate(UpdateType.Normal)
             .WithCancellation(cancellation);
+    }
+
+    /// <summary>
+    /// カメラを指定位置・倍率へ更新
+    /// </summary>
+    /// <param name="index"></param>
+    /// <param name="cancellation"></param>
+    /// <returns></returns>
+    public async UniTask UpdateCamera(int index,
+        CancellationToken cancellation = default)
+    {
+        var data = _preset[index];
+        var duration = data.duration;
+        var ease = data.ease;
+        // 移動
+        var pos = new Vector3(data.position.x, data.position.y, m_camera.transform.position.z);
+        var posTask = SetCameraPosition(pos, duration, ease, cancellation);
+        // ズーム倍率
+        var from = m_camera.orthographicSize;
+        var to = data.size;
+        var zoomTask = SetCameraSize(from, to, duration, ease, cancellation);
+        // 両方実行
+        await UniTask.WhenAll(posTask, zoomTask);
     }
 }

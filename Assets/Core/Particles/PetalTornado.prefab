@@ -534,6 +534,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9069351144614886144, guid: 85b02d1deba977043a3dc3cdbf9e770c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069351144614886144, guid: 85b02d1deba977043a3dc3cdbf9e770c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 890489351
+      objectReference: {fileID: 0}
     - target: {fileID: 9069351144614886145, guid: 85b02d1deba977043a3dc3cdbf9e770c, type: 3}
       propertyPath: m_Name
       value: PetalTornado
@@ -588,6 +596,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9069351144614886151, guid: 85b02d1deba977043a3dc3cdbf9e770c, type: 3}
       propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069351144614886151, guid: 85b02d1deba977043a3dc3cdbf9e770c, type: 3}
+      propertyPath: stopAction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069351144614886151, guid: 85b02d1deba977043a3dc3cdbf9e770c, type: 3}
+      propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9069351144614886151, guid: 85b02d1deba977043a3dc3cdbf9e770c, type: 3}
